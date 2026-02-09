@@ -57,8 +57,8 @@ export default function Tagline() {
         </div>
 
         {/* Line 3: GREAT (White Box) */}
-        <div ref={addToRefs} className="w-full bg-gray-200 text-black text-center py-2 md:py-4 mt-2 mb-2">
-            <span className="text-5xl md:text-8xl lg:text-[10rem] block">Great</span>
+        <div ref={addToRefs} className="w-full text-center py-2 md:py-4 mt-2 mb-2">
+            <span className="text-5xl md:text-8xl lg:text-[10rem] block font-bold text-white">Great</span>
         </div>
 
         {/* Line 4: WORK ... WITH */}
@@ -68,8 +68,8 @@ export default function Tagline() {
         </div>
 
         {/* Line 5: GREAT PEOPLE. (Blue Box) */}
-         <div ref={addToRefs} className="w-full bg-blue-700 text-white text-center py-2 md:py-4 mt-2">
-            <span className="text-5xl md:text-8xl lg:text-[10rem] block">Great People.</span>
+         <div ref={addToRefs} className="w-full text-center py-2 md:py-4 mt-2">
+            <span className="text-5xl md:text-8xl lg:text-[10rem] block font-bold text-blue-500">Great People.</span>
         </div>
 
       </div>

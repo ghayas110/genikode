@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { div } from "three/tsl";
 
 const projects = [
   {
