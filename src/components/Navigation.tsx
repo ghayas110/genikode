@@ -9,7 +9,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 px-8 py-6 mix-blend-difference text-white flex justify-between items-center pointer-events-none">
+    <nav className={`fixed top-0 left-0 w-full z-50 px-8 py-6 text-white flex justify-between items-center pointer-events-none ${isOpen ? '' : 'mix-blend-difference'}`}>
       {/* Logo */}
       <Link href="/" className="pointer-events-auto relative w-32 h-10">
         <Image 

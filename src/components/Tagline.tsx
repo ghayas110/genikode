@@ -46,30 +46,30 @@ export default function Tagline() {
       <div className="max-w-7xl w-full flex flex-col space-y-2 md:space-y-4 font-sans font-bold uppercase tracking-tighter leading-none">
         
         {/* Line 1: WE EXIST */}
-        <div ref={addToRefs} className="text-6xl md:text-8xl lg:text-9xl text-left">
+        <div ref={addToRefs} className="text-5xl md:text-8xl lg:text-9xl text-left">
           We Exist
         </div>
 
         {/* Line 2: TO ... MAKE */}
-        <div ref={addToRefs} className="flex justify-between items-end text-6xl md:text-8xl lg:text-9xl">
+        <div ref={addToRefs} className="flex justify-between items-end text-5xl md:text-8xl lg:text-9xl">
           <span>To</span>
           <span>Make</span>
         </div>
 
         {/* Line 3: GREAT (White Box) */}
         <div ref={addToRefs} className="w-full bg-gray-200 text-black text-center py-2 md:py-4 mt-2 mb-2">
-            <span className="text-6xl md:text-8xl lg:text-[10rem] block">Great</span>
+            <span className="text-5xl md:text-8xl lg:text-[10rem] block">Great</span>
         </div>
 
         {/* Line 4: WORK ... WITH */}
-        <div ref={addToRefs} className="flex justify-between items-start text-6xl md:text-8xl lg:text-9xl">
+        <div ref={addToRefs} className="flex justify-between items-start text-5xl md:text-8xl lg:text-9xl">
           <span>Work</span>
           <span>With</span>
         </div>
 
         {/* Line 5: GREAT PEOPLE. (Blue Box) */}
          <div ref={addToRefs} className="w-full bg-blue-700 text-white text-center py-2 md:py-4 mt-2">
-            <span className="text-6xl md:text-8xl lg:text-[10rem] block">Great People.</span>
+            <span className="text-5xl md:text-8xl lg:text-[10rem] block">Great People.</span>
         </div>
 
       </div>

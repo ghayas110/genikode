@@ -72,7 +72,7 @@ export default function Portfolio() {
        {/* Floating Cursor Image */}
       <div
         ref={cursorRef}
-        className="fixed top-0 left-0 w-[400px] h-[300px] pointer-events-none z-50 rounded-xl overflow-hidden -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-normal"
+        className="hidden md:block fixed top-0 left-0 w-[400px] h-[300px] pointer-events-none z-50 rounded-xl overflow-hidden -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-normal"
         style={{ transformOrigin: "center center" }}
       >
         {projects.map((project, index) => (

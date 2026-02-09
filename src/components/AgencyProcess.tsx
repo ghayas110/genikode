@@ -103,7 +103,7 @@ export default function AgencyProcess() {
                     
                     {/* Left Column: Sticky Number */}
                     <div className="md:w-[20%] relative">
-                        <div className="sticky top-32 text-8xl md:text-[8vw] font-medium leading-none text-zinc-500 font-serif">
+                        <div className="sticky top-32 text-6xl md:text-[8vw] font-medium leading-none text-zinc-500 font-serif">
                             {phase.number}
                         </div>
                     </div>

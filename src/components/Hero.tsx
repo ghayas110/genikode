@@ -83,7 +83,7 @@ export default function Hero() {
       <div className="z-20 text-center px-4 w-full flex flex-col items-center justify-center h-full">
         {/* Title Container - whitespace-nowrap to keep single line if space allows, responsive text size */}
         <div className="max-w-[90vw] overflow-visible">
-            <h1 ref={titleRef} className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter mb-8 text-white text-shadow-lg whitespace-nowrap">
+            <h1 ref={titleRef} className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter mb-8 text-white text-shadow-lg whitespace-normal md:whitespace-nowrap text-center">
             {splitText("Enabling a Digital Tomorrow")}
             </h1>
         </div>

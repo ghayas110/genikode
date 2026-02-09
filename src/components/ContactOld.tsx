@@ -93,7 +93,7 @@ export default function ContactOld() {
         <form ref={formRef} className="w-full grid grid-cols-1 md:grid-cols-2 gap-0">
            
            {/* Name */}
-           <div className={`contact-field group relative border-b border-zinc-800 md:border-r p-8 md:p-12 transition-colors duration-500 ${focusedField === 'name' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
+           <div className={`contact-field group relative border-b border-zinc-800 md:border-r p-6 md:p-12 transition-colors duration-500 ${focusedField === 'name' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
               <label htmlFor="name" className={`block text-sm mb-4 transition-colors ${focusedField === 'name' ? 'text-white' : 'text-zinc-500'}`}>01. What's your name? *</label>
               <input 
                 type="text" 
@@ -109,7 +109,7 @@ export default function ContactOld() {
            </div>
 
            {/* Company */}
-           <div className={`contact-field group relative border-b border-zinc-800 p-8 md:p-12 transition-colors duration-500 ${focusedField === 'company' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
+           <div className={`contact-field group relative border-b border-zinc-800 p-6 md:p-12 transition-colors duration-500 ${focusedField === 'company' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
               <label htmlFor="company" className={`block text-sm mb-4 transition-colors ${focusedField === 'company' ? 'text-white' : 'text-zinc-500'}`}>02. What's your company name? (Optional)</label>
               <input 
                 type="text" 
@@ -125,7 +125,7 @@ export default function ContactOld() {
            </div>
 
            {/* Email */}
-           <div className={`contact-field group relative border-b border-zinc-800 md:border-r p-8 md:p-12 transition-colors duration-500 ${focusedField === 'email' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
+           <div className={`contact-field group relative border-b border-zinc-800 md:border-r p-6 md:p-12 transition-colors duration-500 ${focusedField === 'email' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
               <label htmlFor="email" className={`block text-sm mb-4 transition-colors ${focusedField === 'email' ? 'text-white' : 'text-zinc-500'}`}>03. What's your email? *</label>
               <input 
                 type="email" 
@@ -141,7 +141,7 @@ export default function ContactOld() {
            </div>
 
            {/* Budget */}
-           <div className={`contact-field group relative border-b border-zinc-800 p-8 md:p-12 transition-colors duration-500 ${focusedField === 'budget' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
+           <div className={`contact-field group relative border-b border-zinc-800 p-6 md:p-12 transition-colors duration-500 ${focusedField === 'budget' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
               <label htmlFor="budget" className={`block text-sm mb-4 transition-colors ${focusedField === 'budget' ? 'text-white' : 'text-zinc-500'}`}>04. What's your budget range? *</label>
               <select 
                 name="budget" 
@@ -161,7 +161,7 @@ export default function ContactOld() {
            </div>
 
            {/* Message - Full Width */}
-           <div className={`contact-field col-span-1 md:col-span-2 group relative p-8 md:p-12 transition-colors duration-500 ${focusedField === 'message' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
+           <div className={`contact-field col-span-1 md:col-span-2 group relative p-6 md:p-12 transition-colors duration-500 ${focusedField === 'message' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
               <label htmlFor="message" className={`block text-sm mb-4 transition-colors ${focusedField === 'message' ? 'text-white' : 'text-zinc-500'}`}>05. Tell us about your project *</label>
               <textarea 
                 name="message" 

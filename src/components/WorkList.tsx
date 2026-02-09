@@ -129,16 +129,16 @@ export default function WorkList() {
                 src={project.image}
                 alt={project.title}
                 fill
-                className="object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-500"
+                className="object-cover opacity-80 md:opacity-80 md:group-hover:opacity-60 transition-opacity duration-500"
                 priority={true}
               />
             </div>
 
-            {/* Hover Overlay/Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* Hover Overlay/Gradient - Visible on hover only on Desktop */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
 
-            {/* Content Reveal - Top Left */}
-            <div className="absolute top-0 left-0 p-6 md:p-8 transform translate-y-[-20px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out z-20">
+            {/* Content Reveal - Desktop: Hover, Mobile: Always Visible (Bottom) */}
+            <div className="hidden md:block absolute top-0 left-0 p-6 md:p-8 transform translate-y-[-20px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out z-20">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-white">
                     {project.title}
                 </h2>
@@ -148,9 +148,14 @@ export default function WorkList() {
                 </div>
             </div>
 
-             {/* Mobile: Always visible title at bottom if desired, or keep hidden/reveal on tap */}
-             <div className="absolute bottom-6 left-6 md:hidden opacity-100">
-                <span className="text-xl font-bold">{project.title}</span>
+             {/* Mobile: Always visible title at bottom */}
+             <div className="absolute bottom-0 left-0 p-6 w-full md:hidden">
+                <h2 className="text-2xl font-bold text-white mb-1">{project.title}</h2>
+                <div className="flex items-center gap-2 text-sm text-zinc-300">
+                    <span>{project.category}</span>
+                    <span className="w-1 h-1 bg-zinc-500 rounded-full"></span>
+                    <span>{project.year}</span>
+                </div>
              </div>
 
           </Link>

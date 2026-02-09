@@ -95,13 +95,23 @@ export default function OurServices() {
       <div className="flex flex-col md:flex-row max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Left: Scrollable Text Content */}
-        <div className="w-full md:w-1/2 py-24 md:py-32">
+        <div className="w-full md:w-1/2 py-12 md:py-32">
           {services.map((service, index) => (
             <div 
                 key={service.id} 
                 ref={(el) => { if (el) servicesRef.current[index] = el; }}
-                className="min-h-[80vh] flex flex-col justify-center py-12"
+                className="min-h-[50vh] md:min-h-[80vh] flex flex-col justify-center py-12"
             >
+              {/* Mobile Image */}
+              <div className="md:hidden w-full h-64 relative mb-8 rounded-lg overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+              </div>
+
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white/90">
                 {service.title}
               </h2>
@@ -115,7 +125,7 @@ export default function OurServices() {
           ))}
         </div>
 
-        {/* Right: Pinned Image Panel */}
+        {/* Right: Pinned Image Panel (Desktop Only) */}
         <div ref={rightPanelRef} className="hidden md:flex w-1/2 h-screen sticky top-0 items-center justify-center p-8">
             <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl bg-zinc-900 border border-zinc-800">
                 {services.map((service, index) => (
