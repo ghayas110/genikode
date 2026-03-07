@@ -1,0 +1,50 @@
+import { MetadataRoute } from 'next';
+import { servicesData } from '@/app/service/[slug]/ClientDetail';
+import { projectsData } from '@/app/work/[slug]/ClientDetail';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+    const baseUrl = 'https://genikode.com';
+
+    const staticRoutes: MetadataRoute.Sitemap = [
+        {
+            url: baseUrl,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 1,
+        },
+        {
+            url: `${baseUrl}/agency`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/work`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/contact`,
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.5,
+        },
+    ];
+
+    const serviceRoutes = Object.keys(servicesData).map((slug) => ({
+        url: `${baseUrl}/service/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }));
+
+    const workRoutes = Object.keys(projectsData).map((slug) => ({
+        url: `${baseUrl}/work/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }));
+
+    return [...staticRoutes, ...serviceRoutes, ...workRoutes];
+}

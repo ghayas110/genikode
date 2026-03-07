@@ -7,6 +7,13 @@ import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Trust from "@/components/Trust";
 import ContactOld from "@/components/ContactOld";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://genikode.com",
+  }
+};
 
 export default function Home() {
   return (

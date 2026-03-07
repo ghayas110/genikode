@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Contact() {
   const containerRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -28,6 +29,39 @@ export default function Contact() {
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Quick validation
+    if (!formData.firstName || !formData.companyEmail) {
+       alert("Please fill in your first name and company email.");
+       setIsSubmitting(false);
+       return;
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) {
+        alert("Thank you! Your inquiry has been sent to ghayas110@gmail.com.");
+        setFormData({
+          firstName: "", lastName: "", companyName: "",
+          companyEmail: "", companyWebsite: "", projectDetails: "", newsletter: false
+        });
+      } else {
+        alert("Failed to send message.");
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useLayoutEffect(() => {
@@ -121,7 +155,7 @@ export default function Contact() {
       <div className="max-w-5xl mx-auto px-6 md:px-12 py-20 relative z-20">
         <h2 className="text-2xl md:text-4xl font-serif mb-16 text-zinc-200 form-element">We would love to hear from you.</h2>
         
-        <form ref={formRef} className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+        <form ref={formRef} onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
             
             <div className="form-element flex flex-col gap-2">
                 <label className="text-xs uppercase tracking-wider text-zinc-500 font-medium">First name*</label>
@@ -203,10 +237,13 @@ export default function Contact() {
             <div className="form-element col-span-1 md:col-span-2 mt-12 bg-zinc-900/50 p-1 rounded-lg">
                  <button 
                     type="submit"
-                    className="w-full bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-white h-24 rounded flex items-center justify-center gap-2 group transition-all duration-300"
+                    disabled={isSubmitting}
+                    className="w-full bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-white h-24 rounded flex items-center justify-center gap-2 group transition-all duration-300 disabled:opacity-50 disabled:cursor-wait"
                  >
-                    <span className="text-sm font-medium uppercase tracking-widest text-zinc-400 group-hover:text-white transition-colors">Submit Form</span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]"></span>
+                    <span className="text-sm font-medium uppercase tracking-widest text-zinc-400 group-hover:text-white transition-colors">
+                      {isSubmitting ? "Sending..." : "Submit Form"}
+                    </span>
+                    {!isSubmitting && <span className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]"></span>}
                  </button>
             </div>
 

@@ -21,8 +21,46 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Genikode | Genius in the Code",
-  description: "We Build Digital Futures. Award-winning web experiences.",
+  title: {
+    default: "Genikode | Elite Digital Agency",
+    template: "%s | Genikode"
+  },
+  description: "Genikode is a premium digital agency specializing in high-performance web development, mobile apps, UI/UX, and brand building. We engineer digital futures.",
+  keywords: ["digital agency", "web development", "mobile apps", "UI/UX design", "seo", "branding", "web design"],
+  authors: [{ name: "Genikode" }],
+  creator: "Genikode",
+  metadataBase: new URL('https://genikode.com'), // replace with actual prod domain
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://genikode.com",
+    title: "Genikode | Elite Digital Agency",
+    description: "Genikode is a premium digital agency specializing in high-performance web development, mobile apps, UI/UX, and brand building.",
+    siteName: "Genikode",
+    images: [{
+      url: "/og-image.jpg", // Create this image later or assume it exists in public/
+      width: 1200,
+      height: 630,
+      alt: "Genikode Official Banner"
+    }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Genikode | Elite Digital Agency",
+    description: "Genikode is a premium digital agency specializing in high-performance web development, mobile apps, UI/UX, and brand building.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({

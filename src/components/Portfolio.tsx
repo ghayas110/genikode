@@ -8,28 +8,28 @@ import { div } from "three/tsl";
 
 const projects = [
   {
-    id: "fintech",
-    name: "Nova Finance",
+    id: "digitalbank",
+    name: "Bliq",
     category: "Fintech App",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop",
+    image: "/images/bliq.png",
   },
   {
-    id: "fashion",
-    name: "Luxe Mode",
-    category: "E-Commerce",
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1470&auto=format&fit=crop",
+    id: "welab",
+    name: "Welab Health",
+    category: "Healthcare App",
+    image: "/images/welab.png",
   },
   {
-    id: "ai",
-    name: "Cortex AI",
-    category: "SaaS Platform",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop",
+    id: "papersdock",
+    name: "Papersdock",
+    category: "LMS Platform",
+    image: "/images/papersdock.png",
   },
   {
-    id: "realestate",
-    name: "Opulent Homes",
-    category: "Real Estate",
-    image: "/images/opulent-homes.png",
+    id: "xpertva",
+    name: "Xpertva",
+    category: "Corporate Website",
+    image: "/images/xpertva.png",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function Portfolio() {
        {/* Floating Cursor Image */}
       <div
         ref={cursorRef}
-        className="hidden md:block fixed top-0 left-0 w-[400px] h-[300px] pointer-events-none z-50 rounded-xl overflow-hidden -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-normal"
+        className="hidden md:block fixed top-0 left-0 w-[600px] h-[500px] pointer-events-none z-50 rounded-xl overflow-hidden -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-normal"
         style={{ transformOrigin: "center center" }}
       >
         {projects.map((project, index) => (
@@ -85,7 +85,7 @@ export default function Portfolio() {
                     src={project.image} 
                     alt={project.name} 
                     fill 
-                    className="object-cover"
+                    className="object-contain"
                 />
             </div>
         ))}

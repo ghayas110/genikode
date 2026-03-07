@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef, useState, useLayoutEffect } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ChevronLeft, ChevronRight, Plus, Minus } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,163 +13,238 @@ interface Project {
   id: string;
   title: string;
   category: string;
-  service: string;
-  year: string;
   image: string;
   href: string;
+  badges: string[];
 }
 
-const projects: Project[] = [
+interface Batch {
+  id: string;
+  title: string;
+  count: number;
+  dateRange: string;
+  projects: Project[];
+}
+
+const userProjects: Project[] = [
   {
-    id: "ozarke",
-    title: "Ozarké®",
-    category: "E-Commerce",
-    service: "Shopify Website",
-    year: "2025",
-    image: "/images/work/ozarke.png",
-    href: "#",
+    id: "digitalbank",
+    title: "Bliq",
+    category: "Fintech App",
+    image: "/images/bliq.png",
+    href: "/work/digitalbank",
+    badges: ["UI", "DP"],
   },
   {
-    id: "integrated-reasoning",
-    title: "Integrated Reasoning®",
-    category: "Technology",
-    service: "Corporate Website",
-    year: "2024",
-    image: "/images/work/integrated.png",
-    href: "#",
+    id: "welab",
+    title: "Welab Health",
+    category: "Healthcare App",
+    image: "/images/welab.png",
+    href: "/work/welab",
+    badges: ["UI", "UX"],
   },
   {
-    id: "atria-2",
-    title: "Atria® 2.0",
-    category: "Healthcare",
-    service: "Platform Design",
-    year: "2025",
-    image: "/images/work/atria.png",
-    href: "#",
+    id: "papersdock",
+    title: "Papersdock",
+    category: "LMS Platform",
+    image: "/images/papersdock.png",
+    href: "/work/papersdock",
+    badges: ["WEB"],
   },
   {
-    id: "metadrop",
-    title: "MetaDrop®",
-    category: "Web3",
-    service: "Launchpad UI",
-    year: "2023",
-    image: "/images/work/metadrop.png",
-    href: "#",
+    id: "xpertva",
+    title: "Xpertva",
+    category: "Corporate Website",
+    image: "/images/xpertva.png",
+    href: "/work/xpertva",
+    badges: ["WEB", "UI"],
+  },
+];
+
+const batches: Batch[] = [
+  {
+    id: "batch-7",
+    title: "Batch 07",
+    count: 4,
+    dateRange: "JULY — OCTOBER / 2025",
+    projects: userProjects,
   },
   {
-    id: "elva",
-    title: "Elva®",
-    category: "Design Agency",
-    service: "Portfolio Website",
-    year: "2022",
-    image: "/images/work/ozarke.png",
-    href: "#",
+    id: "batch-6",
+    title: "Batch 06",
+    count: 0,
+    dateRange: "MARCH — JUNE / 2025",
+    projects: [],
   },
   {
-    id: "donorpal",
-    title: "DonorPal®",
-    category: "Non-Profit",
-    service: "Mobile App",
-    year: "2022",
-    image: "/images/work/integrated.png",
-    href: "#",
+    id: "batch-5",
+    title: "Batch 05",
+    count: 0,
+    dateRange: "NOVEMBER — FEBRUARY / 2024-25",
+    projects: [],
   },
 ];
 
 export default function WorkList() {
+  const [openBatch, setOpenBatch] = useState<string | null>("batch-7");
   const containerRef = useRef<HTMLDivElement>(null);
+  const sliderRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      // Scroll animations for grid items
-      const items = gsap.utils.toArray<HTMLElement>(".project-item");
-      
-      items.forEach((item, i) => {
-        gsap.fromTo(item, 
-            { opacity: 0, y: 50 },
-            {
-                opacity: 1, 
-                y: 0, 
-                duration: 1, 
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: item,
-                    start: "top 90%",
-                }
-            }
-        );
-      });
+  const toggleBatch = (batchId: string) => {
+    setOpenBatch(openBatch === batchId ? null : batchId);
+  };
 
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
+  const scrollSlider = (batchId: string, direction: "left" | "right") => {
+    const slider = sliderRefs.current[batchId];
+    if (slider) {
+      const scrollAmount = direction === "left" ? -400 : 400;
+      slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
 
   return (
-    <div ref={containerRef} className="bg-black text-white min-h-screen w-full">
-      
-      {/* Header aligned with grid */}
-      <div className="pt-32 pb-8 px-4 md:px-6 max-w-[1920px] mx-auto">
-         <div className="flex justify-between items-end border-b border-white/20 pb-4">
-             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">Selected Work</h1>
-             <span className="text-sm font-mono opacity-60 hidden md:block">2022 — 2025</span>
-         </div>
+    <div ref={containerRef} className="relative min-h-screen w-full bg-black text-white overflow-hidden">
+      {/* Grain/Noise Overlay */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-[0.2] z-10"
+        style={{ backgroundImage: `url('https://grainy-gradients.vercel.app/noise.svg')` }}
+      ></div>
+
+      {/* Decorative Large Years */}
+      <div className="absolute top-10 left-4 md:left-10 text-[15vw] md:text-[20vw] font-bold leading-none text-white/5 select-none pointer-events-none z-0">
+        '23
+      </div>
+      <div className="absolute top-10 right-4 md:right-10 text-[15vw] md:text-[20vw] font-bold leading-none text-white/5 select-none pointer-events-none z-0">
+        '25
       </div>
 
-      {/* Grid Layout - 2 Columns, tight spacing */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-1 px-4 md:px-6 pb-24 max-w-[1920px] mx-auto">
-        {projects.map((project) => (
-          <Link 
-            key={project.id} 
-            href={project.href}
-            className="project-item group relative aspect-[4/3] overflow-hidden bg-zinc-900 block"
-          >
-            {/* Background Image */}
-            <div className="absolute inset-0 w-full h-full transform transition-transform duration-700 ease-out group-hover:scale-105">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover opacity-80 md:opacity-80 md:group-hover:opacity-60 transition-opacity duration-500"
-                priority={true}
-              />
+      {/* Main Content */}
+      <div className="relative z-20 pt-40 px-4 md:px-10 pb-20 max-w-[1920px] mx-auto">
+        
+        {/* Top Header */}
+        <div className="flex flex-col items-center mb-24 text-center">
+            <span className="text-xs md:text-sm font-mono tracking-widest uppercase mb-6 opacity-60">
+                [ PORTFOLIO ]
+            </span>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 uppercase max-w-4xl">
+                Explore our digital crafts
+            </h1>
+            <p className="text-sm md:text-base opacity-60">
+                A selection of our most recent and impactful work.
+            </p>
+        </div>
+
+        {/* Filters/Tabs Placeholder */}
+        <div className="flex justify-between items-center border-b border-white/10 pb-4 mb-0">
+            <div className="flex gap-10 text-[10px] md:text-xs font-mono opacity-40">
+                <span>BATCH</span>
+                <span className="hidden md:block">PROJECTS</span>
             </div>
-
-            {/* Hover Overlay/Gradient - Visible on hover only on Desktop */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
-
-            {/* Content Reveal - Desktop: Hover, Mobile: Always Visible (Bottom) */}
-            <div className="hidden md:block absolute top-0 left-0 p-6 md:p-8 transform translate-y-[-20px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out z-20">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-white">
-                    {project.title}
-                </h2>
-                <div className="flex flex-col space-y-1 text-sm md:text-base font-medium text-white/80">
-                    <span>{project.service}</span>
-                    <span className="opacity-60">{project.year}</span>
-                </div>
+            <div className="text-[10px] md:text-xs font-mono opacity-40">
+                TIMELINE
             </div>
+        </div>
 
-             {/* Mobile: Always visible title at bottom */}
-             <div className="absolute bottom-0 left-0 p-6 w-full md:hidden">
-                <h2 className="text-2xl font-bold text-white mb-1">{project.title}</h2>
-                <div className="flex items-center gap-2 text-sm text-zinc-300">
-                    <span>{project.category}</span>
-                    <span className="w-1 h-1 bg-zinc-500 rounded-full"></span>
-                    <span>{project.year}</span>
+        {/* Batches Accordions */}
+        <div className="divide-y divide-white/10">
+          {batches.map((batch) => (
+            <div key={batch.id} className="group">
+              <button 
+                onClick={() => toggleBatch(batch.id)}
+                className="w-full flex justify-between items-center py-6 md:py-8 hover:bg-white/5 transition-colors px-2"
+              >
+                <div className="flex items-center gap-10 md:gap-40">
+                    <span className="text-xl md:text-2xl font-bold">[ {batch.title} ]</span>
+                    <span className="hidden md:block text-sm md:text-base opacity-40">[{batch.count}]</span>
                 </div>
-             </div>
+                <div className="flex items-center gap-6">
+                    <span className="text-[10px] md:text-sm font-mono opacity-40 uppercase">{batch.dateRange}</span>
+                    {openBatch === batch.id ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                </div>
+              </button>
 
-          </Link>
-        ))}
+              {/* Accordion Content */}
+              <div 
+                className={`overflow-hidden transition-all duration-700 ease-in-out ${
+                  openBatch === batch.id ? "max-h-[800px] opacity-100 mb-12" : "max-h-0 opacity-0"
+                }`}
+              >
+                {batch.projects.length > 0 ? (
+                  <div className="relative pt-8">
+                    {/* Horizontal Slider */}
+                    <div 
+                      ref={el => { sliderRefs.current[batch.id] = el }}
+                      className="flex gap-4 md:gap-6 overflow-x-auto no-scrollbar pb-10 px-2 scroll-smooth"
+                    >
+                      {batch.projects.map((project) => (
+                        <div key={project.id} className="min-w-[280px] md:min-w-[450px] flex-shrink-0">
+                          <Link href={project.href} className="group/card block">
+                            <div className="relative aspect-[16/10] bg-zinc-900 overflow-hidden mb-4 border border-white/5 group-hover/card:border-white/20 transition-colors">
+                              <Image 
+                                src={project.image}
+                                alt={project.title}
+                                fill
+                                className="object-cover opacity-70 group-hover/card:opacity-100 transition-all duration-500 scale-100 group-hover/card:scale-105"
+                              />
+                              {/* Badges */}
+                              <div className="absolute top-4 left-4 flex gap-2">
+                                {project.badges.map(badge => (
+                                    <span key={badge} className="bg-white/10 backdrop-blur-md text-[8px] md:text-[10px] font-bold px-2 py-0.5 rounded-sm text-white uppercase tracking-wider">
+                                        {badge}
+                                    </span>
+                                ))}
+                              </div>
+                            </div>
+                            <div>
+                                <h3 className="text-sm md:text-base font-bold mb-1 uppercase tracking-tight">
+                                    {project.title}
+                                </h3>
+                                <p className="text-[10px] md:text-xs opacity-40 uppercase font-medium">
+                                    {project.category}
+                                </p>
+                            </div>
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Slider Navigation */}
+                    <div className="flex gap-2 mt-4 justify-center md:justify-start">
+                        <button 
+                            onClick={() => scrollSlider(batch.id, "left")}
+                            className="p-3 border border-white/10 hover:border-white/40 transition-colors rounded-full"
+                        >
+                            <ChevronLeft className="w-5 h-5 text-zinc-400" />
+                        </button>
+                        <button 
+                            onClick={() => scrollSlider(batch.id, "right")}
+                            className="p-3 border border-white/10 hover:border-white/40 transition-colors rounded-full"
+                        >
+                            <ChevronRight className="w-5 h-5 text-zinc-400" />
+                        </button>
+                    </div>
+                  </div>
+                ) : (
+                    <div className="py-20 text-center opacity-20 font-mono italic">
+                        No projects in this archive batch.
+                    </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
 
-      {/* Footer / Archive Link styled similarly */}
-      <div className="px-4 md:px-6 pb-24 max-w-[1920px] mx-auto text-center">
-        <Link href="#" className="inline-block text-xl md:text-2xl font-bold border-b border-white/30 hover:border-white pb-1 transition-colors">
-            View Archive
-        </Link>
-      </div>
-
+      <style jsx global>{`
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </div>
   );
 }

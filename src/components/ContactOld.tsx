@@ -11,6 +11,7 @@ export default function ContactOld() {
   const containerRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -57,6 +58,27 @@ export default function ContactOld() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) {
+        alert("Thank you! Your message has been sent to ghayas110@gmail.com.");
+        setFormData({ name: "", company: "", email: "", budget: "", message: "", isHuman: false });
+      } else {
+        alert("Oops! Something went wrong.");
+      }
+    } catch (error) {
+      alert("Error sending message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -209,11 +231,12 @@ export default function ContactOld() {
 
                 {/* Submit Button */}
                 <button 
+                    onClick={handleSubmit}
                     className="w-full md:w-1/3 bg-white text-black hover:bg-zinc-200 p-4 md:px-8 md:py-8 flex items-center justify-center space-x-3 transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-zinc-800 disabled:text-zinc-500"
-                    disabled={filledFieldsCount < 3} // Disable if critical fields missing
+                    disabled={filledFieldsCount < 3 || isSubmitting} // Disable if critical fields missing
                 >
-                    <span className="text-lg font-bold uppercase tracking-widest">Send Message</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <span className="text-lg font-bold uppercase tracking-widest">{isSubmitting ? "Sending..." : "Send Message"}</span>
+                    {!isSubmitting && <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
                 </button>
 
             </div>
