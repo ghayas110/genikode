@@ -10,7 +10,7 @@ const team = [
     id: "ghayas",
     name: "Ghayas Ali",
     role: "Founder and CEO",
-    description: "Ghayas orchestrates creative strategy and production for high-growth organizations and enterprise partners. He bridges the gap between ambitious visual concepts and operational reality, driving projects from direction to delivery. Trusted to execute in high-stakes environments, he brings the structure required to turn digital initiatives into commercial impact.",
+    description: "Ghayas Ali orchestrates creative strategy and production for high-growth organizations and enterprise partners. He bridges the gap between ambitious visual concepts and operational reality, driving projects from direction to delivery. Trusted to execute in high-stakes environments, he brings the structure required to turn digital initiatives into commercial impact.",
     image: "/images/team/ghayas.png",
     socials: { email: "#", linkedin: "#" }
   },
