@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import ClientDetail, { projectsData } from "./ClientDetail";
+import ClientDetail from "./ClientDetail";
+import { projectsData } from "./data";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default function WorkPage() {
-  return <ClientDetail />;
+export default async function WorkPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  return <ClientDetail slug={resolvedParams.slug} />;
 }

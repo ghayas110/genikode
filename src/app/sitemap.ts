@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
-import { servicesData } from '@/app/service/[slug]/ClientDetail';
-import { projectsData } from '@/app/work/[slug]/ClientDetail';
+import { servicesData } from '@/app/service/[slug]/data';
+import { projectsData } from '@/app/work/[slug]/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://genikode.com';

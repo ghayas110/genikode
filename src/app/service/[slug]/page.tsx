@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import ClientDetail, { servicesData } from "./ClientDetail";
+import ClientDetail from "./ClientDetail";
+import { servicesData } from "./data";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default function ServicePage() {
-  return <ClientDetail />;
+export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  return <ClientDetail slug={resolvedParams.slug} />;
 }
