@@ -62,7 +62,7 @@ export default function AgencyTeam() {
           {team.map((member) => (
             <Fragment key={member.id}>
               {/* Image Card */}
-              <motion.div variants={cardVariants} className="group relative rounded-[20px] overflow-hidden bg-zinc-900 border border-white/5 h-[500px] md:h-[600px]">
+              <motion.div variants={cardVariants} className="group relative rounded-[20px] overflow-hidden bg-zinc-900 border border-white/5 h-[400px] md:h-[600px]">
                  {/* Studio Image tinted with Sunset Gradient */}
                  <Image
                     src={member.image}
@@ -79,19 +79,19 @@ export default function AgencyTeam() {
                  {/* Dark gradient for text readability */}
                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                  
-                 <div className="absolute bottom-0 left-0 p-8 w-full">
-                   <h3 className="text-2xl font-bold tracking-tight mb-1 drop-shadow-md">{member.name}</h3>
-                   <p className="text-sm font-medium text-zinc-400">{member.role}</p>
+                 <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full">
+                   <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-1 drop-shadow-md">{member.name}</h3>
+                   <p className="text-xs md:text-sm font-medium text-zinc-400">{member.role}</p>
                  </div>
               </motion.div>
 
               {/* Text Card */}
-              <motion.div variants={cardVariants} className="rounded-[20px] bg-[#171717] border border-white/5 p-8 flex flex-col h-[500px] md:h-[600px] hover:border-white/10 transition-colors">
-                 <h3 className="text-2xl font-bold tracking-tight mb-16">{member.name}</h3>
-                 <p className="text-sm leading-[1.8] text-zinc-400 font-light mt-auto mb-12 relative z-10 selection:bg-white selection:text-black">
+              <motion.div variants={cardVariants} className="rounded-[20px] bg-[#171717] border border-white/5 p-6 md:p-8 flex flex-col min-h-[400px] md:h-[600px] hover:border-white/10 transition-colors">
+                 <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-8 md:mb-16">{member.name}</h3>
+                 <p className="text-sm leading-[1.8] text-zinc-400 font-light mt-auto mb-8 md:mb-12 relative z-10 selection:bg-white selection:text-black">
                    {member.description}
                  </p>
-                 <div className="flex items-center gap-6 mt-auto">
+                 <div className="flex items-center gap-6 mt-auto md:mt-0">
                     <a href={member.socials.email} className="text-zinc-500 hover:text-white transition-colors duration-300">
                         <Mail className="w-5 h-5 stroke-[1.5]" />
                     </a>
