@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import ClientDetail, { servicesData } from "./ClientDetail";
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const slug = params.slug;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const slug = resolvedParams.slug;
   const service = servicesData[slug] || servicesData["web-design"];
 
   return {
