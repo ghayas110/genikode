@@ -24,6 +24,7 @@ const team = [
   }
 ];
 
+
 export default function AgencyTeam() {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
