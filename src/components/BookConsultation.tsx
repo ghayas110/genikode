@@ -15,7 +15,7 @@ export default function BookConsultation() {
         
         {/* Right: Action */}
         <Link
-        
+
           href="https://calendar.app.google/HpyRLVVFM573gGKHA"
           target="_blank"
           rel="noopener noreferrer"
@@ -29,7 +29,7 @@ export default function BookConsultation() {
             <span className="text-xl font-bold uppercase tracking-widest text-white group-hover:text-black transition-colors duration-500 text-center">
                 Schedule Now
             </span>
-        </a>
+        </Link>
       </div>
     </section>
   );
