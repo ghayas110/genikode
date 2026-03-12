@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function BookConsultation() {
@@ -13,8 +14,9 @@ export default function BookConsultation() {
         </div>
         
         {/* Right: Action */}
-        <a 
-          href="https://calendar.google.com/"
+        <Link
+        
+          href="https://calendar.app.google/HpyRLVVFM573gGKHA"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full md:w-1/4 bg-black p-8 flex flex-col items-center justify-center group hover:bg-white transition-colors duration-500 cursor-pointer"
