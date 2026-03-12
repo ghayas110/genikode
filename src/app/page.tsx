@@ -7,6 +7,7 @@ import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Trust from "@/components/Trust";
 import ContactOld from "@/components/ContactOld";
+import BookConsultation from "@/components/BookConsultation";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function Home() {
    
       <Portfolio />
 
+      <BookConsultation />
      <ContactOld/>
     </main>
   );
