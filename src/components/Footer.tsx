@@ -1,6 +1,7 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,15 +16,17 @@ const sitemap = [
 ];
 
 const socials = [
-  { name: "LinkedIn", href: "https://linkedin.com" },
-  { name: "Instagram", href: "https://instagram.com" },
-  { name: "Twitter", href: "https://twitter.com" },
-  { name: "Dribbble", href: "https://dribbble.com" },
+  { name: "LinkedIn", href: "https://linkedin.com/company/genikode" },
+  { name: "Instagram", href: "https://instagram.com/thegenikode" },
+  { name: "X", href: "https://x.com/genikode" },
+
 ];
 
 export default function Footer() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
+
+  const pathname = usePathname();
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -40,6 +43,27 @@ export default function Footer() {
     }, containerRef);
 
     return () => ctx.revert();
+  }, []);
+
+  useEffect(() => {
+    // Refresh ScrollTrigger after route changes and DOM updates
+    const t = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+    return () => clearTimeout(t);
+  }, [pathname]);
+
+  useEffect(() => {
+    // Robustly handle height changes from dynamic content (loaded images, etc)
+    const resizeObserver = new ResizeObserver(() => {
+      ScrollTrigger.refresh();
+    });
+    
+    resizeObserver.observe(document.body);
+    
+    return () => {
+      resizeObserver.disconnect();
+    };
   }, []);
 
   return (
