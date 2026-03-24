@@ -13,6 +13,7 @@ const sitemap = [
   { name: "Our Agency", href: "/agency" },
   { name: "Portfolio", href: "/work" }, // Assuming a /work page exists or will act as an archive
   { name: "Contact Us", href: "/contact" },
+  { name: "Privacy Policy", href: "/privacy-policy" },
 ];
 
 const socials = [
@@ -80,8 +81,8 @@ export default function Footer() {
                     GNKD®.
                 </Link>
             </div>
-            <div className="text-zinc-500 text-sm max-w-xs">
-              <p>Crafting digital experiences that merge art, technology, and human interaction.</p>
+            <div className="text-zinc-400 text-sm max-w-sm leading-relaxed mt-4">
+              <p>We are a premium digital agency specializing in high-performance web development, mobile applications, and custom software solutions designed to scale your business.</p>
             </div>
           </div>
 
