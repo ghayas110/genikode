@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { CheckCircle2, ChevronRight, Layout, MonitorSmartphone, PenTool, RefreshCw, ShieldCheck, Users } from "lucide-react";
 import Link from "next/link";
-import Navigation from "@/components/Navigation";
+
 
 export default function OfferPage() {
   const [formData, setFormData] = useState({
@@ -69,7 +69,7 @@ export default function OfferPage() {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white font-sans selection:bg-white selection:text-black pt-24">
-      <Navigation />
+
       
       <main className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-16">
         
