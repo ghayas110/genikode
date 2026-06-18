@@ -30,6 +30,42 @@ export const projectsData: Record<string, any> = {
             { value: "[X]", suffix: "+", label: "Countries reached" },
         ],
     },
+    // ⚠️ PLACEHOLDER PROJECT NAME ("ServeOS") and PLACEHOLDER METRICS.
+    // Rename to the real product/client and replace the [X] metric values with
+    // verified numbers before publishing — metrics flow into CreativeWork schema.
+    // Images are royalty-free Unsplash photos (commercial use OK), NOT copied from
+    // any third-party site. Swap for real product screenshots when available.
+    "restaurant-management-system": {
+        title: "ServeOS",
+        category: "Restaurant Management System",
+        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2400&auto=format&fit=crop",
+        gallery: [
+            "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&w=1600&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1600&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1600&auto=format&fit=crop",
+        ],
+        technology: ["React Native", "Next.js", "Node.js", "PostgreSQL"],
+        year: "2025",
+        productAbout:
+            "ServeOS is an all-in-one restaurant management system that unifies point-of-sale, table and floor management, a kitchen display system, online ordering, inventory, and customer loyalty into a single platform — giving restaurants real-time control over every order, table, and ingredient.",
+        howWeStarted:
+            "Restaurants were running their floor on a patchwork of disconnected tools — one app for the POS, paper tickets for the kitchen, spreadsheets for stock, and a separate service for online orders. We set out to collapse all of it into one fast, reliable system built for the pace of a busy service.",
+        mission:
+            "To give restaurant owners a single source of truth — from the first tap on a waiter's tablet to the final end-of-day report — so they can run leaner, serve faster, and understand their business in real time.",
+        clientProblem:
+            "Staff wasted time re-keying orders between systems, kitchens missed tickets during rushes, stock counts were always out of date, and owners had no unified view of sales across branches. Every disconnected tool added friction and cost.",
+        challenges:
+            "The system had to stay fully responsive during peak service even on unreliable Wi-Fi, sync orders instantly between front-of-house tablets and the kitchen display, handle multi-branch operations, and remain simple enough for new staff to learn in a single shift.",
+        solution:
+            "We built an offline-first React Native app for waitstaff and a kitchen display system that sync in real time, a Next.js back-office dashboard for menus, inventory, staff, and analytics, and a Node.js backend with a PostgreSQL data layer. Orders flow instantly from table to kitchen, stock deducts automatically per sale, and owners get live, branch-level reporting from anywhere.",
+        // TODO: Replace with REAL, verified metrics. These are placeholders.
+        metrics: [
+            { value: "[X]", suffix: "%", label: "Faster order turnaround" },
+            { value: "[X]", suffix: "+", label: "Restaurants onboarded" },
+            { value: "[X]", suffix: "%", label: "Reduction in stock waste" },
+            { value: "[X]", suffix: "s", label: "Avg. order-to-kitchen time" },
+        ],
+    },
     digitalbank: {
         title: "Bliq",
         category: "Fintech App",

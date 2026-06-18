@@ -28,6 +28,14 @@ interface Batch {
 
 const userProjects: Project[] = [
   {
+    id: "restaurant-management-system",
+    title: "ServeOS",
+    category: "Restaurant Management System",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop",
+    href: "/work/restaurant-management-system",
+    badges: ["APP", "WEB", "UI"],
+  },
+  {
     // TODO: add the real image at /public/images/work/crewlink-world.png
     id: "crewlink-world",
     title: "CrewLink World",

@@ -8,6 +8,12 @@ import { div } from "three/tsl";
 
 const projects = [
   {
+    id: "restaurant-management-system",
+    name: "ServeOS",
+    category: "Restaurant Management System",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
     id: "digitalbank",
     name: "Bliq",
     category: "Fintech App",

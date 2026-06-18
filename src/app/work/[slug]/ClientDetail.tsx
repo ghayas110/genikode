@@ -207,6 +207,34 @@ export default function ClientDetail({ slug }: { slug: string }) {
           </motion.div>
 
         </div>
+
+        {/* Gallery (only when a project defines images) */}
+        {project.gallery?.length ? (
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            className="mt-32 md:mt-48 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
+          >
+            {project.gallery.map((src: string, i: number) => (
+              <motion.div
+                key={i}
+                variants={fadeUpVariant}
+                className={`relative overflow-hidden rounded-2xl border border-white/10 aspect-[4/3] ${
+                  i === 0 ? "md:col-span-2 md:aspect-[16/7]" : ""
+                }`}
+              >
+                <Image
+                  src={src}
+                  alt={`${project.title} — interface ${i + 1}`}
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+        ) : null}
       </section>
 
       {/* Next Project Footer (Mock) */}
