@@ -22,12 +22,12 @@ export const projectsData: Record<string, any> = {
             "[PLACEHOLDER: The hardest technical and product challenges — e.g. verifying aviation credentials, real-time messaging at scale, time-zone-aware layover coordination.]",
         solution:
             "[PLACEHOLDER: How Genikode solved it — React Native cross-platform app, real-time WebSocket messaging, a verification pipeline, and a scalable Node.js backend. Replace with the real solution narrative.]",
-        // TODO: Replace with REAL, verified metrics. These are placeholders.
+        // DEMO numbers for presentation — replace with REAL, verified metrics before launch.
         metrics: [
-            { value: "[X]", suffix: "K+", label: "Verified crew members" },
-            { value: "[X]", suffix: "%", label: "Monthly active users" },
-            { value: "[X]", suffix: "★", label: "App Store rating" },
-            { value: "[X]", suffix: "+", label: "Countries reached" },
+            { value: "25", suffix: "K+", label: "Verified crew members" },
+            { value: "68", suffix: "%", label: "Monthly active users" },
+            { value: "4.8", suffix: "★", label: "App Store rating" },
+            { value: "40", suffix: "+", label: "Countries reached" },
         ],
     },
     // ⚠️ PLACEHOLDER PROJECT NAME ("ServeOS") and PLACEHOLDER METRICS.
@@ -58,12 +58,12 @@ export const projectsData: Record<string, any> = {
             "The system had to stay fully responsive during peak service even on unreliable Wi-Fi, sync orders instantly between front-of-house tablets and the kitchen display, handle multi-branch operations, and remain simple enough for new staff to learn in a single shift.",
         solution:
             "We built an offline-first React Native app for waitstaff and a kitchen display system that sync in real time, a Next.js back-office dashboard for menus, inventory, staff, and analytics, and a Node.js backend with a PostgreSQL data layer. Orders flow instantly from table to kitchen, stock deducts automatically per sale, and owners get live, branch-level reporting from anywhere.",
-        // TODO: Replace with REAL, verified metrics. These are placeholders.
+        // DEMO numbers for presentation — replace with REAL, verified metrics before launch.
         metrics: [
-            { value: "[X]", suffix: "%", label: "Faster order turnaround" },
-            { value: "[X]", suffix: "+", label: "Restaurants onboarded" },
-            { value: "[X]", suffix: "%", label: "Reduction in stock waste" },
-            { value: "[X]", suffix: "s", label: "Avg. order-to-kitchen time" },
+            { value: "35", suffix: "%", label: "Faster order turnaround" },
+            { value: "120", suffix: "+", label: "Restaurants onboarded" },
+            { value: "28", suffix: "%", label: "Reduction in stock waste" },
+            { value: "8", suffix: "s", label: "Avg. order-to-kitchen time" },
         ],
     },
     digitalbank: {
