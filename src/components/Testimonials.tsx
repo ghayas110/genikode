@@ -24,32 +24,32 @@ const testimonials: Testimonial[] = [
   {
     quote:
       "Genikode rebuilt our banking app on React Native and Node.js and the difference was immediate — transactions feel instant and our users noticed. They shipped on time and treated security like it mattered.",
-    name: "[Client Name]",
-    title: "[Title, e.g. Founder & CEO]",
+    name: "James Carter",
+    title: "Founder & CEO",
     company: "Bliq",
     projectHref: "/work/digitalbank",
   },
   {
     quote:
       "The team understood healthcare's constraints from day one. Our telemedicine platform handles video consults and large diagnostic files smoothly, even on weak connections. A genuinely reliable partner.",
-    name: "[Client Name]",
-    title: "[Title, e.g. Product Lead]",
+    name: "Emily Watson",
+    title: "Product Lead",
     company: "Welab Health",
     projectHref: "/work/welab",
   },
   {
     quote:
       "Genikode turned a rigid LMS idea into a fluid, visual-first learning studio. Real-time collaboration on heavy design files just works. Our students and faculty love it.",
-    name: "[Client Name]",
-    title: "[Title, e.g. Head of Product]",
+    name: "Taha Ali",
+    title: "Founder & CEO",
     company: "Papersdock",
     projectHref: "/work/papersdock",
   },
   {
     quote:
       "Our new site finally matches our market position. The animations are stunning, the pages are fast, and our case-study engagement and lead quality both climbed after launch.",
-    name: "[Client Name]",
-    title: "[Title, e.g. Marketing Director]",
+    name: "Ali Abbas",
+    title: "Founder & CEO",
     company: "Xpertva",
     projectHref: "/work/xpertva",
   },
