@@ -7,7 +7,7 @@ export const projectsData: Record<string, any> = {
     "crewlink-world": {
         title: "CrewLink World",
         category: "Aviation Social App",
-        image: "/images/work/crewlink-world.png", // TODO: add this image to /public/images/work/
+        image: "/images/work/crewlink-world.svg", // branded vector poster; swap for a real screenshot when available
         technology: ["React Native", "Node.js", "PostgreSQL", "WebSockets"],
         year: "2025",
         productAbout:

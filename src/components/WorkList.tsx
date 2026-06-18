@@ -36,11 +36,10 @@ const userProjects: Project[] = [
     badges: ["APP", "WEB", "UI"],
   },
   {
-    // TODO: add the real image at /public/images/work/crewlink-world.png
     id: "crewlink-world",
     title: "CrewLink World",
     category: "Aviation Social App",
-    image: "/images/work/crewlink-world.png",
+    image: "/images/work/crewlink-world.svg",
     href: "/work/crewlink-world",
     badges: ["UI", "UX", "APP"],
   },
