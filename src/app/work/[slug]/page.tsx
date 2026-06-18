@@ -31,5 +31,34 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function WorkPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  return <ClientDetail slug={resolvedParams.slug} />;
+  const slug = resolvedParams.slug;
+  const project = projectsData[slug] || projectsData["digitalbank"];
+
+  const creativeWorkSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    headline: `${project.title} — ${project.category}`,
+    abstract: project.productAbout,
+    genre: project.category,
+    dateCreated: project.year,
+    url: `https://genikode.com/work/${slug}`,
+    image: `https://genikode.com${project.image}`,
+    keywords: project.technology,
+    creator: {
+      "@type": "Organization",
+      name: "Genikode",
+      url: "https://genikode.com",
+    },
+  };
+
+  return (
+    <>
+      <ClientDetail slug={slug} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
+      />
+    </>
+  );
 }

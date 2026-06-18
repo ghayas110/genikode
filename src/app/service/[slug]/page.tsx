@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import ClientDetail from "./ClientDetail";
 import { servicesData } from "./data";
+import Faq from "@/components/Faq";
+import { getServiceFaqs } from "@/data/faqs";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -31,5 +33,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  return <ClientDetail slug={resolvedParams.slug} />;
+  const service = servicesData[resolvedParams.slug] || servicesData["web-design"];
+  return (
+    <>
+      <ClientDetail slug={resolvedParams.slug} />
+      <Faq
+        items={getServiceFaqs(resolvedParams.slug)}
+        eyebrow="Questions"
+        heading={`${service.title} — FAQs`}
+      />
+    </>
+  );
 }

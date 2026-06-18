@@ -1,5 +1,35 @@
 // Project Database
 export const projectsData: Record<string, any> = {
+    // ⚠️ SCAFFOLD / PLACEHOLDER CASE STUDY — CrewLink World.
+    // Replace every [PLACEHOLDER ...] string and the metric values below with real,
+    // verified content before publishing. The metrics here are NOT real and must be
+    // confirmed; they appear in visible copy and in CreativeWork structured data.
+    "crewlink-world": {
+        title: "CrewLink World",
+        category: "Aviation Social App",
+        image: "/images/work/crewlink-world.png", // TODO: add this image to /public/images/work/
+        technology: ["React Native", "Node.js", "PostgreSQL", "WebSockets"],
+        year: "2025",
+        productAbout:
+            "CrewLink World is a social networking app built for aviation professionals — pilots, cabin crew, and ground staff — to connect, coordinate layovers, swap rosters, and share verified industry knowledge in one trusted community.",
+        howWeStarted:
+            "[PLACEHOLDER: How the engagement began — the founder's insight, the gap in the market, and why Genikode was chosen. Replace with the real origin story.]",
+        mission:
+            "[PLACEHOLDER: The product mission in one or two sentences — what CrewLink World set out to change for aviation crews worldwide.]",
+        clientProblem:
+            "[PLACEHOLDER: The concrete problem the client faced — e.g. crews relying on fragmented WhatsApp groups with no verification, no roster tools, and no safe professional space.]",
+        challenges:
+            "[PLACEHOLDER: The hardest technical and product challenges — e.g. verifying aviation credentials, real-time messaging at scale, time-zone-aware layover coordination.]",
+        solution:
+            "[PLACEHOLDER: How Genikode solved it — React Native cross-platform app, real-time WebSocket messaging, a verification pipeline, and a scalable Node.js backend. Replace with the real solution narrative.]",
+        // TODO: Replace with REAL, verified metrics. These are placeholders.
+        metrics: [
+            { value: "[X]", suffix: "K+", label: "Verified crew members" },
+            { value: "[X]", suffix: "%", label: "Monthly active users" },
+            { value: "[X]", suffix: "★", label: "App Store rating" },
+            { value: "[X]", suffix: "+", label: "Countries reached" },
+        ],
+    },
     digitalbank: {
         title: "Bliq",
         category: "Fintech App",

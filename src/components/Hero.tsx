@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { Fragment, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
@@ -11,17 +11,17 @@ export default function Hero() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const chars = titleRef.current?.querySelectorAll(".char");
-      
-      if (chars) {
-        gsap.from(chars, {
-          y: 100,
+      const words = titleRef.current?.querySelectorAll(".word");
+
+      if (words) {
+        gsap.from(words, {
+          y: 60,
           opacity: 0,
           rotateX: -90,
-          stagger: 0.05,
-          duration: 1,
+          stagger: 0.08,
+          duration: 0.9,
           ease: "back.out(1.7)",
-          delay: 0.5,
+          delay: 0.4,
         });
       }
 
@@ -57,10 +57,12 @@ export default function Hero() {
   }, []);
 
   const splitText = (text: string) => {
-    return text.split("").map((char, index) => (
-      <span key={index} className="char inline-block">
-        {char === " " ? "\u00A0" : char}
-      </span>
+    const words = text.split(" ");
+    return words.map((word, index) => (
+      <Fragment key={index}>
+        <span className="word inline-block">{word}</span>
+        {index < words.length - 1 ? " " : null}
+      </Fragment>
     ));
   };
 
@@ -82,14 +84,14 @@ export default function Hero() {
       
       <div className="z-20 text-center px-4 w-full flex flex-col items-center justify-center h-full">
         {/* Title Container - whitespace-nowrap to keep single line if space allows, responsive text size */}
-        <div className="max-w-[90vw] overflow-visible">
-            <h1 ref={titleRef} className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter mb-8 text-white text-shadow-lg whitespace-normal md:whitespace-nowrap text-center">
-            {splitText("Enabling a Digital Tomorrow")}
+        <div className="max-w-[1100px] overflow-visible">
+            <h1 ref={titleRef} className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 text-white text-shadow-lg text-center text-balance">
+            {splitText("Genikode is a Karachi-based digital agency building web and mobile apps with Next.js, React Native, and Node.js.")}
             </h1>
         </div>
-        
-        <p className="hero-subtitle text-lg md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
-          Building the Future of Digital Innovation. We transform visionary ideas into powerful digital solutions that drive business growth and create exceptional user experiences.
+
+        <p className="hero-subtitle text-base md:text-xl text-gray-200 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+          We help startups, founders, and growing businesses worldwide ship fast, scalable websites, mobile apps, UI/UX, SEO, and brand identities — engineered for performance and built to scale.
         </p>
         
         <div className="hero-cta flex gap-4 justify-center">

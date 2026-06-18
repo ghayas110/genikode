@@ -28,6 +28,15 @@ interface Batch {
 
 const userProjects: Project[] = [
   {
+    // TODO: add the real image at /public/images/work/crewlink-world.png
+    id: "crewlink-world",
+    title: "CrewLink World",
+    category: "Aviation Social App",
+    image: "/images/work/crewlink-world.png",
+    href: "/work/crewlink-world",
+    badges: ["UI", "UX", "APP"],
+  },
+  {
     id: "digitalbank",
     title: "Bliq",
     category: "Fintech App",

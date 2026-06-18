@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import Intro from "@/components/Intro";
 import OurServices from "@/components/OurServices";
 import Tagline from "@/components/Tagline";
 import Contact from "@/components/Contact";
@@ -8,6 +9,10 @@ import Portfolio from "@/components/Portfolio";
 import Trust from "@/components/Trust";
 import ContactOld from "@/components/ContactOld";
 import BookConsultation from "@/components/BookConsultation";
+import JsonLd from "@/components/JsonLd";
+import Testimonials from "@/components/Testimonials";
+import Faq from "@/components/Faq";
+import { homeFaqs } from "@/data/faqs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,13 +24,20 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-black text-white">
+      <JsonLd />
       <Hero />
+      <Intro />
       <OurServices />
       <Tagline />
    
       <Portfolio />
 
+      <Testimonials />
+
       <BookConsultation />
+
+      <Faq items={homeFaqs} eyebrow="Got questions?" />
+
      <ContactOld/>
     </main>
   );

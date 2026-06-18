@@ -114,6 +114,31 @@ export default function ClientDetail({ slug }: { slug: string }) {
           </motion.p>
         </motion.div>
 
+        {/* Metrics / Results (only when a project defines them) */}
+        {project.metrics?.length ? (
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            className="mb-32 md:mb-48 grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 border-y border-white/10 py-16"
+          >
+            {project.metrics.map(
+              (metric: { value: string; suffix?: string; label: string }, i: number) => (
+                <motion.div key={i} variants={fadeUpVariant}>
+                  <p className="text-4xl md:text-6xl font-medium tracking-tighter">
+                    {metric.value}
+                    {metric.suffix ? <span>{metric.suffix}</span> : null}
+                  </p>
+                  <p className="mt-3 text-xs md:text-sm font-mono uppercase tracking-widest text-zinc-500">
+                    {metric.label}
+                  </p>
+                </motion.div>
+              )
+            )}
+          </motion.div>
+        ) : null}
+
         {/* Narrative Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-8">
           
