@@ -1,6 +1,7 @@
 import SmoothScroll from "@/components/SmoothScroll";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
@@ -96,6 +97,7 @@ export default function RootLayout({
             {children}
             <Footer />
         </SmoothScroll>
+        <WhatsAppButton />
       </body>
     </html>
   );
