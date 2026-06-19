@@ -33,14 +33,54 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const service = servicesData[resolvedParams.slug] || servicesData["web-design"];
+  const slug = resolvedParams.slug;
+  const service = servicesData[slug] || servicesData["web-design"];
+  const serviceUrl = `https://genikode.com/service/${slug}`;
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${serviceUrl}#service`,
+    name: service.title,
+    serviceType: service.title,
+    description: service.overview,
+    url: serviceUrl,
+    image: service.heroImage,
+    areaServed: { "@type": "Place", name: "Worldwide" },
+    provider: {
+      "@type": "Organization",
+      "@id": "https://genikode.com/#organization",
+      name: "Genikode",
+      url: "https://genikode.com",
+      logo: "https://genikode.com/logo.png",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `${service.title} offerings`,
+      itemListElement: (service.offerings ?? []).map(
+        (offering: { title: string; desc: string }) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: offering.title,
+            description: offering.desc,
+          },
+        })
+      ),
+    },
+  };
+
   return (
     <>
-      <ClientDetail slug={resolvedParams.slug} />
+      <ClientDetail slug={slug} />
       <Faq
-        items={getServiceFaqs(resolvedParams.slug)}
+        items={getServiceFaqs(slug)}
         eyebrow="Questions"
         heading={`${service.title} — FAQs`}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
     </>
   );

@@ -1,9 +1,9 @@
 import type { FaqItem } from "@/components/Faq";
 
-// NOTE: Pricing uses a "starts from" figure. CONFIRM/REPLACE the number below
-// with your real entry-point price before relying on it — it is quoted verbatim
-// in the visible FAQ and in FAQPage structured data shown to Google and AI engines.
-const MOBILE_APP_STARTING_PRICE = "$2,000 (approximately PKR 560,000)"; // TODO: confirm real starting price
+// Confirmed entry-point price (2026-06-19), quoted verbatim in the visible FAQ
+// and in FAQPage structured data. Keep in sync with answerPages.ts (APP_DEV_START)
+// and the Chatbot pricing line if this ever changes.
+const MOBILE_APP_STARTING_PRICE = "$2,000 (approximately PKR 560,000)";
 
 export const homeFaqs: FaqItem[] = [
   {

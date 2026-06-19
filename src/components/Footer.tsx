@@ -11,6 +11,10 @@ gsap.registerPlugin(ScrollTrigger);
 const sitemap = [
   { name: "Home", href: "/" },
   { name: "Our Agency", href: "/agency" },
+  { name: "Founder", href: "/founder" },
+  { name: "Case Studies", href: "/case-studies" },
+  { name: "Web Development", href: "/web-development" },
+  { name: "Mobile App Development", href: "/mobile-app-development" },
   { name: "Portfolio", href: "/work" }, // Assuming a /work page exists or will act as an archive
   { name: "Contact Us", href: "/contact" },
   { name: "Privacy Policy", href: "/privacy-policy" },
