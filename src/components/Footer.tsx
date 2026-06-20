@@ -85,8 +85,27 @@ export default function Footer() {
                     GNKD®.
                 </Link>
             </div>
-            <div className="text-zinc-400 text-sm max-w-sm leading-relaxed mt-4">
-              <p>We are a premium digital agency specializing in high-performance web development, mobile applications, and custom software solutions designed to scale your business.</p>
+            <div className="mt-4 max-w-sm">
+              <p className="text-zinc-400 text-sm leading-relaxed">We are a premium digital agency specializing in high-performance web development, mobile applications, and custom software solutions designed to scale your business.</p>
+
+              {/* NAP — Name, Address, Phone (feeds LocalBusiness schema + local/"near me" AI answers) */}
+              <address className="not-italic mt-8 space-y-2 text-sm text-zinc-400">
+                <p className="text-white font-medium">Genikode</p>
+                <p>
+                  A-12, Sector X-8, Gulshan-e-Maymar,<br />
+                  Karachi, Sindh, Pakistan
+                </p>
+                <p>
+                  <a href="tel:+923002661456" className="hover:text-white transition-colors">
+                    +92 300 2661456
+                  </a>
+                </p>
+                <p>
+                  <a href="mailto:info@genikode.com" className="hover:text-white transition-colors">
+                    info@genikode.com
+                  </a>
+                </p>
+              </address>
             </div>
           </div>
 

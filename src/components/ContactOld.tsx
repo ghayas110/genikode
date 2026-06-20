@@ -103,8 +103,8 @@ export default function ContactOld() {
            
            <div className="contact-header-text pt-4">
               <p className="text-sm text-zinc-600 uppercase tracking-widest mb-1">Prefer email?</p>
-              <a href="mailto:hello@genikode.com" className="text-lg font-bold underline decoration-zinc-700 decoration-2 underline-offset-4 hover:text-white hover:decoration-white transition-all">
-                hello@genikode.com
+              <a href="mailto:info@genikode.com" className="text-lg font-bold underline decoration-zinc-700 decoration-2 underline-offset-4 hover:text-white hover:decoration-white transition-all">
+                info@genikode.com
               </a>
            </div>
         </div>
