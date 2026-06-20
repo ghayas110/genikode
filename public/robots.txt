@@ -1,0 +1,21 @@
+# robots.txt for https://genikode.com
+# Served as a static file (no runtime) so it always returns HTTP 200.
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# AI crawlers — explicitly welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://genikode.com/sitemap.xml
