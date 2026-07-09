@@ -7,7 +7,17 @@ import { projectsData } from "@/app/work/[slug]/data";
 const baseUrl = "https://genikode.com";
 
 // Curated case-study order for the hub.
-const order = ["crewlink-world", "digitalbank", "welab", "papersdock", "xpertva"];
+const order = [
+  "crewlink-world",
+  "pos-system",
+  "restaurant-management-system",
+  "textile-erp",
+  "clinic-management-system",
+  "digitalbank",
+  "welab",
+  "papersdock",
+  "xpertva",
+];
 const studies = order
   .filter((slug) => projectsData[slug])
   .map((slug) => ({ slug, ...projectsData[slug] }));

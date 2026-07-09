@@ -28,6 +28,30 @@ interface Batch {
 
 const userProjects: Project[] = [
   {
+    id: "pos-system",
+    title: "SwiftPOS",
+    category: "Point of Sale System",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1600&auto=format&fit=crop",
+    href: "/work/pos-system",
+    badges: ["WEB", "UX"],
+  },
+  {
+    id: "textile-erp",
+    title: "LoomERP",
+    category: "Textile Industry ERP",
+    image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1600&auto=format&fit=crop",
+    href: "/work/textile-erp",
+    badges: ["WEB", "UI"],
+  },
+  {
+    id: "clinic-management-system",
+    title: "MediClinic",
+    category: "Clinic Management System",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1600&auto=format&fit=crop",
+    href: "/work/clinic-management-system",
+    badges: ["WEB", "UX"],
+  },
+  {
     id: "restaurant-management-system",
     title: "ServeOS",
     category: "Restaurant Management System",

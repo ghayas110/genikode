@@ -66,6 +66,63 @@ export const projectsData: Record<string, any> = {
             { value: "8", suffix: "s", label: "Avg. order-to-kitchen time" },
         ],
     },
+    "pos-system": {
+        title: "SwiftPOS",
+        category: "Point of Sale System",
+        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1600&auto=format&fit=crop",
+        technology: ["React", "Electron", "Node.js", "PostgreSQL"],
+        year: "2025",
+        productAbout:
+            "SwiftPOS is a fast, offline-first point-of-sale platform for retail stores — handling billing, barcode scanning, inventory, and real-time sales reporting from a single, intuitive interface that keeps selling even when the internet drops.",
+        howWeStarted:
+            "Retailers were losing sales to slow, internet-dependent terminals that froze during peak hours. We set out to build a POS that stays instant at the counter and never blocks a sale because of a weak connection.",
+        mission:
+            "To give shop owners a reliable, affordable point-of-sale system that works flawlessly at the till and gives them a clear, real-time view of their business across every branch.",
+        clientProblem:
+            "The client's existing POS depended entirely on a live connection, causing checkout failures during outages, and offered no unified view of stock across multiple stores.",
+        challenges:
+            "Building a truly offline-first architecture that keeps billing instant and inventory accurate, then syncs seamlessly and without conflicts the moment connectivity returns.",
+        solution:
+            "We built a desktop POS in React and Electron backed by a local database that syncs to a Node.js and PostgreSQL cloud backend. Sales continue offline and reconcile automatically, with live dashboards for multi-branch inventory, staff, and reporting.",
+    },
+    "textile-erp": {
+        title: "LoomERP",
+        category: "Textile Industry ERP",
+        image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1600&auto=format&fit=crop",
+        technology: ["Next.js", "Node.js", "PostgreSQL", "GraphQL"],
+        year: "2024",
+        productAbout:
+            "LoomERP is an enterprise resource planning platform built for textile manufacturers — managing spinning, weaving, dyeing, inventory, production planning, procurement, and order tracking end to end in one system.",
+        howWeStarted:
+            "A textile mill was running production on disconnected registers and legacy software that couldn't keep pace with orders. They needed a modern ERP that understood the realities of a factory floor.",
+        mission:
+            "To digitize the entire textile production lifecycle — from raw yarn to shipped order — giving management complete, real-time visibility and control over cost, quality, and delivery.",
+        clientProblem:
+            "Production data was scattered across departments, making it impossible to track a batch, forecast material needs, or spot bottlenecks before they delayed shipments.",
+        challenges:
+            "Modeling the complex, multi-stage textile workflow — spinning, weaving, dyeing, finishing — into a single data model, and rolling it out to floor staff without disrupting live production.",
+        solution:
+            "We built a modular ERP in Next.js with a Node.js, GraphQL, and PostgreSQL backend, mapping each production stage, inventory point, and order into one system with role-based dashboards, batch traceability, and automated material planning.",
+    },
+    "clinic-management-system": {
+        title: "MediClinic",
+        category: "Clinic Management System",
+        image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1600&auto=format&fit=crop",
+        technology: ["Next.js", "Node.js", "PostgreSQL"],
+        year: "2024",
+        productAbout:
+            "MediClinic is a clinic management system that digitizes appointments, electronic medical records, billing, prescriptions, and patient follow-ups in one secure, easy-to-use platform for doctors and their staff.",
+        howWeStarted:
+            "A private clinic was drowning in paper files and phone-based appointments, with patient histories that were slow to find and easy to lose. They wanted to modernize without adding complexity for their staff.",
+        mission:
+            "To help clinics deliver better care by making patient records, scheduling, and billing instant, secure, and effortless — so doctors spend less time on admin and more with patients.",
+        clientProblem:
+            "Paper records caused long wait times, appointment double-bookings were common, and there was no reliable way to track prescriptions, follow-ups, or revenue.",
+        challenges:
+            "Designing a system clinical staff could adopt in a day, while securely handling sensitive patient data and keeping records available instantly at the point of care.",
+        solution:
+            "We built a Next.js clinic platform on a secure Node.js and PostgreSQL backend with role-based access, structured electronic medical records, an appointment calendar with reminders, and integrated billing and prescription management.",
+    },
     digitalbank: {
         title: "Bliq",
         category: "Fintech App",

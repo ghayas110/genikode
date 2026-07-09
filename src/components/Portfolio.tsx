@@ -8,10 +8,28 @@ import { div } from "three/tsl";
 
 const projects = [
   {
+    id: "pos-system",
+    name: "SwiftPOS",
+    category: "Point of Sale System",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
     id: "restaurant-management-system",
     name: "ServeOS",
     category: "Restaurant Management System",
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    id: "textile-erp",
+    name: "LoomERP",
+    category: "Textile Industry ERP",
+    image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    id: "clinic-management-system",
+    name: "MediClinic",
+    category: "Clinic Management System",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1600&auto=format&fit=crop",
   },
   {
     id: "digitalbank",
