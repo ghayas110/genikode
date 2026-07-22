@@ -121,7 +121,7 @@ export default function AnswerPage({ data }: { data: AnswerPageData }) {
         <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-6">Cost</p>
         <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-6">{data.cost.heading}</h2>
         <p className="text-base md:text-lg text-zinc-400 leading-relaxed mb-8 max-w-3xl">{data.cost.lead}</p>
-        <div className="inline-flex flex-col rounded-2xl border border-zinc-800 p-8 mb-8">
+        <div className="glass inline-flex flex-col rounded-2xl p-8 mb-8">
           <span className="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-2">Starts from</span>
           <span className="text-4xl md:text-5xl font-bold tracking-tight">{data.cost.startingPrice}</span>
         </div>

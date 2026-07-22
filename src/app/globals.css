@@ -108,3 +108,52 @@ html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+/* ─────────────────────────────────────────────────────────────
+   UI/UX polish (guided by ui-ux-pro-max: accessibility priority
+   #1 + Liquid Glass style direction)
+   ───────────────────────────────────────────────────────────── */
+
+/* A11y: visible keyboard focus ring (skill checklist: "Focus states
+   visible for keyboard nav"). Only shows for keyboard users, not clicks. */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* A11y: respect reduced-motion (skill checklist: "prefers-reduced-motion
+   respected"). Neutralizes CSS animation/transition + native smooth scroll. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Liquid Glass surface — translucent, blurred, subtly bordered.
+   Use on cards/panels over dark backgrounds for a premium, fluid feel. */
+.glass {
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 250ms ease, background-color 250ms ease,
+    transform 250ms ease;
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Graceful fallback where backdrop-filter is unsupported */
+@supports not (backdrop-filter: blur(1px)) {
+  .glass {
+    background: rgba(24, 24, 27, 0.85);
+  }
+}

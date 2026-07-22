@@ -80,7 +80,7 @@ export default function CaseStudiesPage() {
             <Link
               key={study.slug}
               href={`/work/${study.slug}`}
-              className="group flex flex-col rounded-3xl border border-zinc-800 overflow-hidden hover:border-zinc-600 transition-colors"
+              className="group glass flex flex-col rounded-3xl overflow-hidden hover:-translate-y-1"
             >
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-900">
                 <Image
