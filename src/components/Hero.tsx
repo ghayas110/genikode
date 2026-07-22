@@ -92,15 +92,20 @@ export default function Hero() {
 
   return (
     <section ref={comp} className="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center bg-black">
-      {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full z-0">
+      {/* Video Background — gradient paints instantly; the video fades in only
+          once it can actually play, so the hero never sits blank while buffering. */}
+      <div className="absolute inset-0 w-full h-full z-0 bg-gradient-to-b from-zinc-900 via-black to-black">
         <video
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
+          poster="/hero-poster.jpg"
           className="w-full h-full object-cover opacity-60"
         >
+          {/* Optimized (~1MB, +faststart) with the original as fallback */}
+          <source src="/hero-optimized.mp4" type="video/mp4" />
           <source src="/hero.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/40 z-10"></div>
@@ -147,8 +152,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/80 scroll-indicator cursor-pointer">
+      {/* Scroll Indicator — hidden on mobile so it doesn't collide with the CTAs */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2 text-white/80 scroll-indicator cursor-pointer">
         <span className="text-sm uppercase tracking-widest font-mono">Scroll</span>
         <ChevronDown className="w-6 h-6 animate-bounce" />
       </div>
