@@ -91,7 +91,7 @@ export default function AgencyProcess() {
         
         {/* Massive Sticky/Fixed Header or just Big Header */}
         <div className="mb-24 md:mb-48 border-b border-white/20 pb-8">
-             <h2 className="process-header text-[15vw] leading-none font-medium tracking-tighter text-zinc-100 mix-blend-difference">
+             <h2 className="process-header text-[15vw] leading-none font-medium tracking-tighter text-white mix-blend-difference">
                 Process
              </h2>
         </div>
@@ -103,7 +103,7 @@ export default function AgencyProcess() {
                     
                     {/* Left Column: Sticky Number */}
                     <div className="md:w-[20%] relative">
-                        <div className="sticky top-32 text-6xl md:text-[8vw] font-medium leading-none text-zinc-500 font-serif">
+                        <div className="sticky top-32 text-6xl md:text-[8vw] font-medium leading-none text-zinc-400 font-serif">
                             {phase.number}
                         </div>
                     </div>
@@ -122,10 +122,10 @@ export default function AgencyProcess() {
                                     key={item.text} 
                                     className="process-row flex items-baseline py-6 border-b border-zinc-800 hover:bg-zinc-900/30 transition-colors"
                                 >
-                                    <div className="w-[10%] md:w-[10%] font-mono text-zinc-500 text-sm md:text-base">
+                                    <div className="w-[10%] md:w-[10%] font-mono text-zinc-400 text-sm md:text-base">
                                         {item.id}
                                     </div>
-                                    <div className="w-[90%] md:w-[90%] text-xl md:text-2xl font-light text-zinc-200">
+                                    <div className="w-[90%] md:w-[90%] text-xl md:text-2xl font-light text-white">
                                         {item.text}
                                     </div>
                                 </div>

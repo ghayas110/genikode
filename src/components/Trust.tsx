@@ -56,7 +56,7 @@ export default function Trust() {
                 <span className="stat-value">{stat.value}</span>
                 <span>{stat.suffix}</span>
               </span>
-              <span className="text-lg text-gray-500 uppercase tracking-wide font-medium">{stat.label}</span>
+              <span className="text-lg text-zinc-400 uppercase tracking-wide font-medium">{stat.label}</span>
             </div>
           ))}
         </div>

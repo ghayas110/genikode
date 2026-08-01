@@ -1,161 +1,221 @@
 "use client";
 
-import { Fragment, useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { ChevronDown } from "lucide-react";
+import { useLayoutEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { projectsData } from "@/app/work/[slug]/data";
 
-const services = [
-  { label: "Websites", href: "/service/web-design" },
-  { label: "Mobile Apps", href: "/service/mobile-app" },
-  { label: "UI/UX", href: "/service/ui-ux" },
-  { label: "Branding", href: "/service/brand-building" },
-  { label: "SEO", href: "/service/seo" },
+gsap.registerPlugin(ScrollTrigger);
+
+// Scattered project cards — real work, full colour, framing the headline.
+// { slug, left%, top%, width px, rotation deg, aspectRatio }
+const layout = [
+  { slug: "digitalbank", l: 12, t: 20, w: 216, r: -7, ar: "4 / 3" },
+  { slug: "welab", l: 35, t: 13, w: 150, r: 5, ar: "4 / 5" },
+  { slug: "xpertva", l: 63, t: 15, w: 208, r: -4, ar: "16 / 10" },
+  { slug: "papersdock", l: 87, t: 24, w: 168, r: 6, ar: "4 / 5" },
+  { slug: "crewlink-world", l: 11, t: 66, w: 176, r: 5, ar: "1 / 1" },
+  { slug: "pos-system", l: 34, t: 80, w: 160, r: -6, ar: "4 / 3" },
+  { slug: "restaurant-management-system", l: 62, t: 78, w: 150, r: 7, ar: "4 / 5" },
+  { slug: "clinic-management-system", l: 88, t: 66, w: 206, r: -5, ar: "4 / 3" },
 ];
 
+const cards = layout
+  .filter((c) => projectsData[c.slug])
+  .map((c) => ({
+    ...c,
+    title: projectsData[c.slug].title as string,
+    category: projectsData[c.slug].category as string,
+    image: projectsData[c.slug].image as string,
+  }));
+
+const container: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
+const item: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+  },
+};
+
 export default function Hero() {
-  const comp = useRef(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const comp = useRef<HTMLElement>(null);
 
+  // GSAP: entrance + gentle perpetual float for the scattered cards.
+  // Motivated: makes the work feel alive and invites clicking through.
   useLayoutEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq.matches) return;
+
     const ctx = gsap.context(() => {
-      const words = titleRef.current?.querySelectorAll(".word");
-
-      if (words) {
-        gsap.from(words, {
-          y: 60,
+      const els = gsap.utils.toArray<HTMLElement>(".float-card");
+      els.forEach((el, i) => {
+        gsap.from(el, {
           opacity: 0,
-          rotateX: -90,
-          stagger: 0.08,
-          duration: 0.9,
-          ease: "back.out(1.7)",
-          delay: 0.4,
+          duration: 0.7,
+          delay: 0.15 + i * 0.07,
+          ease: "power3.out",
         });
-      }
-
-      gsap.from(".hero-eyebrow", {
-        y: 20,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        delay: 0.2,
+        gsap.to(el, {
+          y: "-=12",
+          duration: 2.6 + (i % 3) * 0.6,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1,
+          delay: 0.6 + i * 0.12,
+        });
       });
 
-      gsap.from(".hero-subtitle", {
-        y: 20,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        delay: 1.4,
-      });
-
-      gsap.from(".hero-service", {
-        y: 20,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "power3.out",
-        delay: 1.6,
-      });
-
-      gsap.from(".hero-cta", {
-        scale: 0.8,
-        opacity: 0,
-        duration: 1,
-        ease: "elastic.out(1, 0.5)",
-        delay: 2,
-      });
-
-      gsap.from(".scroll-indicator", {
-        y: -10,
-        opacity: 0,
-        duration: 1,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-        delay: 2.5,
-      });
+      // Scroll-driven zoom-out: cards start clustered + small behind the
+      // headline, then spread to their full scattered positions as you scroll.
+      gsap.fromTo(
+        ".cards-layer",
+        { scale: 0.42, transformOrigin: "50% 50%" },
+        {
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: comp.current,
+            start: "top top",
+            end: "+=90%",
+            pin: true,
+            scrub: 1,
+            invalidateOnRefresh: true,
+          },
+        }
+      );
     }, comp);
 
     return () => ctx.revert();
   }, []);
 
-  const splitText = (text: string) => {
-    const words = text.split(" ");
-    return words.map((word, index) => (
-      <Fragment key={index}>
-        <span className="word inline-block">{word}</span>
-        {index < words.length - 1 ? " " : null}
-      </Fragment>
-    ));
-  };
-
   return (
-    <section ref={comp} className="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center bg-black">
-      {/* Video Background — gradient paints instantly; the video fades in only
-          once it can actually play, so the hero never sits blank while buffering. */}
-      <div className="absolute inset-0 w-full h-full z-0 bg-gradient-to-b from-zinc-900 via-black to-black">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster="/hero-poster.jpg"
-          className="w-full h-full object-cover opacity-60"
+    <section
+      ref={comp}
+      className="relative min-h-[100dvh] w-full overflow-hidden bg-black text-white"
+    >
+      {/* Scattered project cards — desktop. `cards-layer` is scrubbed by scroll
+          (clustered -> spread) for the zoom-out reveal. */}
+      <div className="cards-layer absolute inset-0 hidden [will-change:transform] lg:block">
+        {cards.map((c) => (
+          <div
+            key={c.slug}
+            className="absolute"
+            style={{ left: `${c.l}%`, top: `${c.t}%`, width: c.w, transform: "translate(-50%, -50%)" }}
+          >
+            <div className="float-card" style={{ transform: `rotate(${c.r}deg)`, willChange: "transform" }}>
+              <Link
+                href={`/work/${c.slug}`}
+                aria-label={`${c.title}, ${c.category} case study`}
+                className="group block"
+              >
+                <div
+                  className="relative overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-[1.06]"
+                  style={{ aspectRatio: c.ar }}
+                >
+                  <Image
+                    src={c.image}
+                    alt={`${c.title}, ${c.category}`}
+                    fill
+                    sizes="220px"
+                    className="object-cover"
+                  />
+                  <span className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 transition group-hover:ring-white/30" />
+                </div>
+                <p className="mt-3 text-center text-sm font-medium text-white/80 transition-colors group-hover:text-white">
+                  {c.title}
+                </p>
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Centered content */}
+      <div className="relative z-10 mx-auto flex min-h-[100dvh] max-w-3xl flex-col items-center justify-center px-6 py-28 text-center">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="pointer-events-none"
         >
-          {/* Optimized (~1MB, +faststart) with the original as fallback */}
-          <source src="/hero-optimized.mp4" type="video/mp4" />
-          <source src="/hero.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/40 z-10"></div>
-      </div>
+          <motion.p
+            variants={item}
+            className="mb-6 flex items-center justify-center gap-2.5 font-mono text-xs uppercase tracking-[0.22em] text-white/60"
+          >
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            Digital agency, worldwide
+          </motion.p>
 
-      <div className="z-20 text-center px-4 w-full flex flex-col items-center justify-center h-full">
-        {/* Eyebrow / tagline */}
-        <p className="hero-eyebrow flex items-center gap-3 text-xs md:text-sm font-mono uppercase tracking-[0.25em] text-white/70 mb-8">
-          <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          Digital Agency · Building for the World
-        </p>
+          <motion.h1
+            variants={item}
+            className="text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl"
+          >
+            We design, build and scale digital products.
+          </motion.h1>
 
-        {/* Headline / tagline */}
-        <div className="max-w-[1100px] overflow-visible">
-          <h1 ref={titleRef} className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 text-white text-shadow-lg text-center text-balance leading-[1.05]">
-            {splitText("We design, build & scale digital products the world loves.")}
-          </h1>
-        </div>
+          <motion.p
+            variants={item}
+            className="mx-auto mt-6 max-w-md text-base leading-relaxed text-white/60 md:text-lg"
+          >
+            Websites, mobile apps, and brands for founders worldwide.
+          </motion.p>
 
-        {/* Services strip */}
-        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-3 mb-8 max-w-3xl">
-          {services.map((service) => (
+          <motion.div
+            variants={item}
+            className="pointer-events-auto mt-9 flex flex-wrap justify-center gap-4"
+          >
             <Link
-              key={service.label}
-              href={service.href}
-              className="hero-service text-sm md:text-base font-medium text-white/90 border border-white/20 rounded-full px-4 py-1.5 backdrop-blur-sm hover:bg-white hover:text-black transition-colors"
+              href="/work"
+              className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-black transition-transform hover:scale-[1.03] active:scale-95"
             >
-              {service.label}
+              See our work
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
-          ))}
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white hover:text-black active:scale-95"
+            >
+              Start a project
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        {/* Mobile: horizontal scroll strip of the work */}
+        <div className="mt-14 w-screen lg:hidden">
+          <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {cards.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/work/${c.slug}`}
+                aria-label={`${c.title}, ${c.category} case study`}
+                className="group relative aspect-[4/5] w-40 shrink-0 snap-start overflow-hidden rounded-2xl border border-white/10 text-left"
+              >
+                <Image
+                  src={c.image}
+                  alt={`${c.title}, ${c.category}`}
+                  fill
+                  sizes="160px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <span className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <span className="absolute inset-x-3 bottom-3">
+                  <span className="block text-sm font-semibold text-white">{c.title}</span>
+                  <span className="block text-[11px] text-white/60">{c.category}</span>
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
-
-        <p className="hero-subtitle text-base md:text-xl text-gray-200 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
-          Genikode partners with startups, founders, and growing businesses worldwide — turning bold ideas into fast, scalable websites, mobile apps, and brands, engineered with Next.js, React Native, and Node.js.
-        </p>
-
-        <div className="hero-cta flex flex-wrap gap-4 justify-center">
-          <Link href="/contact" className="bg-white text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform duration-300">
-            Start Your Project
-          </Link>
-          <Link href="/agency" className="border border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-black transition-all duration-300">
-            Explore Services
-          </Link>
-        </div>
-      </div>
-
-      {/* Scroll Indicator — hidden on mobile so it doesn't collide with the CTAs */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2 text-white/80 scroll-indicator cursor-pointer">
-        <span className="text-sm uppercase tracking-widest font-mono">Scroll</span>
-        <ChevronDown className="w-6 h-6 animate-bounce" />
       </div>
     </section>
   );

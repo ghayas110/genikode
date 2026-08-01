@@ -114,7 +114,7 @@ export default function Services() {
           {services.map((service) => (
             <div key={service.id} id={`service-${service.id}`} className="min-h-[50vh] flex flex-col justify-center">
               <h3 className="text-4xl md:text-6xl font-bold mb-6">{service.title}</h3>
-              <p className="text-xl text-gray-400 max-w-md">{service.description}</p>
+              <p className="text-xl text-zinc-400 max-w-md">{service.description}</p>
             </div>
           ))}
         </div>
@@ -126,7 +126,7 @@ export default function Services() {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-zinc-800 rounded-b-xl z-20"></div>
               
               {/* Screen Content Container */}
-              <div className="phone-screen w-full h-full relative bg-zinc-950">
+              <div className="phone-screen w-full h-full relative bg-black">
                   {services.map((service, index) => (
                       <div 
                         key={service.id} 

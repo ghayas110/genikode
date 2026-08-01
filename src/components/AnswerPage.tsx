@@ -61,10 +61,10 @@ export default function AnswerPage({ data }: { data: AnswerPageData }) {
     <main className="bg-black text-white">
       {/* Hero */}
       <section className="px-6 md:px-8 pt-36 md:pt-44 pb-20 max-w-5xl mx-auto">
-        <nav aria-label="Breadcrumb" className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-8">
+        <nav aria-label="Breadcrumb" className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-8">
           <Link href="/" className="hover:text-white transition-colors">Home</Link>
           <span className="mx-2">/</span>
-          <span className="text-zinc-300">{data.serviceType}</span>
+          <span className="text-white">{data.serviceType}</span>
         </nav>
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance leading-[1.1] mb-8">
           {data.h1}
@@ -83,10 +83,10 @@ export default function AnswerPage({ data }: { data: AnswerPageData }) {
       </section>
 
       {/* Definition */}
-      <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-900 max-w-5xl mx-auto">
-        <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-6">Definition</p>
+      <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-800 max-w-5xl mx-auto">
+        <p className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-6">Definition</p>
         <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-6">{data.definition.heading}</h2>
-        <p className="text-xl md:text-2xl font-light leading-relaxed text-zinc-100 mb-8 max-w-3xl">
+        <p className="text-xl md:text-2xl font-light leading-relaxed text-white mb-8 max-w-3xl">
           {data.definition.lead}
         </p>
         <div className="space-y-5 max-w-3xl">
@@ -97,8 +97,8 @@ export default function AnswerPage({ data }: { data: AnswerPageData }) {
       </section>
 
       {/* Process */}
-      <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-900 max-w-5xl mx-auto">
-        <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-6">Process</p>
+      <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-800 max-w-5xl mx-auto">
+        <p className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-6">Process</p>
         <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-6">{data.process.heading}</h2>
         {data.process.intro && (
           <p className="text-base md:text-lg text-zinc-400 leading-relaxed mb-12 max-w-3xl">{data.process.intro}</p>
@@ -106,7 +106,7 @@ export default function AnswerPage({ data }: { data: AnswerPageData }) {
         <ol className="grid gap-px bg-zinc-800 border border-zinc-800 rounded-2xl overflow-hidden md:grid-cols-2">
           {data.process.steps.map((step, i) => (
             <li key={i} className="bg-black p-8">
-              <span className="block text-sm font-mono text-zinc-600 mb-4">
+              <span className="block text-sm font-mono text-zinc-400 mb-4">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="text-lg md:text-xl font-semibold mb-3">{step.title}</h3>
@@ -117,30 +117,30 @@ export default function AnswerPage({ data }: { data: AnswerPageData }) {
       </section>
 
       {/* Cost */}
-      <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-900 max-w-5xl mx-auto">
-        <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-6">Cost</p>
+      <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-800 max-w-5xl mx-auto">
+        <p className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-6">Cost</p>
         <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-6">{data.cost.heading}</h2>
         <p className="text-base md:text-lg text-zinc-400 leading-relaxed mb-8 max-w-3xl">{data.cost.lead}</p>
         <div className="glass inline-flex flex-col rounded-2xl p-8 mb-8">
-          <span className="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-2">Starts from</span>
+          <span className="text-sm font-mono uppercase tracking-widest text-zinc-400 mb-2">Starts from</span>
           <span className="text-4xl md:text-5xl font-bold tracking-tight">{data.cost.startingPrice}</span>
         </div>
         <ul className="space-y-3 max-w-3xl">
           {data.cost.factors.map((f, i) => (
-            <li key={i} className="flex items-start gap-3 text-base md:text-lg text-zinc-300">
+            <li key={i} className="flex items-start gap-3 text-base md:text-lg text-white">
               <Check className="w-5 h-5 text-emerald-400 shrink-0 mt-1" />
               <span>{f}</span>
             </li>
           ))}
         </ul>
         {data.cost.note && (
-          <p className="mt-6 text-sm text-zinc-500 max-w-3xl">{data.cost.note}</p>
+          <p className="mt-6 text-sm text-zinc-400 max-w-3xl">{data.cost.note}</p>
         )}
       </section>
 
       {/* Trust / why us — answers the full human question */}
-      <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-900 max-w-5xl mx-auto">
-        <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-6">Why Genikode</p>
+      <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-800 max-w-5xl mx-auto">
+        <p className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-6">Why Genikode</p>
         <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-12">{data.trust.heading}</h2>
         <div className="grid gap-8 md:grid-cols-3">
           {data.trust.points.map((p, i) => (
@@ -156,7 +156,7 @@ export default function AnswerPage({ data }: { data: AnswerPageData }) {
       <Faq items={data.faqs} heading={`${data.serviceType} — FAQs`} eyebrow="Questions" />
 
       {/* Final CTA */}
-      <section className="px-6 md:px-8 py-24 border-t border-zinc-900 text-center">
+      <section className="px-6 md:px-8 py-24 border-t border-zinc-800 text-center">
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-balance">
           Ready to build with a team you can trust?
         </h2>

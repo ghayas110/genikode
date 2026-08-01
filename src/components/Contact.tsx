@@ -146,79 +146,79 @@ export default function Contact() {
             <span className="hero-text-line block italic text-zinc-400 font-light">something beautiful.</span>
           </h1>
           
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-zinc-500 text-xs uppercase tracking-[0.2em] animate-bounce">
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-zinc-400 text-xs uppercase tracking-[0.2em] animate-bounce">
             Scroll to get in touch
           </div>
       </div>
 
       {/* Form Section */}
       <div className="max-w-5xl mx-auto px-6 md:px-12 py-20 relative z-20">
-        <h2 className="text-2xl md:text-4xl font-serif mb-16 text-zinc-200 form-element">We would love to hear from you.</h2>
+        <h2 className="text-2xl md:text-4xl font-serif mb-16 text-white form-element">We would love to hear from you.</h2>
         
         <form ref={formRef} onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
             
             <div className="form-element flex flex-col gap-2">
-                <label className="text-xs uppercase tracking-wider text-zinc-500 font-medium">First name*</label>
+                <label className="text-xs uppercase tracking-wider text-zinc-400 font-medium">First name*</label>
                 <input 
                     type="text" 
                     name="firstName" 
                     placeholder="Enter your first name"
-                    className="bg-zinc-900/30 border border-zinc-800 rounded p-4 text-lg focus:border-white focus:bg-zinc-900 focus:outline-none transition-all text-white placeholder:text-zinc-700"
+                    className="bg-zinc-900/30 border border-zinc-800 rounded p-4 text-lg focus:border-white focus:bg-zinc-900 focus:outline-none transition-all text-white placeholder:text-zinc-400"
                     value={formData.firstName} onChange={handleChange}
                 />
             </div>
 
             <div className="form-element flex flex-col gap-2">
-                <label className="text-xs uppercase tracking-wider text-zinc-500 font-medium">Last name*</label>
+                <label className="text-xs uppercase tracking-wider text-zinc-400 font-medium">Last name*</label>
                 <input 
                     type="text" 
                     name="lastName" 
                     placeholder="Enter your last name"
-                    className="bg-zinc-900/30 border border-zinc-800 rounded p-4 text-lg focus:border-white focus:bg-zinc-900 focus:outline-none transition-all text-white placeholder:text-zinc-700"
+                    className="bg-zinc-900/30 border border-zinc-800 rounded p-4 text-lg focus:border-white focus:bg-zinc-900 focus:outline-none transition-all text-white placeholder:text-zinc-400"
                     value={formData.lastName} onChange={handleChange}
                 />
             </div>
 
             <div className="form-element flex flex-col gap-2">
-                <label className="text-xs uppercase tracking-wider text-zinc-500 font-medium">Company name*</label>
+                <label className="text-xs uppercase tracking-wider text-zinc-400 font-medium">Company name*</label>
                 <input 
                     type="text" 
                     name="companyName" 
                     placeholder="Enter company name"
-                    className="bg-zinc-900/30 border border-zinc-800 rounded p-4 text-lg focus:border-white focus:bg-zinc-900 focus:outline-none transition-all text-white placeholder:text-zinc-700"
+                    className="bg-zinc-900/30 border border-zinc-800 rounded p-4 text-lg focus:border-white focus:bg-zinc-900 focus:outline-none transition-all text-white placeholder:text-zinc-400"
                     value={formData.companyName} onChange={handleChange}
                 />
             </div>
 
              <div className="form-element flex flex-col gap-2">
-                <label className="text-xs uppercase tracking-wider text-zinc-500 font-medium">Company email*</label>
+                <label className="text-xs uppercase tracking-wider text-zinc-400 font-medium">Company email*</label>
                 <input 
                     type="email" 
                     name="companyEmail" 
                     placeholder="Enter email address"
-                    className="bg-zinc-900/30 border border-zinc-800 rounded p-4 text-lg focus:border-white focus:bg-zinc-900 focus:outline-none transition-all text-white placeholder:text-zinc-700"
+                    className="bg-zinc-900/30 border border-zinc-800 rounded p-4 text-lg focus:border-white focus:bg-zinc-900 focus:outline-none transition-all text-white placeholder:text-zinc-400"
                     value={formData.companyEmail} onChange={handleChange}
                 />
             </div>
             
             <div className="form-element col-span-1 md:col-span-2 flex flex-col gap-2">
-                <label className="text-xs uppercase tracking-wider text-zinc-500 font-medium">Company website url*</label>
+                <label className="text-xs uppercase tracking-wider text-zinc-400 font-medium">Company website url*</label>
                 <input 
                     type="text" 
                     name="companyWebsite" 
                     placeholder="https://"
-                    className="bg-zinc-900/30 border border-zinc-800 rounded p-4 text-lg focus:border-white focus:bg-zinc-900 focus:outline-none transition-all text-white placeholder:text-zinc-700"
+                    className="bg-zinc-900/30 border border-zinc-800 rounded p-4 text-lg focus:border-white focus:bg-zinc-900 focus:outline-none transition-all text-white placeholder:text-zinc-400"
                     value={formData.companyWebsite} onChange={handleChange}
                 />
             </div>
 
             <div className="form-element col-span-1 md:col-span-2 flex flex-col gap-2 mt-4">
-                <label className="text-xs uppercase tracking-wider text-zinc-500 font-medium">Tell us about the project (Scope, Timeline, Budget)*</label>
+                <label className="text-xs uppercase tracking-wider text-zinc-400 font-medium">Tell us about the project (Scope, Timeline, Budget)*</label>
                 <textarea 
                     name="projectDetails" 
                     rows={6}
                     placeholder="Type us a message..."
-                    className="bg-zinc-900/30 border border-zinc-800 rounded p-4 text-lg focus:border-white focus:bg-zinc-900 focus:outline-none resize-none transition-all text-white placeholder:text-zinc-700"
+                    className="bg-zinc-900/30 border border-zinc-800 rounded p-4 text-lg focus:border-white focus:bg-zinc-900 focus:outline-none resize-none transition-all text-white placeholder:text-zinc-400"
                     value={formData.projectDetails} onChange={handleChange}
                 />
             </div>
@@ -228,7 +228,7 @@ export default function Contact() {
                     type="checkbox" 
                     name="newsletter"
                     id="newsletter" 
-                    className="w-5 h-5 rounded border-zinc-700 bg-zinc-900 text-white focus:ring-0 checked:bg-white checked:text-black cursor-pointer"
+                    className="w-5 h-5 rounded border-zinc-800 bg-zinc-900 text-white focus:ring-0 checked:bg-white checked:text-black cursor-pointer"
                     checked={formData.newsletter} onChange={handleChange}
                  />
                  <label htmlFor="newsletter" className="text-zinc-400 text-sm select-none cursor-pointer hover:text-white transition-colors">Yes, sign me up to newsletter</label>

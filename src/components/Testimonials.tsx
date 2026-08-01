@@ -64,7 +64,7 @@ export default function Testimonials() {
       className="w-full bg-white text-black py-24 md:py-32"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <p className="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">
+        <p className="text-xs font-mono uppercase tracking-widest text-black/50 mb-6">
           What clients say
         </p>
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-16 max-w-3xl text-balance">
@@ -75,15 +75,15 @@ export default function Testimonials() {
           {testimonials.map((t, index) => (
             <figure
               key={index}
-              className="flex flex-col justify-between border border-gray-200 rounded-2xl p-8 hover:border-black transition-colors"
+              className="flex flex-col justify-between border border-black/15 rounded-2xl p-8 hover:border-black/40 transition-colors"
             >
-              <blockquote className="text-lg md:text-xl font-light leading-relaxed text-gray-800">
+              <blockquote className="text-lg md:text-xl font-light leading-relaxed text-black/90">
                 “{t.quote}”
               </blockquote>
-              <figcaption className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between gap-4">
+              <figcaption className="mt-8 pt-6 border-t border-black/10 flex items-center justify-between gap-4">
                 <div>
                   <span className="block font-semibold text-black">{t.name}</span>
-                  <span className="block text-sm text-gray-500">
+                  <span className="block text-sm text-black/60">
                     {t.title},{" "}
                     <Link href={t.projectHref} className="underline hover:text-black">
                       {t.company}

@@ -7,14 +7,14 @@ export const metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-white font-sans selection:bg-white selection:text-black py-24 md:py-32">
+    <main className="min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black py-24 md:py-32">
       <div className="max-w-4xl mx-auto px-4 md:px-8">
         
         {/* Header */}
         <div className="mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 mb-8 backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-blue-500" />
-            <span className="text-xs font-semibold tracking-widest uppercase text-zinc-300">Legal</span>
+            <span className="text-xs font-semibold tracking-widest uppercase text-white">Legal</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
             Privacy Policy
@@ -87,7 +87,7 @@ export default function PrivacyPolicyPage() {
               If you have any questions or concerns regarding this Privacy Policy, our development practices, or how we handle your data, please contact us at:
             </p>
             <div className="mt-4 p-6 bg-zinc-900/50 border border-zinc-800 rounded-xl">
-              <p className="text-zinc-300">
+              <p className="text-white">
                 <strong>Email:</strong> ghayas110@gmail.com<br />
                 <strong>Website:</strong> genikode.com
               </p>

@@ -76,7 +76,7 @@ export default function ClientDetail({ slug }: { slug: string }) {
           className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-12 text-center"
         >
           <motion.div variants={fadeUpVariant} className="mb-6">
-            <span className="text-zinc-500 font-mono tracking-[0.4em] uppercase text-xs md:text-sm py-2 px-6 border border-zinc-800 rounded-full backdrop-blur-sm">
+            <span className="text-zinc-400 font-mono tracking-[0.4em] uppercase text-xs md:text-sm py-2 px-6 border border-zinc-800 rounded-full backdrop-blur-sm">
                Service Division
             </span>
           </motion.div>
@@ -95,7 +95,7 @@ export default function ClientDetail({ slug }: { slug: string }) {
           transition={{ delay: 1, duration: 1 }}
           className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-            <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase">Scroll to explore</span>
+            <span className="text-[10px] font-mono tracking-widest text-zinc-400 uppercase">Scroll to explore</span>
             <div className="w-[1px] h-12 bg-zinc-800 overflow-hidden relative">
                <motion.div 
                  animate={{ y: ["-100%", "100%"] }}
@@ -122,13 +122,13 @@ export default function ClientDetail({ slug }: { slug: string }) {
                <motion.div variants={fadeUpVariant} className="w-24 h-[1px] bg-white mb-8" />
             </div>
 
-            <div className="bg-zinc-950 p-8 md:p-12 rounded-3xl border border-white/5 relative overflow-hidden group">
+            <div className="bg-black p-8 md:p-12 rounded-3xl border border-white/5 relative overflow-hidden group">
                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-duration-700" />
-               <motion.h3 variants={fadeUpVariant} className="text-xs font-mono tracking-[0.3em] uppercase text-zinc-500 mb-8 flex items-center gap-4">
+               <motion.h3 variants={fadeUpVariant} className="text-xs font-mono tracking-[0.3em] uppercase text-zinc-400 mb-8 flex items-center gap-4">
                  <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
                  The Genikode Approach
                </motion.h3>
-               <motion.p variants={fadeUpVariant} className="text-lg md:text-xl text-zinc-300 font-light leading-relaxed relative z-10">
+               <motion.p variants={fadeUpVariant} className="text-lg md:text-xl text-white font-light leading-relaxed relative z-10">
                  {service.approach}
                </motion.p>
             </div>
@@ -136,7 +136,7 @@ export default function ClientDetail({ slug }: { slug: string }) {
       </section>
 
       {/* What We Offer / Capabilities Grid */}
-      <section className="py-24 md:py-40 bg-[#0a0a0a] relative overflow-hidden">
+      <section className="py-24 md:py-40 bg-black relative overflow-hidden">
         {/* Subtle background texture */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_100%)] pointer-events-none" />
         
@@ -148,7 +148,7 @@ export default function ClientDetail({ slug }: { slug: string }) {
             viewport={{ once: true, margin: "-100px" }}
             className="mb-20 text-center md:text-left"
           >
-            <motion.h2 variants={fadeUpVariant} className="text-sm font-mono tracking-[0.3em] text-zinc-500 uppercase mb-4">
+            <motion.h2 variants={fadeUpVariant} className="text-sm font-mono tracking-[0.3em] text-zinc-400 uppercase mb-4">
               Core Capabilities
             </motion.h2>
             <motion.h3 variants={fadeUpVariant} className="text-5xl md:text-7xl font-serif italic tracking-tighter">
@@ -168,13 +168,13 @@ export default function ClientDetail({ slug }: { slug: string }) {
                >
                   <div className="flex items-start gap-6">
                      <div className="mt-1">
-                        <CheckCircle2 className="w-6 h-6 text-zinc-600 group-hover:text-white transition-colors duration-500" />
+                        <CheckCircle2 className="w-6 h-6 text-zinc-400 group-hover:text-white transition-colors duration-500" />
                      </div>
                      <div>
-                        <h4 className="text-2xl md:text-3xl font-medium tracking-tight mb-4 text-zinc-200 group-hover:text-white transition-colors duration-500">
+                        <h4 className="text-2xl md:text-3xl font-medium tracking-tight mb-4 text-white group-hover:text-white transition-colors duration-500">
                            {item.title}
                         </h4>
-                        <p className="text-base md:text-lg text-zinc-500 font-light leading-relaxed">
+                        <p className="text-base md:text-lg text-zinc-400 font-light leading-relaxed">
                            {item.desc}
                         </p>
                      </div>
@@ -212,7 +212,7 @@ export default function ClientDetail({ slug }: { slug: string }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-8xl lg:text-[9rem] font-medium tracking-tighter text-zinc-600 transition-all duration-700 group-hover:text-white"
+              className="text-5xl md:text-8xl lg:text-[9rem] font-medium tracking-tighter text-zinc-400 transition-all duration-700 group-hover:text-white"
             >
               Let's Talk.
             </motion.h2>

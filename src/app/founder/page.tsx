@@ -75,10 +75,10 @@ export default function FounderPage() {
     <main className="bg-black text-white">
       {/* Hero */}
       <section className="px-6 md:px-8 pt-36 md:pt-44 pb-16 max-w-5xl mx-auto">
-        <nav aria-label="Breadcrumb" className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-10">
+        <nav aria-label="Breadcrumb" className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-10">
           <Link href="/" className="hover:text-white transition-colors">Home</Link>
           <span className="mx-2">/</span>
-          <span className="text-zinc-300">Founder</span>
+          <span className="text-white">Founder</span>
         </nav>
 
         <div className="grid gap-12 md:grid-cols-12 md:items-center">
@@ -95,9 +95,9 @@ export default function FounderPage() {
             </div>
           </div>
           <div className="md:col-span-7">
-            <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-5">Founder & CEO</p>
+            <p className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-5">Founder & CEO</p>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">Ghayas Ali</h1>
-            <p className="text-lg md:text-xl text-zinc-300 font-light leading-relaxed">
+            <p className="text-lg md:text-xl text-white font-light leading-relaxed">
               Ghayas Ali is the founder and CEO of <Link href="/" className="underline hover:text-white">Genikode</Link>,
               a Karachi-based digital agency building high-performance websites and mobile apps for founders and
               businesses around the world.
@@ -118,7 +118,7 @@ export default function FounderPage() {
       </section>
 
       {/* Bio */}
-      <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-900 max-w-3xl mx-auto">
+      <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-800 max-w-3xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-8">About Ghayas</h2>
         <div className="space-y-6 text-base md:text-lg text-zinc-400 leading-relaxed">
           <p>
@@ -141,18 +141,18 @@ export default function FounderPage() {
       </section>
 
       {/* Expertise */}
-      <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-900 max-w-5xl mx-auto">
-        <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-6">Expertise</p>
+      <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-800 max-w-5xl mx-auto">
+        <p className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-6">Expertise</p>
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-10">Areas of focus</h2>
         <ul className="grid gap-px bg-zinc-800 border border-zinc-800 rounded-2xl overflow-hidden md:grid-cols-2">
           {expertise.map((item) => (
-            <li key={item} className="bg-black p-6 text-base md:text-lg text-zinc-200">{item}</li>
+            <li key={item} className="bg-black p-6 text-base md:text-lg text-white">{item}</li>
           ))}
         </ul>
       </section>
 
       {/* Proof / work */}
-      <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-900 max-w-3xl mx-auto">
+      <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-800 max-w-3xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-6">Work & track record</h2>
         <p className="text-base md:text-lg text-zinc-400 leading-relaxed mb-8">
           The clearest measure of any founder is the work. Explore Genikode's case studies — real products,

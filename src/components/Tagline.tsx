@@ -52,7 +52,7 @@ export default function Tagline() {
         >
           {/* Tag marker */}
           <motion.div variants={lineVariant} className="mb-8 md:mb-12">
-             <span className="text-zinc-500 font-mono text-xs md:text-sm tracking-[0.3em] uppercase py-2 px-6 border border-zinc-800 rounded-full bg-zinc-950/50">
+             <span className="text-zinc-400 font-mono text-xs md:text-sm tracking-[0.3em] uppercase py-2 px-6 border border-zinc-800 rounded-full bg-zinc-950/50">
                 Our Core Belief
              </span>
           </motion.div>
@@ -61,7 +61,7 @@ export default function Tagline() {
           <div className="overflow-hidden py-2" style={{ perspective: "1000px" }}>
             <motion.h2 
               variants={lineVariant} 
-              className="text-4xl md:text-[6rem] lg:text-[8rem] font-bold tracking-tighter leading-none text-zinc-100 uppercase"
+              className="text-4xl md:text-[6rem] lg:text-[8rem] font-bold tracking-tighter leading-none text-white uppercase"
               style={{ transformOrigin: "bottom center" }}
             >
               We exist to <span className="text-transparent inline-block" style={{ WebkitTextStroke: "1px rgba(255,255,255,0.4)" }}>make</span>
@@ -83,14 +83,14 @@ export default function Tagline() {
              
              {/* Left Avatar (Ghayas) */}
              <motion.div variants={avatarVariant} className="absolute left-2 md:left-10 lg:-left-10 -top-4 md:-top-20 z-30">
-               <div className="w-16 h-16 md:w-32 md:h-32 xl:w-40 xl:h-40 rounded-full overflow-hidden border border-zinc-700 relative grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110 shadow-2xl hover:border-zinc-400 group cursor-pointer">
+               <div className="w-16 h-16 md:w-32 md:h-32 xl:w-40 xl:h-40 rounded-full overflow-hidden border border-zinc-800 relative grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110 shadow-2xl hover:border-zinc-800 group cursor-pointer">
                  <Image src="/images/team/ghayas.png" alt="Ghayas" fill className="object-cover object-top" />
                </div>
              </motion.div>
 
              {/* Right Avatar (Kisa) */}
              <motion.div variants={avatarVariant} className="absolute right-2 md:right-10 lg:-right-4 bottom-2 md:-bottom-10 z-30">
-               <div className="w-14 h-14 md:w-28 md:h-28 xl:w-36 xl:h-36 rounded-full overflow-hidden border border-zinc-700 relative grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110 shadow-2xl hover:border-zinc-400 group cursor-pointer">
+               <div className="w-14 h-14 md:w-28 md:h-28 xl:w-36 xl:h-36 rounded-full overflow-hidden border border-zinc-800 relative grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110 shadow-2xl hover:border-zinc-800 group cursor-pointer">
                  <Image src="/images/team/kisa.png" alt="Kisa" fill className="object-cover object-top" />
                </div>
              </motion.div>

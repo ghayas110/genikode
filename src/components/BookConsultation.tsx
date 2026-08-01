@@ -3,7 +3,7 @@ import React from "react";
 
 export default function BookConsultation() {
   return (
-    <section className="w-full bg-zinc-950 text-white relative z-10 border-t border-zinc-800">
+    <section className="w-full bg-black text-white relative z-10 border-t border-zinc-800">
       <div className="flex flex-col md:flex-row h-auto md:h-[40vh] border-b border-zinc-800">
         {/* Left: Huge Text */}
         <div className="w-full md:w-3/4 p-8 md:p-16 flex flex-col justify-center border-b md:border-b-0 md:border-r border-zinc-800">

@@ -73,7 +73,7 @@ export default function ClientDetail({ slug }: { slug: string }) {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           className="relative z-10 max-w-7xl mx-auto w-full"
         >
-          <p className="text-zinc-500 font-mono tracking-[0.3em] uppercase mb-4 text-sm md:text-base">
+          <p className="text-zinc-400 font-mono tracking-[0.3em] uppercase mb-4 text-sm md:text-base">
             [ {project.category} ]
           </p>
           <h1 className="text-6xl md:text-[8rem] lg:text-[10rem] font-medium leading-[0.9] tracking-tighter uppercase mb-8">
@@ -82,11 +82,11 @@ export default function ClientDetail({ slug }: { slug: string }) {
           
           <div className="flex flex-wrap gap-8 md:gap-24 border-t border-white/20 pt-8">
             <div>
-              <p className="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-2">Year</p>
+              <p className="text-zinc-400 text-xs font-mono uppercase tracking-widest mb-2">Year</p>
               <p className="text-lg md:text-xl font-light">{project.year}</p>
             </div>
             <div>
-              <p className="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-2">Technologies</p>
+              <p className="text-zinc-400 text-xs font-mono uppercase tracking-widest mb-2">Technologies</p>
               <div className="flex flex-wrap gap-x-4 gap-y-2 max-w-sm">
                 {project.technology.map((tech: string) => (
                   <span key={tech} className="text-lg md:text-xl font-light">{tech}</span>
@@ -108,7 +108,7 @@ export default function ClientDetail({ slug }: { slug: string }) {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-32 md:mb-48"
         >
-          <motion.h2 variants={fadeUpVariant} className="text-zinc-500 font-serif text-2xl italic mb-8">The Product</motion.h2>
+          <motion.h2 variants={fadeUpVariant} className="text-zinc-400 font-serif text-2xl italic mb-8">The Product</motion.h2>
           <motion.p variants={fadeUpVariant} className="text-3xl md:text-5xl lg:text-6xl font-medium leading-[1.2] tracking-tight">
             {project.productAbout}
           </motion.p>
@@ -130,7 +130,7 @@ export default function ClientDetail({ slug }: { slug: string }) {
                     {metric.value}
                     {metric.suffix ? <span>{metric.suffix}</span> : null}
                   </p>
-                  <p className="mt-3 text-xs md:text-sm font-mono uppercase tracking-widest text-zinc-500">
+                  <p className="mt-3 text-xs md:text-sm font-mono uppercase tracking-widest text-zinc-400">
                     {metric.label}
                   </p>
                 </motion.div>
@@ -151,28 +151,28 @@ export default function ClientDetail({ slug }: { slug: string }) {
             className="md:col-span-7 flex flex-col gap-24"
           >
             <div>
-              <motion.h3 variants={fadeUpVariant} className="text-xs font-mono tracking-[0.2em] uppercase text-zinc-500 mb-6 flex items-center gap-4">
+              <motion.h3 variants={fadeUpVariant} className="text-xs font-mono tracking-[0.2em] uppercase text-zinc-400 mb-6 flex items-center gap-4">
                 <span className="block w-8 h-[1px] bg-zinc-500"></span> How we started
               </motion.h3>
-              <motion.p variants={fadeUpVariant} className="text-xl md:text-2xl text-zinc-300 font-light leading-relaxed">
+              <motion.p variants={fadeUpVariant} className="text-xl md:text-2xl text-white font-light leading-relaxed">
                 {project.howWeStarted}
               </motion.p>
             </div>
 
             <div>
-              <motion.h3 variants={fadeUpVariant} className="text-xs font-mono tracking-[0.2em] uppercase text-zinc-500 mb-6 flex items-center gap-4">
+              <motion.h3 variants={fadeUpVariant} className="text-xs font-mono tracking-[0.2em] uppercase text-zinc-400 mb-6 flex items-center gap-4">
                 <span className="block w-8 h-[1px] bg-zinc-500"></span> The Mission
               </motion.h3>
-              <motion.p variants={fadeUpVariant} className="text-xl md:text-2xl text-zinc-300 font-light leading-relaxed">
+              <motion.p variants={fadeUpVariant} className="text-xl md:text-2xl text-white font-light leading-relaxed">
                 {project.mission}
               </motion.p>
             </div>
 
             <div>
-              <motion.h3 variants={fadeUpVariant} className="text-xs font-mono tracking-[0.2em] uppercase text-zinc-500 mb-6 flex items-center gap-4">
+              <motion.h3 variants={fadeUpVariant} className="text-xs font-mono tracking-[0.2em] uppercase text-zinc-400 mb-6 flex items-center gap-4">
                 <span className="block w-8 h-[1px] bg-zinc-500"></span> The Client's Problem
               </motion.h3>
-              <motion.p variants={fadeUpVariant} className="text-xl md:text-2xl text-zinc-300 font-light leading-relaxed">
+              <motion.p variants={fadeUpVariant} className="text-xl md:text-2xl text-white font-light leading-relaxed">
                 {project.clientProblem}
               </motion.p>
             </div>
@@ -187,7 +187,7 @@ export default function ClientDetail({ slug }: { slug: string }) {
             className="md:col-span-4 md:col-start-9 flex flex-col gap-24 border-t md:border-t-0 border-zinc-800 pt-16 md:pt-0"
           >
             <div>
-              <motion.h3 variants={fadeUpVariant} className="text-xs font-mono tracking-[0.2em] uppercase text-zinc-500 mb-6">
+              <motion.h3 variants={fadeUpVariant} className="text-xs font-mono tracking-[0.2em] uppercase text-zinc-400 mb-6">
                 [ The Challenges ]
               </motion.h3>
               <motion.p variants={fadeUpVariant} className="text-base text-zinc-400 font-light leading-relaxed">
@@ -200,7 +200,7 @@ export default function ClientDetail({ slug }: { slug: string }) {
               <h3 className="text-xs font-mono tracking-[0.2em] uppercase text-white mb-6">
                 [ The Solution ]
               </h3>
-              <p className="text-base text-zinc-300 font-light leading-relaxed relative z-10">
+              <p className="text-base text-white font-light leading-relaxed relative z-10">
                 {project.solution}
               </p>
             </motion.div>
@@ -240,8 +240,8 @@ export default function ClientDetail({ slug }: { slug: string }) {
       {/* Next Project Footer (Mock) */}
       <section className="h-[50vh] flex flex-col items-center justify-center border-t border-white/10 relative overflow-hidden group cursor-pointer">
         <Link href="/work" className="absolute inset-0 flex flex-col items-center justify-center z-10">
-            <span className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-500 mb-4 transition-colors group-hover:text-white">Next Project</span>
-            <h2 className="text-5xl md:text-7xl font-medium tracking-tighter text-zinc-700 transition-colors group-hover:text-white duration-500">View Archive</h2>
+            <span className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-400 mb-4 transition-colors group-hover:text-white">Next Project</span>
+            <h2 className="text-5xl md:text-7xl font-medium tracking-tighter text-zinc-400 transition-colors group-hover:text-white duration-500">View Archive</h2>
         </Link>
         <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-700 z-0"></div>
       </section>

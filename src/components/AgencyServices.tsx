@@ -145,7 +145,7 @@ export default function AgencyServices() {
                   >
                       {/* Left: Number & Skills */}
                       <div className="flex flex-col md:w-1/3">
-                          <span className="text-sm font-mono text-zinc-500 mb-4">0{index + 1}</span>
+                          <span className="text-sm font-mono text-zinc-400 mb-4">0{index + 1}</span>
                           <div className="flex flex-wrap gap-2">
                               {service.tags.map(tag => (
                                   <span key={tag} className="text-xs uppercase tracking-wider border border-zinc-800 px-2 py-1 rounded-full text-zinc-400 bg-black/50 backdrop-blur-sm">
@@ -160,7 +160,7 @@ export default function AgencyServices() {
                           <h2 className="text-5xl md:text-8xl font-serif font-light mb-6 tracking-tight drop-shadow-lg">
                               {service.title}
                           </h2>
-                          <p className="text-lg md:text-2xl text-zinc-300 max-w-xl leading-relaxed font-light">
+                          <p className="text-lg md:text-2xl text-white max-w-xl leading-relaxed font-light">
                               {service.description}
                           </p>
                       </div>
@@ -172,7 +172,7 @@ export default function AgencyServices() {
       {/* CTA / Next Steps */}
       <section className="h-[50vh] flex items-center justify-center border-t border-zinc-800 mt-24 relative z-10 bg-black">
           <div className="text-center">
-              <p className="text-zinc-500 mb-4 uppercase tracking-widest text-sm">Ready to start?</p>
+              <p className="text-zinc-400 mb-4 uppercase tracking-widest text-sm">Ready to start?</p>
               <a href="#contact" className="text-4xl md:text-7xl font-bold hover:text-blue-500 transition-colors">
                   Let's Talk.
               </a>

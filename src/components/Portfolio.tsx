@@ -93,7 +93,7 @@ export default function Portfolio() {
   }, [activeProject]);
 
   return (
-    <section ref={containerRef} className="relative w-full py-32 bg-zinc-950 text-white overflow-hidden cursor-none">
+    <section ref={containerRef} className="relative w-full py-32 bg-black text-white overflow-hidden cursor-none">
        {/* Floating Cursor Image */}
       <div
         ref={cursorRef}
@@ -116,7 +116,7 @@ export default function Portfolio() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <h2 className="text-xl text-zinc-500 mb-12 uppercase tracking-widest border-b border-zinc-800 pb-4">Selected Works</h2>
+        <h2 className="text-xl text-zinc-400 mb-12 uppercase tracking-widest border-b border-zinc-800 pb-4">Selected Works</h2>
         
         <div className="flex flex-col">
           {projects.map((project, index) => (
@@ -130,7 +130,7 @@ export default function Portfolio() {
                 {project.name}
               </h3>
               <div className="flex flex-col items-end gap-2 text-right">
-                <span className="text-zinc-500 text-lg">{project.category}</span>
+                <span className="text-zinc-400 text-lg">{project.category}</span>
                 <ArrowUpRight className="w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:translate-x-2 group-hover:-translate-y-2" />
               </div>
             </div>

@@ -29,7 +29,7 @@ export default function Navigation() {
           { name: "Agency", href: "/agency" },
           { name: "Contact", href: "/contact" },
         ].map((item) => (
-          <Link key={item.name} href={item.href} className="hover:text-gray-400 transition-colors">
+          <Link key={item.name} href={item.href} className="hover:text-zinc-400 transition-colors">
             {item.name}
           </Link>
         ))}
@@ -67,7 +67,7 @@ export default function Navigation() {
             <Link
                 key={item.name}
                 href={item.href}
-                className="text-4xl font-bold hover:text-gray-400 transition-colors px-6 py-3"
+                className="text-4xl font-bold hover:text-zinc-400 transition-colors px-6 py-3"
                 onClick={() => setIsOpen(false)}
             >
                 {item.name}

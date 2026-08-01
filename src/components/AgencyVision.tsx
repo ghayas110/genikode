@@ -90,7 +90,7 @@ export default function AgencyVision() {
         <div className="max-w-5xl mx-auto text-center md:text-left mb-32 md:mb-48">
           <AnimatedText 
             text="Our work is grounded in research and experimentation. We help brands make sense of emerging technologies and turn them into clear, purposeful experiences that stay with people." 
-            className="text-3xl md:text-5xl lg:text-[4rem] font-medium leading-[1.1] text-zinc-100 mb-10 tracking-tight"
+            className="text-3xl md:text-5xl lg:text-[4rem] font-medium leading-[1.1] text-white mb-10 tracking-tight"
           />
           <AnimatedText 
             text="Everything we create is built in close collaboration with our clients and agency partners, working together to bring ideas to life with clarity and intention." 
@@ -119,24 +119,24 @@ export default function AgencyVision() {
           >
             <motion.h3 variants={fadeUpVariant} className="text-[4rem] md:text-[6rem] leading-[0.9] font-serif mb-16 md:mb-24 tracking-tighter">
               Our Mission<br />
-              <span className="italic text-zinc-500 font-light">& values</span>
+              <span className="italic text-zinc-400 font-light">& values</span>
             </motion.h3>
             
             <motion.div variants={fadeUpVariant} className="mb-24">
-              <span className="italic text-zinc-500 font-serif text-2xl md:text-3xl block mb-8">Why We Create</span>
+              <span className="italic text-zinc-400 font-serif text-2xl md:text-3xl block mb-8">Why We Create</span>
               <p className="text-zinc-400 leading-[1.8] text-sm md:text-base font-light max-w-md">
                 At Genikode, we design to champion the people behind the brands. We focus on solving real challenges so we can build better products and more human experiences. We believe in making a meaningful contribution through collaboration, care and craft, standing alongside our clients as partners and advocates. With a steady, supportive hand, we bring ideas to life, no matter the size, to create work that truly moves people.
               </p>
             </motion.div>
 
             <motion.div variants={fadeUpVariant}>
-              <span className="italic text-zinc-500 font-serif text-2xl md:text-3xl block mb-8">Our Values</span>
+              <span className="italic text-zinc-400 font-serif text-2xl md:text-3xl block mb-8">Our Values</span>
               <ul className="flex flex-col">
                 {values.map((value, index) => (
                   <motion.li 
                     key={value}
                     variants={fadeUpVariant}
-                    className="group flex flex-row items-center justify-between text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight py-6 border-b border-zinc-800 text-zinc-400 cursor-default transition-colors duration-500 hover:text-zinc-100"
+                    className="group flex flex-row items-center justify-between text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight py-6 border-b border-zinc-800 text-zinc-400 cursor-default transition-colors duration-500 hover:text-white"
                   >
                     <span>{value}</span>
                     <motion.span 
@@ -163,7 +163,7 @@ export default function AgencyVision() {
             <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-zinc-800 hidden lg:block" />
 
             <motion.div variants={fadeUpVariant} className="flex justify-between items-end mb-16 lg:ml-8">
-               <span className="text-xs lg:text-sm tracking-[0.2em] uppercase font-bold text-zinc-300">Capabilities</span>
+               <span className="text-xs lg:text-sm tracking-[0.2em] uppercase font-bold text-white">Capabilities</span>
             </motion.div>
             
             {/* Click-through Image Box that Changes Based on Hover */}
@@ -198,19 +198,19 @@ export default function AgencyVision() {
                   key={service.title} 
                   variants={fadeUpVariant}
                   onMouseEnter={() => setActiveCapability(index)}
-                  className="group cursor-pointer border-b border-zinc-800 hover:border-zinc-400 transition-colors"
+                  className="group cursor-pointer border-b border-zinc-800 hover:border-zinc-800 transition-colors"
                 >
                   <Link href={service.link} className="flex justify-between items-center py-6 md:py-8 w-full h-full">
                     <span 
                       className={`text-xl md:text-3xl transition-colors duration-500 font-light ${
-                        activeCapability === index ? "text-white" : "text-zinc-500 group-hover:text-zinc-300"
+                        activeCapability === index ? "text-white" : "text-zinc-400 group-hover:text-white"
                       }`}
                     >
                       {service.title}
                     </span>
                     <span 
                       className={`text-xs md:text-sm font-mono transition-colors duration-500 ${
-                        activeCapability === index ? "text-zinc-300" : "text-zinc-600 group-hover:text-zinc-400"
+                        activeCapability === index ? "text-white" : "text-zinc-400 group-hover:text-zinc-400"
                       }`}
                     >
                       [ 0{index + 1} ]

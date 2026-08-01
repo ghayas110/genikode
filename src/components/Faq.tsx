@@ -36,11 +36,11 @@ export default function Faq({ items, heading = "Frequently Asked Questions", eye
   return (
     <section
       aria-label={heading}
-      className="w-full bg-black text-white border-t border-zinc-900 py-20 md:py-28"
+      className="w-full bg-black text-white border-t border-zinc-800 py-20 md:py-28"
     >
       <div className="max-w-4xl mx-auto px-6 md:px-8">
         {eyebrow && (
-          <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-6">
+          <p className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-6">
             {eyebrow}
           </p>
         )}

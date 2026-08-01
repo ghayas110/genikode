@@ -192,7 +192,7 @@ export default function Chatbot() {
         <div
           role="dialog"
           aria-label="Chat with Genikode"
-          className="fixed bottom-24 right-6 z-[60] flex w-[calc(100vw-3rem)] max-w-sm flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 text-white shadow-2xl shadow-black/50"
+          className="fixed bottom-24 right-6 z-[60] flex w-[calc(100vw-3rem)] max-w-sm flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-black text-white shadow-2xl shadow-black/50"
           style={{ maxHeight: "min(70vh, 560px)" }}
         >
           {/* Header */}
@@ -212,12 +212,12 @@ export default function Chatbot() {
               m.from === "bot" ? (
                 <div key={i} className="max-w-[85%]">
                   {m.text && (
-                    <p className="rounded-2xl rounded-tl-sm bg-zinc-800 px-4 py-2.5 text-sm leading-relaxed text-zinc-100">
+                    <p className="rounded-2xl rounded-tl-sm bg-zinc-800 px-4 py-2.5 text-sm leading-relaxed text-white">
                       {m.text}
                     </p>
                   )}
                   {m.list && (
-                    <ul className="mt-1 space-y-1.5 rounded-2xl rounded-tl-sm bg-zinc-800 px-4 py-3 text-sm text-zinc-100">
+                    <ul className="mt-1 space-y-1.5 rounded-2xl rounded-tl-sm bg-zinc-800 px-4 py-3 text-sm text-white">
                       {m.list.map((item, j) => (
                         <li key={j} className="flex items-start gap-2">
                           <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
@@ -250,8 +250,8 @@ export default function Chatbot() {
                     (opt.variant === "whatsapp"
                       ? "bg-[#25D366] text-white hover:bg-[#1ebe5b]"
                       : opt.variant === "primary"
-                      ? "bg-white text-black hover:bg-zinc-200"
-                      : "border border-zinc-700 text-zinc-200 hover:border-white hover:text-white")
+                      ? "bg-white text-black hover:bg-zinc-800"
+                      : "border border-zinc-800 text-white hover:border-white hover:text-white")
                   }
                 >
                   {opt.label}

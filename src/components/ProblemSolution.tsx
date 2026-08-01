@@ -45,13 +45,13 @@ export default function ProblemSolution() {
           <div className="max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-                Complex <br/> <span className="text-zinc-500">Problems.</span>
+                Complex <br/> <span className="text-zinc-400">Problems.</span>
               </h2>
               <p className="text-xl text-zinc-400">
                 Spaghetti code, slow performance, and outdated design systems can slow down your growth.
               </p>
             </div>
-            <div className="relative w-full aspect-video border-2 border-dashed border-zinc-700 rounded-lg p-4 bg-zinc-950/50">
+            <div className="relative w-full aspect-video border-2 border-dashed border-zinc-800 rounded-lg p-4 bg-zinc-950/50">
                {/* Wireframe representation */}
                <div className="w-full h-4 bg-zinc-800 mb-4 rounded"></div>
                <div className="w-2/3 h-4 bg-zinc-800 mb-8 rounded"></div>
@@ -61,7 +61,7 @@ export default function ProblemSolution() {
                  <div className="h-24 bg-zinc-800 rounded"></div>
                </div>
                <div className="absolute inset-0 flex items-center justify-center">
-                 <span className="font-mono text-zinc-600 uppercase tracking-widest bg-zinc-950 px-2">Wireframe Mode</span>
+                 <span className="font-mono text-zinc-400 uppercase tracking-widest bg-black px-2">Wireframe Mode</span>
                </div>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function ProblemSolution() {
               <h2 className="text-4xl md:text-6xl font-bold mb-6">
                 Simple <br/> <span className="text-blue-600">Solutions.</span>
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-zinc-400">
                 We transform chaotic requirements into elegant, high-performance digital experiences.
               </p>
             </div>

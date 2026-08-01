@@ -59,10 +59,10 @@ export default function CaseStudiesPage() {
     <main className="bg-black text-white">
       {/* Hero */}
       <section className="px-6 md:px-8 pt-36 md:pt-44 pb-16 max-w-6xl mx-auto">
-        <nav aria-label="Breadcrumb" className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-10">
+        <nav aria-label="Breadcrumb" className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-10">
           <Link href="/" className="hover:text-white transition-colors">Home</Link>
           <span className="mx-2">/</span>
-          <span className="text-zinc-300">Case Studies</span>
+          <span className="text-white">Case Studies</span>
         </nav>
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-balance">
           Case studies: real products, real outcomes.
@@ -93,14 +93,14 @@ export default function CaseStudiesPage() {
               </div>
               <div className="p-8 flex flex-col flex-1">
                 <div className="flex items-center justify-between gap-4 mb-4">
-                  <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">
+                  <span className="text-xs font-mono uppercase tracking-widest text-zinc-400">
                     {study.category}
                   </span>
-                  <span className="text-xs font-mono text-zinc-600">{study.year}</span>
+                  <span className="text-xs font-mono text-zinc-400">{study.year}</span>
                 </div>
                 <h2 className="text-2xl font-bold tracking-tight mb-3 flex items-center gap-2">
                   {study.title}
-                  <ArrowUpRight className="w-5 h-5 text-zinc-500 group-hover:text-white transition-colors" />
+                  <ArrowUpRight className="w-5 h-5 text-zinc-400 group-hover:text-white transition-colors" />
                 </h2>
                 <p className="text-sm md:text-base text-zinc-400 leading-relaxed line-clamp-3">
                   {study.productAbout}
@@ -112,7 +112,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 md:px-8 py-24 border-t border-zinc-900 text-center">
+      <section className="px-6 md:px-8 py-24 border-t border-zinc-800 text-center">
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-balance">
           Want to be our next case study?
         </h2>

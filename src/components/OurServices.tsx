@@ -137,7 +137,7 @@ export default function OurServices() {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white/90">
                 {service.title}
               </h2>
-              <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-lg">
+              <p className="text-lg md:text-xl text-zinc-400 leading-relaxed max-w-lg">
                 {service.description}
               </p>
               <Link href={`/service/${service.id}`} className="mt-8 text-white border-b border-white pb-1 w-max hover:text-gray-300 hover:border-gray-300 transition-colors uppercase tracking-widest text-sm font-medium">

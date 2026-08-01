@@ -94,7 +94,7 @@ export default function ContactOld() {
         </div>
         
         {/* Right: Info */}
-        <div className="w-full md:w-1/4 bg-zinc-950 p-8 flex flex-col justify-center space-y-6">
+        <div className="w-full md:w-1/4 bg-black p-8 flex flex-col justify-center space-y-6">
            <div className="contact-header-text">
                <p className="text-xl md:text-2xl font-medium leading-snug text-zinc-400">
                 Ready to engineer your digital future? Reach out and let's create something extraordinary.
@@ -102,7 +102,7 @@ export default function ContactOld() {
            </div>
            
            <div className="contact-header-text pt-4">
-              <p className="text-sm text-zinc-600 uppercase tracking-widest mb-1">Prefer email?</p>
+              <p className="text-sm text-zinc-400 uppercase tracking-widest mb-1">Prefer email?</p>
               <a href="mailto:info@genikode.com" className="text-lg font-bold underline decoration-zinc-700 decoration-2 underline-offset-4 hover:text-white hover:decoration-white transition-all">
                 info@genikode.com
               </a>
@@ -116,13 +116,13 @@ export default function ContactOld() {
            
            {/* Name */}
            <div className={`contact-field group relative border-b border-zinc-800 md:border-r p-6 md:p-12 transition-colors duration-500 ${focusedField === 'name' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
-              <label htmlFor="name" className={`block text-sm mb-4 transition-colors ${focusedField === 'name' ? 'text-white' : 'text-zinc-500'}`}>01. What's your name? *</label>
+              <label htmlFor="name" className={`block text-sm mb-4 transition-colors ${focusedField === 'name' ? 'text-white' : 'text-zinc-400'}`}>01. What's your name? *</label>
               <input 
                 type="text" 
                 name="name" 
                 id="name"
                 placeholder="John Doe"
-                className="w-full bg-transparent text-2xl md:text-4xl font-light focus:outline-none placeholder-zinc-800 text-white transition-all"
+                className="w-full bg-transparent text-2xl md:text-4xl font-light focus:outline-none placeholder-zinc-600 text-white transition-all"
                 value={formData.name}
                 onChange={handleChange}
                 onFocus={() => setFocusedField('name')}
@@ -132,13 +132,13 @@ export default function ContactOld() {
 
            {/* Company */}
            <div className={`contact-field group relative border-b border-zinc-800 p-6 md:p-12 transition-colors duration-500 ${focusedField === 'company' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
-              <label htmlFor="company" className={`block text-sm mb-4 transition-colors ${focusedField === 'company' ? 'text-white' : 'text-zinc-500'}`}>02. What's your company name? (Optional)</label>
+              <label htmlFor="company" className={`block text-sm mb-4 transition-colors ${focusedField === 'company' ? 'text-white' : 'text-zinc-400'}`}>02. What's your company name? (Optional)</label>
               <input 
                 type="text" 
                 name="company" 
                 id="company"
                 placeholder="Acme Inc."
-                className="w-full bg-transparent text-2xl md:text-4xl font-light focus:outline-none placeholder-zinc-800 text-white transition-all"
+                className="w-full bg-transparent text-2xl md:text-4xl font-light focus:outline-none placeholder-zinc-600 text-white transition-all"
                 value={formData.company}
                 onChange={handleChange}
                 onFocus={() => setFocusedField('company')}
@@ -148,13 +148,13 @@ export default function ContactOld() {
 
            {/* Email */}
            <div className={`contact-field group relative border-b border-zinc-800 md:border-r p-6 md:p-12 transition-colors duration-500 ${focusedField === 'email' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
-              <label htmlFor="email" className={`block text-sm mb-4 transition-colors ${focusedField === 'email' ? 'text-white' : 'text-zinc-500'}`}>03. What's your email? *</label>
+              <label htmlFor="email" className={`block text-sm mb-4 transition-colors ${focusedField === 'email' ? 'text-white' : 'text-zinc-400'}`}>03. What's your email? *</label>
               <input 
                 type="email" 
                 name="email" 
                 id="email"
                 placeholder="john@acme.com"
-                className="w-full bg-transparent text-2xl md:text-4xl font-light focus:outline-none placeholder-zinc-800 text-white transition-all"
+                className="w-full bg-transparent text-2xl md:text-4xl font-light focus:outline-none placeholder-zinc-600 text-white transition-all"
                 value={formData.email}
                 onChange={handleChange}
                 onFocus={() => setFocusedField('email')}
@@ -164,7 +164,7 @@ export default function ContactOld() {
 
            {/* Budget */}
            <div className={`contact-field group relative border-b border-zinc-800 p-6 md:p-12 transition-colors duration-500 ${focusedField === 'budget' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
-              <label htmlFor="budget" className={`block text-sm mb-4 transition-colors ${focusedField === 'budget' ? 'text-white' : 'text-zinc-500'}`}>04. What's your budget range? *</label>
+              <label htmlFor="budget" className={`block text-sm mb-4 transition-colors ${focusedField === 'budget' ? 'text-white' : 'text-zinc-400'}`}>04. What's your budget range? *</label>
               <select 
                 name="budget" 
                 id="budget"
@@ -174,7 +174,7 @@ export default function ContactOld() {
                 onFocus={() => setFocusedField('budget')}
                 onBlur={() => setFocusedField(null)}
               >
-                 <option value="" className="bg-black text-zinc-500">Select a range</option>
+                 <option value="" className="bg-black text-zinc-400">Select a range</option>
                  <option value="<10k" className="bg-zinc-900 text-white">&lt; $10k</option>
                  <option value="10k-50k" className="bg-zinc-900 text-white">$10k - $50k</option>
                  <option value="50k-100k" className="bg-zinc-900 text-white">$50k - $100k</option>
@@ -184,13 +184,13 @@ export default function ContactOld() {
 
            {/* Message - Full Width */}
            <div className={`contact-field col-span-1 md:col-span-2 group relative p-6 md:p-12 transition-colors duration-500 ${focusedField === 'message' ? 'bg-zinc-900/50' : 'hover:bg-zinc-900/20'}`}>
-              <label htmlFor="message" className={`block text-sm mb-4 transition-colors ${focusedField === 'message' ? 'text-white' : 'text-zinc-500'}`}>05. Tell us about your project *</label>
+              <label htmlFor="message" className={`block text-sm mb-4 transition-colors ${focusedField === 'message' ? 'text-white' : 'text-zinc-400'}`}>05. Tell us about your project *</label>
               <textarea 
                 name="message" 
                 id="message"
                 rows={6}
                 placeholder="Describe your goals, timeline, and any other details..."
-                className="w-full bg-transparent text-2xl md:text-4xl font-light focus:outline-none placeholder-zinc-800 text-white resize-none transition-all"
+                className="w-full bg-transparent text-2xl md:text-4xl font-light focus:outline-none placeholder-zinc-600 text-white resize-none transition-all"
                 value={formData.message}
                 onChange={handleChange}
                 onFocus={() => setFocusedField('message')}
@@ -207,7 +207,7 @@ export default function ContactOld() {
                 {/* Progress Info */}
                 <div className="w-full md:w-2/3 bg-black/90 backdrop-blur-md p-4 md:px-8 md:py-8 flex items-center justify-between border-b md:border-b-0 md:border-r border-zinc-800">
                     <div className="flex items-center space-x-6">
-                        <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">Completion</span>
+                        <span className="text-xs font-medium uppercase tracking-widest text-zinc-400">Completion</span>
                         <div className="w-48 h-[2px] bg-zinc-800 overflow-hidden">
                              <div 
                                 className="h-full bg-white transition-all duration-700 ease-out"
@@ -232,7 +232,7 @@ export default function ContactOld() {
                 {/* Submit Button */}
                 <button 
                     onClick={handleSubmit}
-                    className="w-full md:w-1/3 bg-white text-black hover:bg-zinc-200 p-4 md:px-8 md:py-8 flex items-center justify-center space-x-3 transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-zinc-800 disabled:text-zinc-500"
+                    className="w-full md:w-1/3 bg-white text-black hover:bg-zinc-800 p-4 md:px-8 md:py-8 flex items-center justify-center space-x-3 transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-zinc-800 disabled:text-zinc-400"
                     disabled={filledFieldsCount < 3 || isSubmitting} // Disable if critical fields missing
                 >
                     <span className="text-lg font-bold uppercase tracking-widest">{isSubmitting ? "Sending..." : "Send Message"}</span>

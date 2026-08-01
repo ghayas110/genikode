@@ -68,7 +68,7 @@ export default function OfferPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white font-sans selection:bg-white selection:text-black pt-24">
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black pt-24">
 
       
       <main className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-16">
@@ -77,7 +77,7 @@ export default function OfferPage() {
         <div className="text-center mb-16 md:mb-24">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 mb-8 backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs font-semibold tracking-widest uppercase text-zinc-300">Limited-Time Offer</span>
+            <span className="text-xs font-semibold tracking-widest uppercase text-white">Limited-Time Offer</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 relative z-10">
@@ -109,11 +109,11 @@ export default function OfferPage() {
               {features.map((feature, idx) => (
                 <div key={idx} className="group relative">
                   <div className="absolute inset-0 bg-zinc-900 rounded-2xl md:rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative flex items-center gap-6 p-6 border border-zinc-800 rounded-2xl md:rounded-[32px] bg-zinc-900/30 backdrop-blur-md group-hover:border-zinc-700 transition-colors duration-500">
+                  <div className="relative flex items-center gap-6 p-6 border border-zinc-800 rounded-2xl md:rounded-[32px] bg-zinc-900/30 backdrop-blur-md group-hover:border-zinc-800 transition-colors duration-500">
                     <div className="w-16 h-16 rounded-full bg-black border border-zinc-800 flex items-center justify-center shrink-0">
                       {feature.icon}
                     </div>
-                    <span className="text-xl font-medium tracking-tight group-hover:text-white text-zinc-300 transition-colors duration-300">
+                    <span className="text-xl font-medium tracking-tight group-hover:text-white text-white transition-colors duration-300">
                       {feature.title}
                     </span>
                   </div>
@@ -134,7 +134,7 @@ export default function OfferPage() {
 
               {status === "success" ? (
                 <div className="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl text-center space-y-4">
-                  <div className="w-20 h-20 bg-black border border-zinc-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-20 h-20 bg-black border border-zinc-800 rounded-full flex items-center justify-center mx-auto mb-6">
                     <CheckCircle2 className="w-10 h-10 text-white" />
                   </div>
                   <h4 className="text-2xl font-bold">Details Received!</h4>
@@ -143,13 +143,13 @@ export default function OfferPage() {
                     href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0hcu4p_LLATLlT5yM1Q3eSxMNjJGa1prIZn_shDrxOfNtoCCOhugrMgRnFDFwTh0AXJFTGMvNJ"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-6 inline-block px-8 py-4 bg-white text-black font-semibold rounded-xl hover:bg-zinc-200 transition-colors"
+                    className="mt-6 inline-block px-8 py-4 bg-white text-black font-semibold rounded-xl hover:bg-zinc-800 transition-colors"
                   >
                     Continue to Calendar Scheduling
                   </a>
                   <button 
                     onClick={() => setStatus("idle")}
-                    className="mt-4 block w-full text-zinc-500 hover:text-white transition-colors underline"
+                    className="mt-4 block w-full text-zinc-400 hover:text-white transition-colors underline"
                   >
                     Start a new request
                   </button>
@@ -163,7 +163,7 @@ export default function OfferPage() {
                   )}
                   
                   <div className="space-y-4">
-                    <h4 className="text-lg font-semibold tracking-widest text-zinc-500 uppercase pb-2 border-b border-zinc-800">Your Details</h4>
+                    <h4 className="text-lg font-semibold tracking-widest text-zinc-400 uppercase pb-2 border-b border-zinc-800">Your Details</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label className="text-sm font-medium text-zinc-400">Full Name</label>
@@ -173,7 +173,7 @@ export default function OfferPage() {
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
+                          className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
                           placeholder="John Doe"
                         />
                       </div>
@@ -185,7 +185,7 @@ export default function OfferPage() {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
+                          className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
                           placeholder="john@example.com"
                         />
                       </div>
@@ -198,14 +198,14 @@ export default function OfferPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
+                        className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
                         placeholder="+1 (555) 000-0000"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-4 pt-6">
-                    <h4 className="text-lg font-semibold tracking-widest text-zinc-500 uppercase pb-2 border-b border-zinc-800">Project Specifics</h4>
+                    <h4 className="text-lg font-semibold tracking-widest text-zinc-400 uppercase pb-2 border-b border-zinc-800">Project Specifics</h4>
                     
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-zinc-400">What kind of website do you want?</label>
@@ -214,7 +214,7 @@ export default function OfferPage() {
                         name="websiteType"
                         value={formData.websiteType}
                         onChange={handleChange}
-                        className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-white transition-colors appearance-none"
+                        className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-white transition-colors appearance-none"
                       >
                         <option value="" disabled>Select website type...</option>
                         <option value="Corporate / Business">Corporate / Business</option>
@@ -233,7 +233,7 @@ export default function OfferPage() {
                         name="sections"
                         value={formData.sections}
                         onChange={handleChange}
-                        className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
+                        className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
                         placeholder="e.g. Home, About Us, Services, Portfolio, Contact"
                       />
                     </div>
@@ -247,7 +247,7 @@ export default function OfferPage() {
                           name="domain"
                           value={formData.domain}
                           onChange={handleChange}
-                          className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
+                          className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
                           placeholder="e.g. mybusiness.com"
                         />
                       </div>
@@ -258,7 +258,7 @@ export default function OfferPage() {
                           name="referenceLink"
                           value={formData.referenceLink}
                           onChange={handleChange}
-                          className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
+                          className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-4 text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
                           placeholder="Link to a site you like"
                         />
                       </div>
@@ -269,12 +269,12 @@ export default function OfferPage() {
                     <button
                       type="submit"
                       disabled={status === "loading"}
-                      className="w-full bg-white text-black text-lg font-bold uppercase tracking-widest py-5 rounded-xl hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2 group disabled:opacity-50"
+                      className="w-full bg-white text-black text-lg font-bold uppercase tracking-widest py-5 rounded-xl hover:bg-zinc-800 transition-colors flex items-center justify-center gap-2 group disabled:opacity-50"
                     >
                       {status === "loading" ? "Submitting..." : "Submit Details & Continue to Calendar"}
                       <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </button>
-                    <p className="text-center text-zinc-500 text-sm mt-4">
+                    <p className="text-center text-zinc-400 text-sm mt-4">
                       By submitting, you agree to our Terms & Conditions. You will be redirected to choose an appointment time.
                     </p>
                   </div>

@@ -139,8 +139,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section: Massive Text */}
-        <div className="relative border-t border-zinc-900 pt-8 flex flex-col items-center">
-             <div className="w-full flex justify-between items-center text-xs text-zinc-600 mb-4 uppercase tracking-widest">
+        <div className="relative border-t border-zinc-800 pt-8 flex flex-col items-center">
+             <div className="w-full flex justify-between items-center text-xs text-zinc-400 mb-4 uppercase tracking-widest">
                 <span>© {new Date().getFullYear()} Genikode</span>
                 <span>All Rights Reserved</span>
              </div>
