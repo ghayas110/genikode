@@ -28,8 +28,24 @@ interface Batch {
 
 const userProjects: Project[] = [
   {
+    id: "sarah-palace",
+    title: "Sarah Palace",
+    category: "Banquet Hall Management System",
+    image: "/images/work/sarah-palace.jpg",
+    href: "/work/sarah-palace",
+    badges: ["WEB", "UI"],
+  },
+  {
+    id: "skyline-ballroom",
+    title: "Skyline Ballroom",
+    category: "Ballroom & Catering Management",
+    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1600&auto=format&fit=crop",
+    href: "/work/skyline-ballroom",
+    badges: ["WEB", "UX"],
+  },
+  {
     id: "pos-system",
-    title: "SwiftPOS",
+    title: "Smart Mini Mart",
     category: "Point of Sale System",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1600&auto=format&fit=crop",
     href: "/work/pos-system",
@@ -37,7 +53,7 @@ const userProjects: Project[] = [
   },
   {
     id: "textile-erp",
-    title: "LoomERP",
+    title: "AJ Textiles",
     category: "Textile Industry ERP",
     image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1600&auto=format&fit=crop",
     href: "/work/textile-erp",
@@ -58,14 +74,6 @@ const userProjects: Project[] = [
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop",
     href: "/work/restaurant-management-system",
     badges: ["APP", "WEB", "UI"],
-  },
-  {
-    id: "crewlink-world",
-    title: "CrewLink World",
-    category: "Aviation Social App",
-    image: "/images/work/crewlink-world.svg",
-    href: "/work/crewlink-world",
-    badges: ["UI", "UX", "APP"],
   },
   {
     id: "digitalbank",

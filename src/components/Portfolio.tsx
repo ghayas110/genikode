@@ -8,8 +8,20 @@ import { div } from "three/tsl";
 
 const projects = [
   {
+    id: "sarah-palace",
+    name: "Sarah Palace",
+    category: "Banquet Hall Management System",
+    image: "/images/work/sarah-palace.jpg",
+  },
+  {
+    id: "skyline-ballroom",
+    name: "Skyline Ballroom",
+    category: "Ballroom & Catering Management",
+    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
     id: "pos-system",
-    name: "SwiftPOS",
+    name: "Smart Mini Mart",
     category: "Point of Sale System",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1600&auto=format&fit=crop",
   },
@@ -21,7 +33,7 @@ const projects = [
   },
   {
     id: "textile-erp",
-    name: "LoomERP",
+    name: "AJ Textiles",
     category: "Textile Industry ERP",
     image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1600&auto=format&fit=crop",
   },

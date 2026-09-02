@@ -8,7 +8,8 @@ const baseUrl = "https://genikode.com";
 
 // Curated case-study order for the hub.
 const order = [
-  "crewlink-world",
+  "sarah-palace",
+  "skyline-ballroom",
   "pos-system",
   "restaurant-management-system",
   "textile-erp",
@@ -23,7 +24,7 @@ const studies = order
   .map((slug) => ({ slug, ...projectsData[slug] }));
 
 export const metadata: Metadata = {
-  title: "Case Studies — Real Products We've Built | Genikode",
+  title: "Case Studies: Real Products We've Built",
   description:
     "Explore Genikode's case studies across fintech, healthcare, education, aviation, and corporate web — real products built for clients in Pakistan and worldwide with Next.js, React Native, and Node.js.",
   alternates: { canonical: `${baseUrl}/case-studies` },

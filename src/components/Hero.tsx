@@ -18,7 +18,7 @@ const layout = [
   { slug: "welab", l: 35, t: 13, w: 150, r: 5, ar: "4 / 5" },
   { slug: "xpertva", l: 63, t: 15, w: 208, r: -4, ar: "16 / 10" },
   { slug: "papersdock", l: 87, t: 24, w: 168, r: 6, ar: "4 / 5" },
-  { slug: "crewlink-world", l: 11, t: 66, w: 176, r: 5, ar: "1 / 1" },
+  { slug: "sarah-palace", l: 11, t: 66, w: 190, r: 5, ar: "4 / 3" },
   { slug: "pos-system", l: 34, t: 80, w: 160, r: -6, ar: "4 / 3" },
   { slug: "restaurant-management-system", l: 62, t: 78, w: 150, r: 7, ar: "4 / 5" },
   { slug: "clinic-management-system", l: 88, t: 66, w: 206, r: -5, ar: "4 / 3" },

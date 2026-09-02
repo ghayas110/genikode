@@ -3,6 +3,7 @@
 import { useLayoutEffect, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import LocationMap from "@/components/LocationMap";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -12,6 +13,7 @@ const sitemap = [
   { name: "Home", href: "/" },
   { name: "Our Agency", href: "/agency" },
   { name: "Founder", href: "/founder" },
+  { name: "Team", href: "/team" },
   { name: "Case Studies", href: "/case-studies" },
   { name: "Web Development", href: "/web-development" },
   { name: "Mobile App Development", href: "/mobile-app-development" },
@@ -106,6 +108,9 @@ export default function Footer() {
                   </a>
                 </p>
               </address>
+
+              {/* Compact location map (lazy-loaded) */}
+              <LocationMap height={170} className="mt-6" />
             </div>
           </div>
 

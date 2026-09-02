@@ -1,34 +1,44 @@
 // Project Database
 export const projectsData: Record<string, any> = {
-    // ⚠️ SCAFFOLD / PLACEHOLDER CASE STUDY — CrewLink World.
-    // Replace every [PLACEHOLDER ...] string and the metric values below with real,
-    // verified content before publishing. The metrics here are NOT real and must be
-    // confirmed; they appear in visible copy and in CreativeWork structured data.
-    "crewlink-world": {
-        title: "CrewLink World",
-        category: "Aviation Social App",
-        image: "/images/work/crewlink-world.svg", // branded vector poster; swap for a real screenshot when available
-        technology: ["React Native", "Node.js", "PostgreSQL", "WebSockets"],
+    // Real client — Sarah Palace, a wedding & event banquet hall in Karachi
+    // (sarahpalace.com). Photo is from the client's own site.
+    "sarah-palace": {
+        title: "Sarah Palace",
+        category: "Banquet Hall Management System",
+        image: "/images/work/sarah-palace.jpg",
+        technology: ["Next.js", "Node.js", "PostgreSQL"],
         year: "2025",
         productAbout:
-            "CrewLink World is a social networking app built for aviation professionals — pilots, cabin crew, and ground staff — to connect, coordinate layovers, swap rosters, and share verified industry knowledge in one trusted community.",
+            "Sarah Palace is a wedding and event banquet hall in Karachi. We built its booking and hall-management platform — a fast, mobile-friendly site where couples and families explore the halls, lawns, and gardens, check date availability, and request packages, while the venue manages every booking from a single dashboard.",
         howWeStarted:
-            "[PLACEHOLDER: How the engagement began — the founder's insight, the gap in the market, and why Genikode was chosen. Replace with the real origin story.]",
+            "Sarah Palace was handling enquiries over phone calls and WhatsApp, with dates and packages tracked by hand. Double-bookings and missed follow-ups were a constant risk, and there was no online presence to capture couples researching venues.",
         mission:
-            "[PLACEHOLDER: The product mission in one or two sentences — what CrewLink World set out to change for aviation crews worldwide.]",
+            "To give the venue a professional online presence that turns enquiries into bookings, and a simple back office that keeps every event, date, and payment organised in one place.",
         clientProblem:
-            "[PLACEHOLDER: The concrete problem the client faced — e.g. crews relying on fragmented WhatsApp groups with no verification, no roster tools, and no safe professional space.]",
+            "Bookings, availability, and customer follow-ups lived across phone notes, WhatsApp chats, and paper — hard to track, easy to lose, and impossible to see at a glance.",
         challenges:
-            "[PLACEHOLDER: The hardest technical and product challenges — e.g. verifying aviation credentials, real-time messaging at scale, time-zone-aware layover coordination.]",
+            "Presenting multiple event spaces, packages, and available dates clearly to families planning weddings, while giving the venue team a fast, no-training-needed way to manage enquiries and confirmed events.",
         solution:
-            "[PLACEHOLDER: How Genikode solved it — React Native cross-platform app, real-time WebSocket messaging, a verification pipeline, and a scalable Node.js backend. Replace with the real solution narrative.]",
-        // DEMO numbers for presentation — replace with REAL, verified metrics before launch.
-        metrics: [
-            { value: "25", suffix: "K+", label: "Verified crew members" },
-            { value: "68", suffix: "%", label: "Monthly active users" },
-            { value: "4.8", suffix: "★", label: "App Store rating" },
-            { value: "40", suffix: "+", label: "Countries reached" },
-        ],
+            "We designed and built a fast Next.js website showcasing the halls, lawns, and gardens with real photography, an enquiry and availability flow, and a Node.js and PostgreSQL back office where the team manages bookings, dates, packages, and follow-ups from one dashboard.",
+    },
+    "skyline-ballroom": {
+        title: "Skyline Ballroom",
+        category: "Ballroom & Catering Management",
+        image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2400&auto=format&fit=crop",
+        technology: ["Next.js", "Node.js", "PostgreSQL"],
+        year: "2025",
+        productAbout:
+            "Skyline Ballroom is an event venue with an in-house catering operation. We built a combined ballroom and catering management system that handles event bookings, hall availability, menu and package selection, guest counts, and kitchen coordination in one platform.",
+        howWeStarted:
+            "The venue was running two businesses at once — the ballroom and the catering — on separate, manual processes. Event details agreed with a client often didn't reach the kitchen cleanly, and availability was hard to keep straight across both.",
+        mission:
+            "To run the venue and its catering as one connected operation, so a booking, its menu, and its guest count flow straight to the team without re-keying or lost details.",
+        clientProblem:
+            "Ballroom bookings and catering orders were tracked separately, so menus, headcounts, and event dates fell out of sync — leading to last-minute scrambles and miscommunication with the kitchen.",
+        challenges:
+            "Modelling an event as a single booking that carries the hall, the date, the package, the guest count, and the catering menu together, and presenting it clearly to both the sales team and the kitchen.",
+        solution:
+            "We built a Next.js management system with a Node.js and PostgreSQL backend where each event is one record — hall, date, package, guest count, and catering menu in one place. The sales team books and quotes, and the kitchen sees confirmed menus and headcounts for every upcoming event.",
     },
     // ⚠️ PLACEHOLDER PROJECT NAME ("ServeOS") and PLACEHOLDER METRICS.
     // Rename to the real product/client and replace the [X] metric values with
@@ -67,13 +77,13 @@ export const projectsData: Record<string, any> = {
         ],
     },
     "pos-system": {
-        title: "SwiftPOS",
+        title: "Smart Mini Mart",
         category: "Point of Sale System",
         image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1600&auto=format&fit=crop",
         technology: ["React", "Electron", "Node.js", "PostgreSQL"],
         year: "2025",
         productAbout:
-            "SwiftPOS is a fast, offline-first point-of-sale platform for retail stores — handling billing, barcode scanning, inventory, and real-time sales reporting from a single, intuitive interface that keeps selling even when the internet drops.",
+            "Smart Mini Mart is a retail store we built a fast, offline-first point-of-sale system for — handling billing, barcode scanning, inventory, and real-time sales reporting from a single, intuitive interface that keeps selling even when the internet drops.",
         howWeStarted:
             "Retailers were losing sales to slow, internet-dependent terminals that froze during peak hours. We set out to build a POS that stays instant at the counter and never blocks a sale because of a weak connection.",
         mission:
@@ -86,13 +96,13 @@ export const projectsData: Record<string, any> = {
             "We built a desktop POS in React and Electron backed by a local database that syncs to a Node.js and PostgreSQL cloud backend. Sales continue offline and reconcile automatically, with live dashboards for multi-branch inventory, staff, and reporting.",
     },
     "textile-erp": {
-        title: "LoomERP",
+        title: "AJ Textiles",
         category: "Textile Industry ERP",
         image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1600&auto=format&fit=crop",
         technology: ["Next.js", "Node.js", "PostgreSQL", "GraphQL"],
         year: "2024",
         productAbout:
-            "LoomERP is an enterprise resource planning platform built for textile manufacturers — managing spinning, weaving, dyeing, inventory, production planning, procurement, and order tracking end to end in one system.",
+            "For AJ Textiles, a textile manufacturer, we built an enterprise resource planning platform — managing spinning, weaving, dyeing, inventory, production planning, procurement, and order tracking end to end in one system.",
         howWeStarted:
             "A textile mill was running production on disconnected registers and legacy software that couldn't keep pace with orders. They needed a modern ERP that understood the realities of a factory floor.",
         mission:
