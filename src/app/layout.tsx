@@ -30,7 +30,10 @@ export const metadata: Metadata = {
   keywords: ["digital agency", "web development", "mobile apps", "UI/UX design", "seo", "branding", "web design"],
   authors: [{ name: "Genikode" }],
   creator: "Genikode",
-  metadataBase: new URL('https://genikode.com'), // replace with actual prod domain
+  metadataBase: new URL('https://genikode.com'),
+  alternates: {
+    canonical: './',
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
