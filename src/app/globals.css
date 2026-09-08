@@ -109,6 +109,20 @@ html.lenis body {
   pointer-events: none;
 }
 
+/* Hero cards start clustered — matching the GSAP scroll-zoom start state — so
+   there's no flash of the fully-spread layout before JS runs (the "populate
+   then snap back to zero" glitch). GSAP then takes over via inline transform.
+   Reduced-motion users skip the zoom and see the spread layout directly. */
+.cards-layer {
+  transform: scale(0.42);
+  transform-origin: 50% 50%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cards-layer {
+    transform: none;
+  }
+}
+
 /* ─────────────────────────────────────────────────────────────
    UI/UX polish (guided by ui-ux-pro-max: accessibility priority
    #1 + Liquid Glass style direction)
