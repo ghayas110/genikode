@@ -1,13 +1,5 @@
-"use client";
-
-import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ChevronLeft, ChevronRight, Plus, Minus } from "lucide-react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface Project {
   id: string;
@@ -18,15 +10,48 @@ interface Project {
   badges: string[];
 }
 
-interface Batch {
-  id: string;
-  title: string;
-  count: number;
-  dateRange: string;
-  projects: Project[];
-}
-
 const userProjects: Project[] = [
+  // Real, live 2026 client sites — links go straight to the deployed product.
+  {
+    id: "dentalandcosmetics",
+    title: "Dental & Cosmetics Clinic",
+    category: "Healthcare / Clinic Website",
+    image: "/images/work/dentalandcosmetics.png",
+    href: "https://dentalandcosmetics.vercel.app",
+    badges: ["WEB", "UI"],
+  },
+  {
+    id: "royaldental",
+    title: "Royal Dental & Aesthetic Clinic",
+    category: "Healthcare / Clinic Website",
+    image: "/images/work/royaldental.png",
+    href: "https://royaldentalandaestheticclinic.vercel.app",
+    badges: ["WEB"],
+  },
+  {
+    id: "moosaministry",
+    title: "Moosa Ministry",
+    category: "Food & Restaurant Brand",
+    image: "/images/work/moosaministry.png",
+    href: "https://moosaministry.vercel.app",
+    badges: ["WEB", "UI"],
+  },
+  {
+    id: "alamantrust",
+    title: "Al-Aman Trust",
+    category: "Nonprofit / Trust Website",
+    image: "/images/work/alamantrust.png",
+    href: "https://alamantrustlltd.vercel.app",
+    badges: ["WEB"],
+  },
+  {
+    id: "shariahcompliance",
+    title: "Shariah Compliance Solutions",
+    category: "Finance & Consulting Website",
+    image: "/images/work/shariahcompliance.png",
+    href: "https://shariahcompliancessolutions.vercel.app",
+    badges: ["WEB", "UI"],
+  },
   {
     id: "sarah-palace",
     title: "Sarah Palace",
@@ -111,30 +136,16 @@ const userProjects: Project[] = [
 
 const batches: Batch[] = [
   {
-    id: "batch-7",
-    title: "Batch 07",
-    count: 4,
-    dateRange: "JULY — OCTOBER / 2025",
+    id: "batch-8",
+    title: "Batch 08",
+    count: userProjects.length,
+    dateRange: "2026 / CURRENT",
     projects: userProjects,
-  },
-  {
-    id: "batch-6",
-    title: "Batch 06",
-    count: 0,
-    dateRange: "MARCH — JUNE / 2025",
-    projects: [],
-  },
-  {
-    id: "batch-5",
-    title: "Batch 05",
-    count: 0,
-    dateRange: "NOVEMBER — FEBRUARY / 2024-25",
-    projects: [],
   },
 ];
 
 export default function WorkList() {
-  const [openBatch, setOpenBatch] = useState<string | null>("batch-7");
+  const [openBatch, setOpenBatch] = useState<string | null>("batch-8");
   const containerRef = useRef<HTMLDivElement>(null);
   const sliderRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
@@ -163,7 +174,7 @@ export default function WorkList() {
         '23
       </div>
       <div className="absolute top-10 right-4 md:right-10 text-[15vw] md:text-[20vw] font-bold leading-none text-white/5 select-none pointer-events-none z-0">
-        '25
+        '26
       </div>
 
       {/* Main Content */}
@@ -224,11 +235,12 @@ export default function WorkList() {
                       ref={el => { sliderRefs.current[batch.id] = el }}
                       className="flex gap-4 md:gap-6 overflow-x-auto no-scrollbar pb-10 px-2 scroll-smooth"
                     >
-                      {batch.projects.map((project) => (
-                        <div key={project.id} className="min-w-[280px] md:min-w-[450px] flex-shrink-0">
-                          <Link href={project.href} className="group/card block">
+                      {batch.projects.map((project) => {
+                        const isExternal = project.href.startsWith("http");
+                        const cardInner = (
+                          <>
                             <div className="relative aspect-[16/10] bg-zinc-900 overflow-hidden mb-4 border border-white/5 group-hover/card:border-white/20 transition-colors">
-                              <Image 
+                              <Image
                                 src={project.image}
                                 alt={project.title}
                                 fill
@@ -242,6 +254,11 @@ export default function WorkList() {
                                     </span>
                                 ))}
                               </div>
+                              {isExternal && (
+                                <span className="absolute top-4 right-4 flex items-center gap-1 bg-emerald-500/90 text-[8px] md:text-[10px] font-bold px-2 py-0.5 rounded-sm text-white uppercase tracking-wider">
+                                  Live
+                                </span>
+                              )}
                             </div>
                             <div>
                                 <h3 className="text-sm md:text-base font-bold mb-1 uppercase tracking-tight">
@@ -251,9 +268,22 @@ export default function WorkList() {
                                     {project.category}
                                 </p>
                             </div>
-                          </Link>
-                        </div>
-                      ))}
+                          </>
+                        );
+                        return (
+                          <div key={project.id} className="min-w-[280px] md:min-w-[450px] flex-shrink-0">
+                            {isExternal ? (
+                              <a href={project.href} target="_blank" rel="noopener noreferrer" className="group/card block">
+                                {cardInner}
+                              </a>
+                            ) : (
+                              <Link href={project.href} className="group/card block">
+                                {cardInner}
+                              </Link>
+                            )}
+                          </div>
+                        );
+                      })}
                     </div>
 
                     {/* Slider Navigation */}

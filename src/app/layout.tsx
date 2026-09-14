@@ -23,11 +23,11 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "Genikode | Elite Digital Agency",
+    default: "Genikode | Software House, Web & App Development, Karachi",
     template: "%s | Genikode"
   },
-  description: "Genikode is a premium digital agency specializing in high-performance web development, mobile apps, UI/UX, and brand building. We engineer digital futures.",
-  keywords: ["digital agency", "web development", "mobile apps", "UI/UX design", "seo", "branding", "web design"],
+  description: "Genikode is a software house and web & mobile app development company in Karachi, Pakistan. We build custom software, high-performance websites, and iOS/Android apps for startups and businesses worldwide.",
+  keywords: ["software house", "software development company", "web development company", "mobile app development", "app development company Karachi", "website development", "React Native development", "Next.js development", "software house Karachi", "UI/UX design"],
   authors: [{ name: "Genikode" }],
   creator: "Genikode",
   metadataBase: new URL('https://genikode.com'),
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://genikode.com",
-    title: "Genikode | Elite Digital Agency",
-    description: "Genikode is a premium digital agency specializing in high-performance web development, mobile apps, UI/UX, and brand building.",
+    title: "Genikode | Software House & App Development Company, Karachi",
+    description: "A Karachi software house building custom software, websites, and mobile apps for startups and businesses worldwide.",
     siteName: "Genikode",
     images: [{
       url: "/og-image.jpg", // Create this image later or assume it exists in public/
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Genikode | Elite Digital Agency",
-    description: "Genikode is a premium digital agency specializing in high-performance web development, mobile apps, UI/UX, and brand building.",
+    title: "Genikode | Software House & App Development Company, Karachi",
+    description: "A Karachi software house building custom software, websites, and mobile apps for startups and businesses worldwide.",
     images: ["/og-image.jpg"],
   },
   robots: {
