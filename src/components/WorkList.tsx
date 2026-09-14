@@ -134,35 +134,13 @@ const userProjects: Project[] = [
   },
 ];
 
-const batches: Batch[] = [
-  {
-    id: "batch-8",
-    title: "Batch 08",
-    count: userProjects.length,
-    dateRange: "2026 / CURRENT",
-    projects: userProjects,
-  },
-];
+// Landscape aspect variants give the masonry a gentle height rhythm without
+// cropping website screenshots awkwardly.
+const ratios = ["16 / 10", "4 / 3", "16 / 11", "3 / 2", "5 / 4", "16 / 10"];
 
 export default function WorkList() {
-  const [openBatch, setOpenBatch] = useState<string | null>("batch-8");
-  const containerRef = useRef<HTMLDivElement>(null);
-  const sliderRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
-
-  const toggleBatch = (batchId: string) => {
-    setOpenBatch(openBatch === batchId ? null : batchId);
-  };
-
-  const scrollSlider = (batchId: string, direction: "left" | "right") => {
-    const slider = sliderRefs.current[batchId];
-    if (slider) {
-      const scrollAmount = direction === "left" ? -400 : 400;
-      slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
-
   return (
-    <div ref={containerRef} className="relative min-h-screen w-full bg-black text-white overflow-hidden">
+    <div className="relative min-h-screen w-full bg-black text-white overflow-hidden">
       {/* Grain/Noise Overlay */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.2] z-10"
@@ -193,136 +171,61 @@ export default function WorkList() {
             </p>
         </div>
 
-        {/* Filters/Tabs Placeholder */}
-        <div className="flex justify-between items-center border-b border-white/10 pb-4 mb-0">
-            <div className="flex gap-10 text-[10px] md:text-xs font-mono opacity-40">
-                <span>BATCH</span>
-                <span className="hidden md:block">PROJECTS</span>
-            </div>
-            <div className="text-[10px] md:text-xs font-mono opacity-40">
-                TIMELINE
-            </div>
-        </div>
-
-        {/* Batches Accordions */}
-        <div className="divide-y divide-white/10">
-          {batches.map((batch) => (
-            <div key={batch.id} className="group">
-              <button 
-                onClick={() => toggleBatch(batch.id)}
-                className="w-full flex justify-between items-center py-6 md:py-8 hover:bg-white/5 transition-colors px-2"
-              >
-                <div className="flex items-center gap-10 md:gap-40">
-                    <span className="text-xl md:text-2xl font-bold">[ {batch.title} ]</span>
-                    <span className="hidden md:block text-sm md:text-base opacity-40">[{batch.count}]</span>
-                </div>
-                <div className="flex items-center gap-6">
-                    <span className="text-[10px] md:text-sm font-mono opacity-40 uppercase">{batch.dateRange}</span>
-                    {openBatch === batch.id ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                </div>
-              </button>
-
-              {/* Accordion Content */}
-              <div 
-                className={`overflow-hidden transition-all duration-700 ease-in-out ${
-                  openBatch === batch.id ? "max-h-[800px] opacity-100 mb-12" : "max-h-0 opacity-0"
-                }`}
-              >
-                {batch.projects.length > 0 ? (
-                  <div className="relative pt-8">
-                    {/* Horizontal Slider */}
-                    <div 
-                      ref={el => { sliderRefs.current[batch.id] = el }}
-                      className="flex gap-4 md:gap-6 overflow-x-auto no-scrollbar pb-10 px-2 scroll-smooth"
-                    >
-                      {batch.projects.map((project) => {
-                        const isExternal = project.href.startsWith("http");
-                        const cardInner = (
-                          <>
-                            <div className="relative aspect-[16/10] bg-zinc-900 overflow-hidden mb-4 border border-white/5 group-hover/card:border-white/20 transition-colors">
-                              <Image
-                                src={project.image}
-                                alt={project.title}
-                                fill
-                                className="object-cover opacity-70 group-hover/card:opacity-100 transition-all duration-500 scale-100 group-hover/card:scale-105"
-                              />
-                              {/* Badges */}
-                              <div className="absolute top-4 left-4 flex gap-2">
-                                {project.badges.map(badge => (
-                                    <span key={badge} className="bg-white/10 backdrop-blur-md text-[8px] md:text-[10px] font-bold px-2 py-0.5 rounded-sm text-white uppercase tracking-wider">
-                                        {badge}
-                                    </span>
-                                ))}
-                              </div>
-                              {isExternal && (
-                                <span className="absolute top-4 right-4 flex items-center gap-1 bg-emerald-500/90 text-[8px] md:text-[10px] font-bold px-2 py-0.5 rounded-sm text-white uppercase tracking-wider">
-                                  Live
-                                </span>
-                              )}
-                            </div>
-                            <div>
-                                <h3 className="text-sm md:text-base font-bold mb-1 uppercase tracking-tight">
-                                    {project.title}
-                                </h3>
-                                <p className="text-[10px] md:text-xs opacity-40 uppercase font-medium">
-                                    {project.category}
-                                </p>
-                            </div>
-                          </>
-                        );
-                        return (
-                          <div key={project.id} className="min-w-[280px] md:min-w-[450px] flex-shrink-0">
-                            {isExternal ? (
-                              <a href={project.href} target="_blank" rel="noopener noreferrer" className="group/card block">
-                                {cardInner}
-                              </a>
-                            ) : (
-                              <Link href={project.href} className="group/card block">
-                                {cardInner}
-                              </Link>
-                            )}
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    {/* Slider Navigation */}
-                    <div className="flex gap-2 mt-4 justify-center md:justify-start">
-                        <button 
-                            onClick={() => scrollSlider(batch.id, "left")}
-                            className="p-3 border border-white/10 hover:border-white/40 transition-colors rounded-full"
-                        >
-                            <ChevronLeft className="w-5 h-5 text-zinc-400" />
-                        </button>
-                        <button 
-                            onClick={() => scrollSlider(batch.id, "right")}
-                            className="p-3 border border-white/10 hover:border-white/40 transition-colors rounded-full"
-                        >
-                            <ChevronRight className="w-5 h-5 text-zinc-400" />
-                        </button>
-                    </div>
+        {/* Masonry grid — every project visible at once */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-5">
+          {userProjects.map((project, i) => {
+            const isExternal = project.href.startsWith("http");
+            const inner = (
+              <>
+                <div
+                  className="relative overflow-hidden rounded-xl bg-zinc-900 border border-white/10 group-hover/card:border-white/30 transition-colors"
+                  style={{ aspectRatio: ratios[i % ratios.length] }}
+                >
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} - ${project.category}`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover object-top opacity-80 group-hover/card:opacity-100 group-hover/card:scale-[1.04] transition-all duration-500"
+                  />
+                  <div className="absolute top-3 left-3 flex gap-2">
+                    {project.badges.map((badge) => (
+                      <span key={badge} className="bg-white/10 backdrop-blur-md text-[8px] md:text-[10px] font-bold px-2 py-0.5 rounded-sm text-white uppercase tracking-wider">
+                        {badge}
+                      </span>
+                    ))}
                   </div>
-                ) : (
-                    <div className="py-20 text-center opacity-20 font-mono italic">
-                        No projects in this archive batch.
-                    </div>
-                )}
-              </div>
-            </div>
-          ))}
+                  {isExternal && (
+                    <span className="absolute top-3 right-3 flex items-center gap-1.5 bg-emerald-500/90 text-[8px] md:text-[10px] font-bold px-2 py-0.5 rounded-sm text-white uppercase tracking-wider">
+                      <span className="h-1.5 w-1.5 rounded-full bg-white" /> Live
+                    </span>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
+                </div>
+                <div className="mt-3 mb-1">
+                  <h3 className="text-sm md:text-base font-bold uppercase tracking-tight">
+                    {project.title}
+                  </h3>
+                  <p className="text-[10px] md:text-xs opacity-40 uppercase font-medium">
+                    {project.category}
+                  </p>
+                </div>
+              </>
+            );
+            const cls = "mb-5 block break-inside-avoid group/card";
+            return isExternal ? (
+              <a key={project.id} href={project.href} target="_blank" rel="noopener noreferrer" className={cls}>
+                {inner}
+              </a>
+            ) : (
+              <Link key={project.id} href={project.href} className={cls}>
+                {inner}
+              </Link>
+            );
+          })}
         </div>
 
       </div>
-
-      <style jsx global>{`
-        .no-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
     </div>
   );
 }
