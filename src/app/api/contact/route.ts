@@ -5,6 +5,22 @@ export async function POST(req: Request) {
     try {
         const data = await req.json();
 
+        // Gmail credentials are required to send. Missing them is the #1 cause of
+        // "Failed to send message" — surface a clear reason instead of a generic 500.
+        if (!process.env.GMAIL_APP_PASSWORD) {
+            console.error(
+                'GMAIL_APP_PASSWORD is not set. Add it to .env.local (see setup notes) and restart the server.'
+            );
+            return NextResponse.json(
+                {
+                    success: false,
+                    message:
+                        'Email is not configured on the server (missing GMAIL_APP_PASSWORD).',
+                },
+                { status: 500 }
+            );
+        }
+
         // Formatter logic depending on which form was submitted
         const isOldContact = "budget" in data;
 
@@ -27,7 +43,6 @@ export async function POST(req: Request) {
         <p><strong>Name:</strong> ${data.firstName} ${data.lastName}</p>
         <p><strong>Company:</strong> ${data.companyName}</p>
         <p><strong>Company Email:</strong> ${data.companyEmail}</p>
-        <p><strong>Website:</strong> ${data.companyWebsite}</p>
         <p><strong>Newsletter Opt-In:</strong> ${data.newsletter ? 'Yes' : 'No'}</p>
         <p><strong>Project Details (Scope, Timeline, Budget):</strong><br/> ${data.projectDetails}</p>
       `;

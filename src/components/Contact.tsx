@@ -17,7 +17,6 @@ export default function Contact() {
     lastName: "",
     companyName: "",
     companyEmail: "",
-    companyWebsite: "",
     projectDetails: "",
     newsletter: false,
   });
@@ -52,7 +51,7 @@ export default function Contact() {
         alert("Thank you! Your inquiry has been sent to ghayas110@gmail.com.");
         setFormData({
           firstName: "", lastName: "", companyName: "",
-          companyEmail: "", companyWebsite: "", projectDetails: "", newsletter: false
+          companyEmail: "", projectDetails: "", newsletter: false
         });
       } else {
         alert("Failed to send message.");
@@ -201,17 +200,6 @@ export default function Contact() {
                 />
             </div>
             
-            <div className="form-element col-span-1 md:col-span-2 flex flex-col gap-2">
-                <label className="text-xs uppercase tracking-wider text-zinc-400 font-medium">Company website url*</label>
-                <input 
-                    type="text" 
-                    name="companyWebsite" 
-                    placeholder="https://"
-                    className="bg-zinc-900/30 border border-zinc-800 rounded p-4 text-lg focus:border-white focus:bg-zinc-900 focus:outline-none transition-all text-white placeholder:text-zinc-400"
-                    value={formData.companyWebsite} onChange={handleChange}
-                />
-            </div>
-
             <div className="form-element col-span-1 md:col-span-2 flex flex-col gap-2 mt-4">
                 <label className="text-xs uppercase tracking-wider text-zinc-400 font-medium">Tell us about the project (Scope, Timeline, Budget)*</label>
                 <textarea 

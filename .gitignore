@@ -33,6 +33,12 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# ---- Genikode CRM (LOCAL ONLY — never pushed) ----
+# The whole CRM lives under these paths and stays on this machine only.
+/src/app/crm/
+/src/app/api/crm/
+/crm-data/
+
 # vercel
 .vercel
 
