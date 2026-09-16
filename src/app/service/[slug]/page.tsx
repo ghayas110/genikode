@@ -4,13 +4,21 @@ import { servicesData } from "./data";
 import Faq from "@/components/Faq";
 import { getServiceFaqs } from "@/data/faqs";
 
+// Pre-render every service page as static HTML at build time so Google can crawl
+// them reliably (and fast). Covers all slugs in servicesData.
+export function generateStaticParams() {
+  return Object.keys(servicesData).map((slug) => ({ slug }));
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
   const service = servicesData[slug] || servicesData["web-design"];
 
   return {
-    title: `${service.title} Services | Genikode`,
+    // Root layout applies the "%s | Genikode" template, so keep the brand out here
+    // (otherwise the title doubles: "… | Genikode | Genikode").
+    title: `${service.title} Services`,
     description: service.overview,
     openGraph: {
       title: `${service.title} | Genikode Elite Services`,
