@@ -52,13 +52,19 @@ export async function POST(req: Request) {
 
         const subjectName = isOldContact ? data.name : `${data.firstName} ${data.lastName}`;
 
+        // Google shows the App Password as "xxxx xxxx xxxx xxxx"; the spaces are for
+        // display only. Pasting them into the env var is the #1 cause of a valid key
+        // failing auth (535), so strip all whitespace defensively.
+        const gmailPass = (process.env.GMAIL_APP_PASSWORD || '').replace(/\s+/g, '');
+        const gmailUser = process.env.GMAIL_USER || 'ghayas110@gmail.com';
+
         const transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
             port: 465,
             secure: true,
             auth: {
-                user: process.env.GMAIL_USER || 'ghayas110@gmail.com',
-                pass: process.env.GMAIL_APP_PASSWORD // Must be a 16-character Google App Password
+                user: gmailUser,
+                pass: gmailPass // 16-char Google App Password (whitespace stripped)
             }
         });
 
@@ -75,6 +81,20 @@ export async function POST(req: Request) {
         return NextResponse.json({ success: true, message: 'Message sent successfully!' });
     } catch (error) {
         console.error('Failed to send email:', error);
-        return NextResponse.json({ success: false, message: 'Failed to send message.' }, { status: 500 });
+        // Surface the real SMTP reason (e.g. 535 "Username and Password not accepted")
+        // so misconfiguration is diagnosable instead of a blank "Failed to send".
+        const err = error as { code?: string; responseCode?: number; response?: string; message?: string };
+        const reason =
+            err.response || err.message || 'Unknown mail error';
+        return NextResponse.json(
+            {
+                success: false,
+                message: 'Failed to send message.',
+                code: err.code || null,
+                responseCode: err.responseCode || null,
+                reason: String(reason).slice(0, 300),
+            },
+            { status: 500 }
+        );
     }
 }
