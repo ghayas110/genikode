@@ -130,6 +130,9 @@ export default function OurServices() {
                     src={service.image}
                     alt={service.title}
                     fill
+                    // Mobile-only image (md:hidden): full width on phones, 1px hint on
+                    // desktop so browsers never fetch the 3840px default variant.
+                    sizes="(max-width: 767px) 100vw, 1px"
                     className="object-cover"
                   />
               </div>
@@ -159,6 +162,8 @@ export default function OurServices() {
                             src={service.image}
                             alt={service.title}
                             fill
+                            // Desktop-only half-width panel (hidden md:flex).
+                            sizes="(min-width: 1280px) 600px, (min-width: 768px) 50vw, 1px"
                             className="object-cover"
                             priority={index === 0}
                         />

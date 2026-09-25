@@ -117,10 +117,12 @@ export default function Portfolio() {
                 key={project.id}
                 className={`absolute inset-0 transition-opacity duration-300 ${activeProject === index ? 'opacity-100' : 'opacity-0'}`}
             >
-                <Image 
-                    src={project.image} 
-                    alt={project.name} 
-                    fill 
+                <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    // Desktop-only 600px cursor preview (hidden md:block).
+                    sizes="(min-width: 768px) 600px, 1px"
                     className="object-contain"
                 />
             </div>

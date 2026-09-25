@@ -17,6 +17,7 @@ export default function Navigation() {
           src="/logo-transparent.png"
           alt="Genikode Logo"
           fill
+          sizes="128px"
           className="object-contain drop-shadow-[0_1px_10px_rgba(0,0,0,0.55)]"
         />
       </Link>

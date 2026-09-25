@@ -84,14 +84,14 @@ export default function Tagline() {
              {/* Left Avatar (Ghayas) */}
              <motion.div variants={avatarVariant} className="absolute left-2 md:left-10 lg:-left-10 -top-4 md:-top-20 z-30">
                <div className="w-16 h-16 md:w-32 md:h-32 xl:w-40 xl:h-40 rounded-full overflow-hidden border border-zinc-800 relative grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110 shadow-2xl hover:border-zinc-800 group cursor-pointer">
-                 <Image src="/images/team/ghayas.png" alt="Ghayas" fill className="object-cover object-top" />
+                 <Image src="/images/team/ghayas.png" alt="Ghayas" fill sizes="(min-width: 1280px) 160px, (min-width: 768px) 128px, 64px" className="object-cover object-top" />
                </div>
              </motion.div>
 
              {/* Right Avatar (Kisa) */}
              <motion.div variants={avatarVariant} className="absolute right-2 md:right-10 lg:-right-4 bottom-2 md:-bottom-10 z-30">
                <div className="w-14 h-14 md:w-28 md:h-28 xl:w-36 xl:h-36 rounded-full overflow-hidden border border-zinc-800 relative grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110 shadow-2xl hover:border-zinc-800 group cursor-pointer">
-                 <Image src="/images/team/kisa.png" alt="Kisa" fill className="object-cover object-top" />
+                 <Image src="/images/team/kisa.png" alt="Kisa" fill sizes="(min-width: 1280px) 144px, (min-width: 768px) 112px, 56px" className="object-cover object-top" />
                </div>
              </motion.div>
 
