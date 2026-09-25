@@ -210,7 +210,7 @@ export default function Hero() {
                 <span className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 <span className="absolute inset-x-3 bottom-3">
                   <span className="block text-sm font-semibold text-white">{c.title}</span>
-                  <span className="block text-[11px] text-white/60">{c.category}</span>
+                  <span className="block text-xs text-white/60">{c.category}</span>
                 </span>
               </Link>
             ))}

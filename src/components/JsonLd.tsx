@@ -117,16 +117,8 @@ export default function JsonLd() {
           "Genikode — digital agency building high-performance websites and mobile apps.",
         publisher: { "@id": orgId },
         inLanguage: "en",
-        // NOTE: targets /search which does not exist yet — build that page so the
-        // SearchAction resolves, or remove this potentialAction.
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${baseUrl}/search?q={search_term_string}`,
-          },
-          "query-input": "required name=search_term_string",
-        },
+        // No SearchAction: there is no /search page, and Google retired the
+        // sitelinks search box anyway.
       },
     ],
   };

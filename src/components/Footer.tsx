@@ -31,7 +31,7 @@ const socials = [
 
 export default function Footer() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const titleRef = useRef<HTMLParagraphElement>(null);
 
   const pathname = usePathname();
 
@@ -98,12 +98,12 @@ export default function Footer() {
                   Karachi, Sindh, Pakistan
                 </p>
                 <p>
-                  <a href="tel:+923002661456" className="hover:text-white transition-colors">
+                  <a href="tel:+923002661456" className="inline-flex min-h-11 items-center md:min-h-0 hover:text-white transition-colors">
                     +92 300 2661456
                   </a>
                 </p>
                 <p>
-                  <a href="mailto:info@genikode.com" className="hover:text-white transition-colors">
+                  <a href="mailto:info@genikode.com" className="inline-flex min-h-11 items-center md:min-h-0 hover:text-white transition-colors">
                     info@genikode.com
                   </a>
                 </p>
@@ -117,10 +117,11 @@ export default function Footer() {
           {/* Sitemap */}
           <div className="md:col-span-3 md:col-start-7">
             <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-8">Sitemap</h3>
-            <ul className="space-y-4">
+            {/* Mobile: 44px tap targets with tighter spacing; desktop unchanged. */}
+            <ul className="space-y-1 md:space-y-4">
               {sitemap.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-lg md:text-xl font-medium text-white hover:text-zinc-400 transition-colors">
+                  <Link href={item.href} className="inline-flex min-h-11 items-center md:min-h-0 text-lg md:text-xl font-medium text-white hover:text-zinc-400 transition-colors">
                     {item.name}
                   </Link>
                 </li>
@@ -131,10 +132,10 @@ export default function Footer() {
           {/* Socials */}
           <div className="md:col-span-3">
              <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-8">Socials</h3>
-             <ul className="space-y-4">
+             <ul className="space-y-1 md:space-y-4">
               {socials.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} target="_blank" className="text-lg md:text-xl font-medium text-white hover:text-zinc-400 transition-colors">
+                  <Link href={item.href} target="_blank" className="inline-flex min-h-11 min-w-11 items-center md:min-h-0 md:min-w-0 text-lg md:text-xl font-medium text-white hover:text-zinc-400 transition-colors">
                     {item.name}
                   </Link>
                 </li>
@@ -150,12 +151,15 @@ export default function Footer() {
                 <span>All Rights Reserved</span>
              </div>
              
-             <h1 
+             {/* Decorative wordmark — a <p>, not <h1>: the footer renders on every
+                 page, so an <h1> here gave every page two H1s. */}
+             <p
                 ref={titleRef}
+                aria-hidden="true"
                 className="text-[12vw] leading-[0.8] font-bold tracking-tighter text-white select-none whitespace-nowrap translate-y-20"
              >
                 GENIKODE
-             </h1>
+             </p>
         </div>
 
       </div>
