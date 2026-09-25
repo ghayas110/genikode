@@ -15,6 +15,18 @@ const nextConfig: NextConfig = {
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+  // Canonical domain is https://genikode.com (no www). www served the full site
+  // as a duplicate, so 301 it to the apex, keeping the path and query.
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.genikode.com" }],
+        destination: "https://genikode.com/:path*",
+        statusCode: 301,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
