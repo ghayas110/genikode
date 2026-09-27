@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { servicesData } from '@/app/service/[slug]/data';
 import { projectsData } from '@/app/work/[slug]/data';
+import { OFFER_PATH, isOfferActive } from '@/app/offer/first-project/offer-config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://genikode.com';
@@ -98,5 +99,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }));
 
-    return [...staticRoutes, ...serviceRoutes, ...workRoutes];
+    // Time-limited promo page — listed only while the offer is running.
+    const promoRoutes: MetadataRoute.Sitemap = isOfferActive()
+        ? [{ url: `${baseUrl}${OFFER_PATH}`, lastModified: currentDate, changeFrequency: 'weekly' as const, priority: 0.7 }]
+        : [];
+
+    return [...staticRoutes, ...promoRoutes, ...serviceRoutes, ...workRoutes];
 }

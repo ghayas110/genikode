@@ -25,6 +25,15 @@ const nextConfig: NextConfig = {
         destination: "https://genikode.com/:path*",
         statusCode: 301,
       },
+      // Link reclamation: the old WordPress site's URLs are still indexed (and
+      // may have backlinks). 301 them to the new equivalents so that link equity
+      // isn't lost to 404s. Specific slugs first, then catch-alls.
+      // (Old crypto/"free download" posts are intentionally NOT redirected —
+      // they stay 404 so no spam signal is passed to real pages.)
+      { source: "/portfolio/bliq", destination: "/work/digitalbank", statusCode: 301 },
+      { source: "/portfolio/hhh", destination: "/work/welab", statusCode: 301 },
+      { source: "/portfolio/:slug*", destination: "/work", statusCode: 301 },
+      { source: "/blog/:path*", destination: "/case-studies", statusCode: 301 },
     ];
   },
 };
