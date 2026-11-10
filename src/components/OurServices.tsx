@@ -6,6 +6,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
 
+// Services with a dedicated landing page link straight to it (the old
+// /service/* duplicates 301 there).
+const SERVICE_HREF: Record<string, string> = {
+  "web-design": "/web-development",
+  "mobile-app": "/mobile-app-development",
+};
+
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
@@ -143,7 +150,7 @@ export default function OurServices() {
               <p className="text-lg md:text-xl text-zinc-400 leading-relaxed max-w-lg">
                 {service.description}
               </p>
-              <Link href={`/service/${service.id}`} className="mt-8 text-white border-b border-white pb-1 w-max hover:text-gray-300 hover:border-gray-300 transition-colors uppercase tracking-widest text-sm font-medium">
+              <Link href={SERVICE_HREF[service.id] ?? `/service/${service.id}`} className="mt-8 text-white border-b border-white pb-1 w-max hover:text-gray-300 hover:border-gray-300 transition-colors uppercase tracking-widest text-sm font-medium">
                 Learn More
               </Link>
             </div>

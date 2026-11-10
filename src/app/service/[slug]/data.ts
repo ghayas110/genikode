@@ -1,4 +1,17 @@
 // Service Database combining overlapping terms
+
+// Service slugs that duplicate a dedicated landing page. They 301 to that page
+// (see next.config.ts) and are excluded from static params, sitemap and schema
+// so the two pages don't compete for the same searches.
+export const RETIRED_SERVICE_SLUGS: Record<string, string> = {
+    "web-design": "/web-development",
+    "web-app": "/web-development",
+    "mobile-app": "/mobile-app-development",
+};
+
+export const activeServiceSlugs = () =>
+    Object.keys(servicesData).filter((slug) => !(slug in RETIRED_SERVICE_SLUGS));
+
 export const servicesData: Record<string, any> = {
     "web-design": {
         title: "Web Design",

@@ -22,18 +22,22 @@ const PAGE_URL = `https://genikode.com${OFFER_PATH}`;
 // Re-render hourly so the page flips to "offer ended" soon after the deadline.
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
-  title: "10% Off Your First Website or App Project",
-  description:
-    "Start a new website, app or custom software project with Genikode by October 31 and get 10% off. Use code GENIKODE10.",
-  alternates: { canonical: PAGE_URL },
-  openGraph: {
-    title: "10% Off Your First Website or App Project | Genikode",
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "10% Off Your First Website or App Project",
     description:
-      "Confirm your website, mobile app or custom software project before October 31 and get 10% off your first project.",
-    url: PAGE_URL,
-  },
-};
+      "Start a new website, app or custom software project with Genikode by October 31 and get 10% off. Use code GENIKODE10.",
+    alternates: { canonical: PAGE_URL },
+    // Once the promotion has ended, keep the page reachable but out of the index.
+    ...(isOfferActive() ? {} : { robots: { index: false, follow: true } }),
+    openGraph: {
+      title: "10% Off Your First Website or App Project | Genikode",
+      description:
+        "Confirm your website, mobile app or custom software project before October 31 and get 10% off your first project.",
+      url: PAGE_URL,
+    },
+  };
+}
 
 const services = [
   {

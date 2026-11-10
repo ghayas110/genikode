@@ -4,11 +4,11 @@ import AgencyVision from "@/components/AgencyVision";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Agency",
-  description: "Meet the great people doing great work. Learn about Genikode's core mission, our vision for a digital future, and the elite team that makes it happen.",
+  title: "About Genikode – Software Development Company",
+  description: "Genikode is a software development company building websites, mobile apps and custom software for clients worldwide. Meet the team and how we work.",
   openGraph: {
-    title: "Agency | Genikode",
-    description: "Meet the great people doing great work. Learn about Genikode's core mission, our vision for a digital future, and the elite team that makes it happen.",
+    title: "About Genikode | Software Development Company",
+    description: "A software development company building websites, mobile apps and custom software for clients worldwide.",
     url: "https://genikode.com/agency",
   },
   alternates: {

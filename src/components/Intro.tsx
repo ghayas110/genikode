@@ -11,9 +11,9 @@ export default function Intro() {
           About Genikode
         </p>
         <p className="text-xl md:text-3xl font-light leading-relaxed tracking-tight text-white">
-          <span className="text-white font-medium">Genikode</span> is a digital
-          agency based in{" "}
-          <span className="text-white font-medium">Karachi, Pakistan</span>,
+          <span className="text-white font-medium">Genikode</span> is a software
+          development company working with{" "}
+          <span className="text-white font-medium">clients worldwide</span>,
           founded by{" "}
           <span className="text-white font-medium">Ghayas Ali</span>. We build
           high-performance websites and mobile apps using{" "}

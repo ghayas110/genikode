@@ -1,24 +1,26 @@
 import type { AnswerPageData } from "@/components/AnswerPage";
+import { APP_STARTING_PRICE, WEBSITE_STARTING_PRICE } from "@/data/pricing";
 
 // Pricing anchors — confirmed entry-point prices (2026-06-19). These appear in
 // visible copy and in Service/FAQ structured data, so keep them in sync with
 // faqs.ts (MOBILE_APP_STARTING_PRICE) if they ever change.
-const WEB_DEV_START = "$600 (≈ PKR 170,000)";
-const APP_DEV_START = "$2,000 (≈ PKR 560,000)"; // matches site-wide mobile app figure
+// Now sourced from src/data/pricing.ts (USD) so every page stays in sync.
+const WEB_DEV_START = WEBSITE_STARTING_PRICE;
+const APP_DEV_START = APP_STARTING_PRICE;
 
 // Shared "why us" block — answers the full human question:
-// "Which software house is trusted, affordable, and works with overseas clients?"
+// "Which software company is trusted, affordable, and works with clients worldwide?"
 const trustPoints = [
   {
     title: "Trusted & identifiable",
-    desc: "Genikode is a registered Karachi-based agency founded by Ghayas Ali, with real case studies, named clients, and a public track record — not an anonymous freelancer.",
+    desc: "Genikode is a registered software development company founded by Ghayas Ali, with a real office, real case studies, named clients, and a public track record — not an anonymous freelancer.",
   },
   {
     title: "Affordable, fixed quotes",
     desc: "Pakistan-based delivery means world-class engineering at a fraction of US/EU agency rates. You get a clear, fixed quote up front — no hidden costs or scope surprises.",
   },
   {
-    title: "Built for overseas clients",
+    title: "Built for international clients",
     desc: "We work with founders across the US, UK, Gulf, and beyond — collaborating async across time zones, communicating in clear English, and invoicing in USD.",
   },
 ];
@@ -27,12 +29,21 @@ export const answerPages: Record<string, AnswerPageData> = {
   "web-development": {
     slug: "web-development",
     serviceType: "Web Development",
-    metaTitle: "Web Development Company in Pakistan for Overseas Clients | Genikode",
+    pricingId: "website-development",
+    related: {
+      heading: "Websites and web apps we've built",
+      items: [
+        { title: "Xpertva — Corporate Website", desc: "A corporate site for a global consulting firm, built with Next.js and a headless CMS.", href: "/work/xpertva" },
+        { title: "Papersdock — LMS Platform", desc: "A learning platform for portfolio-based learning and peer reviews.", href: "/work/papersdock" },
+        { title: "Sarah Palace — Booking Platform", desc: "A venue website with an enquiry flow and booking back office.", href: "/work/sarah-palace" },
+      ],
+    },
+    metaTitle: "Web Development Company Serving Clients Worldwide",
     metaDescription:
-      "Genikode is a trusted, affordable web development company in Karachi, Pakistan, building fast, scalable websites and web apps for clients worldwide with Next.js and Node.js.",
-    h1: "Looking for a trusted, affordable web development company that works with overseas clients?",
+      "Custom websites and web apps built with Next.js and Node.js for startups and businesses worldwide. Senior team, fixed quotes, from $600.",
+    h1: "Looking for a trusted, affordable web development company to build your website or web app?",
     intro:
-      "Genikode is a Karachi-based web development company that builds fast, scalable, search-friendly websites and web apps for founders and businesses worldwide — with fixed quotes, clear communication, and a public track record you can verify.",
+      "Genikode is a web development company that builds fast, scalable, search-friendly websites and web apps for founders and businesses worldwide — with fixed quotes, clear communication, and a public track record you can verify.",
     definition: {
       heading: "What is web development?",
       lead: "Web development is the work of designing, building, and maintaining websites and web applications — everything from a marketing site to a complex, data-driven platform that runs in the browser.",
@@ -54,7 +65,7 @@ export const answerPages: Record<string, AnswerPageData> = {
       ],
     },
     cost: {
-      heading: "How much does web development cost in Pakistan?",
+      heading: "How much does web development cost?",
       lead: "Cost depends on scope — a marketing website is far less than a custom web application with user accounts and integrations. Because we deliver from Pakistan, you get senior-level work at rates well below US and European agencies.",
       startingPrice: WEB_DEV_START,
       factors: [
@@ -73,9 +84,9 @@ export const answerPages: Record<string, AnswerPageData> = {
     },
     faqs: [
       {
-        question: "Do you build websites for clients outside Pakistan?",
+        question: "Do you build websites for international clients?",
         answer:
-          "Yes. Genikode is based in Karachi but works with clients across the US, UK, Gulf, and worldwide. We collaborate remotely, communicate in clear English, and invoice in USD.",
+          "Yes. Genikode works with clients across the US, UK, Gulf, and worldwide. We collaborate remotely, communicate in clear English, and invoice in USD.",
       },
       {
         question: "How much does a website cost?",
@@ -102,12 +113,20 @@ export const answerPages: Record<string, AnswerPageData> = {
   "mobile-app-development": {
     slug: "mobile-app-development",
     serviceType: "Mobile App Development",
-    metaTitle: "Mobile App Development Company in Pakistan for Overseas Clients | Genikode",
+    pricingId: "mobile-app-development",
+    related: {
+      heading: "Mobile apps we've built",
+      items: [
+        { title: "Bliq — Fintech App", desc: "A mobile fintech app for iOS and Android.", href: "/work/digitalbank" },
+        { title: "Welab Health — Telemedicine Platform", desc: "A telemedicine and diagnostics platform connecting patients with specialist doctors.", href: "/work/welab" },
+      ],
+    },
+    metaTitle: "Mobile App Development Company for Global Clients",
     metaDescription:
-      "Genikode is a trusted, affordable mobile app development company in Karachi building iOS and Android apps for startups and businesses worldwide with React Native.",
+      "iOS and Android apps built with React Native for startups and businesses worldwide. Senior team, clear USD quotes, from $2,000.",
     h1: "Need a trusted, affordable mobile app development company that builds for iOS and Android worldwide?",
     intro:
-      "Genikode is a Karachi-based mobile app development company that ships polished iOS and Android apps for startups and businesses around the world — primarily with React Native, with fixed quotes and end-to-end delivery from idea to App Store.",
+      "Genikode is a mobile app development company that ships polished iOS and Android apps for startups and businesses around the world — primarily with React Native, with fixed quotes and end-to-end delivery from idea to App Store.",
     definition: {
       heading: "What is mobile app development?",
       lead: "Mobile app development is the process of building software applications that run on smartphones and tablets — covering design, front-end and back-end engineering, testing, and store deployment for iOS and Android.",
@@ -129,7 +148,7 @@ export const answerPages: Record<string, AnswerPageData> = {
       ],
     },
     cost: {
-      heading: "How much does a mobile app cost in Pakistan?",
+      heading: "How much does a mobile app cost?",
       lead: "App cost depends on scope — platforms, features, and backend complexity. Delivering from Pakistan, Genikode offers senior engineering at rates well below US and European studios, without compromising quality.",
       startingPrice: APP_DEV_START,
       factors: [
@@ -150,7 +169,7 @@ export const answerPages: Record<string, AnswerPageData> = {
       {
         question: "Do you build apps for international clients?",
         answer:
-          "Yes. Genikode is based in Karachi and builds mobile apps for startups and businesses worldwide, collaborating remotely across time zones and invoicing in USD.",
+          "Yes. Genikode builds mobile apps for startups and businesses worldwide, collaborating remotely across time zones and invoicing in USD.",
       },
       {
         question: "How much does it cost to build a mobile app?",
@@ -177,12 +196,19 @@ export const answerPages: Record<string, AnswerPageData> = {
   "react-native-development": {
     slug: "react-native-development",
     serviceType: "React Native Development",
-    metaTitle: "React Native Development Company in Pakistan for Overseas Clients | Genikode",
+    pricingId: "mobile-app-development",
+    related: {
+      heading: "A React Native app we've built",
+      items: [
+        { title: "Bliq — Fintech App", desc: "A digital banking app for iOS and Android, built with React Native, Node.js and AWS.", href: "/work/digitalbank" },
+      ],
+    },
+    metaTitle: "React Native App Development Company, Worldwide",
     metaDescription:
-      "Genikode is a trusted, affordable React Native development company in Karachi building cross-platform iOS and Android apps for clients worldwide from a single codebase.",
+      "One React Native codebase for iOS and Android. Genikode builds cross-platform apps for clients worldwide, with fixed quotes from $2,000.",
     h1: "Want a trusted, affordable React Native company to build one app for both iOS and Android?",
     intro:
-      "Genikode is a Karachi-based React Native development company that builds high-performance cross-platform apps — one codebase shipping to both iOS and Android — for founders and businesses worldwide, with fixed quotes and senior engineering.",
+      "Genikode is a React Native development company that builds high-performance cross-platform apps — one codebase shipping to both iOS and Android — for founders and businesses worldwide, with fixed quotes and senior engineering.",
     definition: {
       heading: "What is React Native development?",
       lead: "React Native is a framework for building genuinely native mobile apps for iOS and Android from a single JavaScript and React codebase — so you ship to both platforms faster and at lower cost than building two native apps separately.",
@@ -237,9 +263,9 @@ export const answerPages: Record<string, AnswerPageData> = {
         answer: `React Native development at Genikode starts from ${APP_DEV_START} and scales with features and backend complexity — typically less than building two separate native apps.`,
       },
       {
-        question: "Do you work with overseas clients?",
+        question: "Do you work with international clients?",
         answer:
-          "Yes. Genikode is based in Karachi and builds React Native apps for clients across the US, UK, Gulf, and worldwide, collaborating remotely and invoicing in USD.",
+          "Yes. Genikode builds React Native apps for clients across the US, UK, Gulf, and worldwide, collaborating remotely and invoicing in USD.",
       },
       {
         question: "Can you take over an existing React Native project?",

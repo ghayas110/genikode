@@ -1,4 +1,4 @@
-import { servicesData } from "@/app/service/[slug]/data";
+import { servicesData, RETIRED_SERVICE_SLUGS } from "@/app/service/[slug]/data";
 
 const baseUrl = "https://genikode.com";
 const EMAIL = "info@genikode.com";
@@ -32,7 +32,7 @@ const address = {
 const serviceCatalog = {
   "@type": "OfferCatalog",
   name: "Digital Agency Services",
-  itemListElement: Object.entries(servicesData).map(([slug, service]) => ({
+  itemListElement: Object.entries(servicesData).filter(([slug]) => !(slug in RETIRED_SERVICE_SLUGS)).map(([slug, service]) => ({
     "@type": "Offer",
     itemOffered: {
       "@type": "Service",
@@ -77,7 +77,7 @@ export default function JsonLd() {
         logo: `${baseUrl}/logo.png`,
         image: `${baseUrl}/og-image.jpg`,
         description:
-          "Premium digital agency in Karachi delivering web development, mobile apps, UI/UX, SEO, and brand building worldwide.",
+          "Software development company delivering web development, mobile apps, custom software, UI/UX and SEO to clients worldwide.",
         email: EMAIL,
         telephone: TELEPHONE,
         priceRange: "$$",

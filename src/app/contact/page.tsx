@@ -3,8 +3,8 @@ import LocationMap, { MAPS_LINK } from "@/components/LocationMap";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Ready to engineer your digital future? Reach out to Genikode and let's create something extraordinary together.",
+  title: "Contact Us – Get a Free Project Quote",
+  description: "Tell us about your website, app or software project. Free consultation and a clear USD quote, wherever you are in the world.",
   openGraph: {
     title: "Contact Genikode | Elite Digital Agency",
     description: "Let's chat and build something beautiful. Start a project with Genikode today.",
@@ -28,7 +28,7 @@ export default function ContactPage() {
         <div className="grid gap-8 md:grid-cols-5 md:items-start">
           <div className="md:col-span-2">
             <p className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-4">Visit us</p>
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-5">Find us in Karachi</h2>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-5">Our office</h2>
             <address className="not-italic text-zinc-400 leading-relaxed space-y-2">
               <p>
                 A-12, Sector X-8, Gulshan-e-Maymar,

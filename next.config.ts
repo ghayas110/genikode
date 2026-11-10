@@ -34,6 +34,15 @@ const nextConfig: NextConfig = {
       { source: "/portfolio/hhh", destination: "/work/welab", statusCode: 301 },
       { source: "/portfolio/:slug*", destination: "/work", statusCode: 301 },
       { source: "/blog/:path*", destination: "/case-studies", statusCode: 301 },
+      // Common/old URLs that 404'd (/about is still in Google's index).
+      { source: "/about", destination: "/agency", statusCode: 301 },
+      { source: "/contact-us", destination: "/contact", statusCode: 301 },
+      { source: "/pricing", destination: "/services", statusCode: 301 },
+      // Duplicate service pages consolidated into their landing pages so they
+      // don't compete for the same searches (see RETIRED_SERVICE_SLUGS).
+      { source: "/service/web-design", destination: "/web-development", statusCode: 301 },
+      { source: "/service/web-app", destination: "/web-development", statusCode: 301 },
+      { source: "/service/mobile-app", destination: "/mobile-app-development", statusCode: 301 },
     ];
   },
 };

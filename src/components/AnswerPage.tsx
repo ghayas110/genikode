@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import Faq from "@/components/Faq";
 import type { FaqItem } from "@/components/Faq";
+import PricingTiers from "@/components/PricingTiers";
+import { getPricing, pricingOffers } from "@/data/pricing";
 
 const baseUrl = "https://genikode.com";
 
@@ -17,6 +19,12 @@ export type AnswerPageData = {
   // "Why us" block that answers trust / affordability / overseas-clients intent.
   trust: { heading: string; points: { title: string; desc: string }[] };
   faqs: FaqItem[];
+  /** Optional: id from src/data/pricing.ts to show a USD price table. */
+  pricingId?: string;
+  /** Optional: related case studies / pages, shown as proof. */
+  related?: { heading: string; items: { title: string; desc: string; href: string }[] };
+  /** Optional breadcrumb parent, e.g. { name: "Industries", href: "/industries" }. */
+  parent?: { name: string; href: string };
   // schema
   serviceType: string;
   metaTitle: string;
@@ -25,6 +33,7 @@ export type AnswerPageData = {
 
 export default function AnswerPage({ data }: { data: AnswerPageData }) {
   const url = `${baseUrl}/${data.slug}`;
+  const price = data.pricingId ? getPricing(data.pricingId) : undefined;
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -34,11 +43,8 @@ export default function AnswerPage({ data }: { data: AnswerPageData }) {
     serviceType: data.serviceType,
     description: data.metaDescription,
     url,
-    areaServed: [
-      { "@type": "Place", name: "Karachi" },
-      { "@type": "Country", name: "Pakistan" },
-      { "@type": "Place", name: "Worldwide" },
-    ],
+    areaServed: { "@type": "Place", name: "Worldwide" },
+    ...(price ? { offers: pricingOffers(price, baseUrl) } : {}),
     provider: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,
@@ -53,7 +59,10 @@ export default function AnswerPage({ data }: { data: AnswerPageData }) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: baseUrl },
-      { "@type": "ListItem", position: 2, name: data.serviceType, item: url },
+      ...(data.parent
+        ? [{ "@type": "ListItem", position: 2, name: data.parent.name, item: `${baseUrl}${data.parent.href}` }]
+        : []),
+      { "@type": "ListItem", position: data.parent ? 3 : 2, name: data.serviceType, item: url },
     ],
   };
 
@@ -64,6 +73,12 @@ export default function AnswerPage({ data }: { data: AnswerPageData }) {
         <nav aria-label="Breadcrumb" className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-8">
           <Link href="/" className="hover:text-white transition-colors">Home</Link>
           <span className="mx-2">/</span>
+          {data.parent && (
+            <>
+              <Link href={data.parent.href} className="hover:text-white transition-colors">{data.parent.name}</Link>
+              <span className="mx-2">/</span>
+            </>
+          )}
           <span className="text-white">{data.serviceType}</span>
         </nav>
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance leading-[1.1] mb-8">
@@ -136,7 +151,33 @@ export default function AnswerPage({ data }: { data: AnswerPageData }) {
         {data.cost.note && (
           <p className="mt-6 text-sm text-zinc-400 max-w-3xl">{data.cost.note}</p>
         )}
+        {price && (
+          <div className="mt-14">
+            <PricingTiers pricing={price} />
+            <p className="mt-6 text-sm text-zinc-500">
+              Typical USD ranges. <Link href="/services" className="underline hover:text-white">See all services &amp; pricing</Link>.
+            </p>
+          </div>
+        )}
       </section>
+
+      {data.related && data.related.items.length > 0 && (
+        <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-800 max-w-5xl mx-auto">
+          <p className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-6">Proof</p>
+          <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-10">{data.related.heading}</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            {data.related.items.map((r) => (
+              <Link key={r.href} href={r.href} className="group rounded-2xl border border-zinc-800 p-6 hover:border-zinc-600 transition-colors">
+                <h3 className="text-lg font-semibold mb-2">{r.title}</h3>
+                <p className="text-zinc-400 leading-relaxed">{r.desc}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm text-zinc-300 group-hover:text-white">
+                  Read the case study <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Trust / why us — answers the full human question */}
       <section className="px-6 md:px-8 py-16 md:py-20 border-t border-zinc-800 max-w-5xl mx-auto">

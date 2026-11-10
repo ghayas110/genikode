@@ -1,18 +1,30 @@
 import { Metadata } from "next";
 import ClientDetail from "./ClientDetail";
 import { projectsData } from "./data";
+import { trimDescription } from "@/data/site";
+
+// Pre-render every case study as static HTML (fast, reliably crawlable).
+export function generateStaticParams() {
+  return Object.keys(projectsData).map((slug) => ({ slug }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
   const project = projectsData[slug] || projectsData["digitalbank"];
 
+  // Keep the title within ~60 chars once the " | Genikode" template is added:
+  // drop "Case Study" when it would overflow.
+  const full = `${project.title} – ${project.category} Case Study`;
+  const title = full.length <= 49 ? full : `${project.title} – ${project.category}`;
+  const description = trimDescription(project.productAbout);
+
   return {
-    title: `${project.title} | ${project.category} Case Study`,
-    description: project.productAbout,
+    title,
+    description,
     openGraph: {
       title: `${project.title} - Genikode Case Study`,
-      description: project.productAbout,
+      description,
       url: `https://genikode.com/work/${slug}`,
       images: [
         {

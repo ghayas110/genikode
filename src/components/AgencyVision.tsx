@@ -10,7 +10,7 @@ const capabilities = [
   { title: "3D Visualisation", link: "/service/3d-visualisation", image: "/images/agency/agency_2.png" },
   { title: "Rapid Concept Prototyping", link: "/service/prototyping", image: "/images/agency/development.png" },
   { title: "Motion & Production", link: "/service/motion", image: "/images/agency/motion.png" },
-  { title: "Website & App Experience", link: "/service/web-app", image: "/images/agency/agency_1.png" }
+  { title: "Website & App Experience", link: "/web-development", image: "/images/agency/agency_1.png" }
 ];
 
 const values = [

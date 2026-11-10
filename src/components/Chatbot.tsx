@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { APP_STARTING_PRICE, WEBSITE_STARTING_PRICE } from "@/data/pricing";
 import { MessageCircle, X } from "lucide-react";
 
 // Scripted (rule-based) chatbot. No backend — it's a guided decision tree that
@@ -78,7 +79,7 @@ const nodes: Record<NodeKey, ChatNode> = {
   pricing: {
     messages: [
       {
-        text: "It depends on scope, but mobile apps start from $2,000 (≈ PKR 560,000). We share a fixed quote after a short discovery call — no surprises.",
+        text: `It depends on scope, but mobile apps start from ${APP_STARTING_PRICE} and websites from ${WEBSITE_STARTING_PRICE}. We share a fixed quote after a short discovery call — no surprises. Full pricing: genikode.com/services`,
       },
     ],
     options: [

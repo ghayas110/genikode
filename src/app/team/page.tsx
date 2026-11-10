@@ -29,13 +29,13 @@ const team = [
 ];
 
 export const metadata: Metadata = {
-  title: "About the Team",
+  title: "Our Team – Senior Web & App Developers",
   description:
-    "Meet the people behind Genikode — a Karachi-based digital agency led by founder Ghayas Ali and co-founder Kisa Ghayas, building websites and mobile apps for clients worldwide.",
+    "Meet the senior team behind Genikode, led by Ghayas Ali and Kisa Ghayas, building websites and mobile apps for clients worldwide.",
   alternates: { canonical: `${baseUrl}/team` },
   openGraph: {
     title: "About the Team | Genikode",
-    description: "Meet the people behind Genikode, a Karachi-based digital agency.",
+    description: "Meet the senior team building software for Genikode clients worldwide.",
     url: `${baseUrl}/team`,
   },
 };
@@ -69,7 +69,7 @@ export default function TeamPage() {
           The people behind Genikode.
         </h1>
         <p className="text-lg md:text-xl text-zinc-400 font-light leading-relaxed max-w-2xl">
-          A small, senior team in Karachi building web and mobile products for founders and businesses worldwide.
+          A small, senior team building web and mobile products for founders and businesses worldwide.
           Real people you talk to directly, not a faceless agency.
         </p>
       </section>

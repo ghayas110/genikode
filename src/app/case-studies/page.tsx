@@ -26,7 +26,7 @@ const studies = order
 export const metadata: Metadata = {
   title: "Case Studies: Real Products We've Built",
   description:
-    "Explore Genikode's case studies across fintech, healthcare, education, aviation, and corporate web — real products built for clients in Pakistan and worldwide with Next.js, React Native, and Node.js.",
+    "Case studies of websites, mobile apps and custom software built by Genikode for clients worldwide, across fintech, healthcare, education and retail.",
   alternates: { canonical: `${baseUrl}/case-studies` },
   openGraph: {
     title: "Case Studies | Genikode",

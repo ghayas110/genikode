@@ -1,9 +1,10 @@
 import type { FaqItem } from "@/components/Faq";
+import { APP_STARTING_PRICE } from "@/data/pricing";
 
 // Confirmed entry-point price (2026-06-19), quoted verbatim in the visible FAQ
 // and in FAQPage structured data. Keep in sync with answerPages.ts (APP_DEV_START)
 // and the Chatbot pricing line if this ever changes.
-const MOBILE_APP_STARTING_PRICE = "$2,000 (approximately PKR 560,000)";
+const MOBILE_APP_STARTING_PRICE = APP_STARTING_PRICE;
 
 export const homeFaqs: FaqItem[] = [
   {
@@ -13,7 +14,7 @@ export const homeFaqs: FaqItem[] = [
   {
     question: "Do you work with international clients?",
     answer:
-      "Yes. Genikode is based in Karachi, Pakistan, and works with startups, founders, and growing businesses worldwide. We collaborate remotely across time zones using clear async updates, scheduled calls, and shared project tracking, and we invoice international clients in USD.",
+      "Yes. Genikode works with startups, founders, and growing businesses worldwide. We collaborate remotely across time zones using clear async updates, scheduled calls, and shared project tracking, and we invoice international clients in USD.",
   },
   {
     question: "React Native vs native — which should I choose?",
@@ -152,9 +153,9 @@ export const serviceFaqs: Record<string, FaqItem[]> = {
         "Technical audits, keyword architecture, on-page optimization, and content strategy — covering crawl health, Core Web Vitals, metadata, and internal linking.",
     },
     {
-      question: "Do you offer local SEO for businesses in Pakistan?",
+      question: "Do you offer local SEO?",
       answer:
-        "Yes. We optimize for local search visibility, including structured data and Google Business presence, for businesses targeting customers in Karachi and across Pakistan.",
+        "Yes. We optimize local search visibility — structured data, Google Business Profile and location pages — for businesses targeting customers in a specific city or country, anywhere in the world.",
     },
   ],
   smm: [
@@ -265,7 +266,7 @@ const genericServiceFaqs: FaqItem[] = [
   {
     question: "Do you work with international clients?",
     answer:
-      "Yes. Genikode is based in Karachi, Pakistan, and serves startups and businesses worldwide, collaborating remotely across time zones.",
+      "Yes. Genikode serves startups and businesses worldwide, collaborating remotely across time zones.",
   },
   {
     question: "How do projects get started?",

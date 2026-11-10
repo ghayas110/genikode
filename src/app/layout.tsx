@@ -24,12 +24,12 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "Genikode | Software House, Web & App Development, Karachi",
+    default: "Genikode | Software Development Company for Global Clients",
     template: "%s | Genikode"
   },
   // Keep ≤ ~130 chars so it isn't truncated in search results.
-  description: "Genikode is a Karachi software house building custom software, fast websites, and iOS & Android apps for businesses worldwide.",
-  keywords: ["software house", "software development company", "web development company", "mobile app development", "app development company Karachi", "website development", "React Native development", "Next.js development", "software house Karachi", "UI/UX design"],
+  description: "Genikode builds custom software, fast websites and iOS & Android apps for startups and businesses worldwide. Free consultation, USD quotes.",
+  keywords: ["software house", "software development company", "web development company", "mobile app development", "offshore software development", "custom software development", "website development", "React Native development", "Next.js development", "hire developers", "UI/UX design"],
   authors: [{ name: "Genikode" }],
   creator: "Genikode",
   metadataBase: new URL('https://genikode.com'),
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://genikode.com",
-    title: "Genikode | Software House & App Development Company, Karachi",
-    description: "A Karachi software house building custom software, websites, and mobile apps for startups and businesses worldwide.",
+    title: "Genikode | Software Development Company for Global Clients",
+    description: "Custom software, websites and mobile apps for startups and businesses worldwide.",
     siteName: "Genikode",
     images: [{
       url: "/og-image.jpg",
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Genikode | Software House & App Development Company, Karachi",
-    description: "A Karachi software house building custom software, websites, and mobile apps for startups and businesses worldwide.",
+    title: "Genikode | Software Development Company for Global Clients",
+    description: "Custom software, websites and mobile apps for startups and businesses worldwide.",
     images: ["/og-image.jpg"],
   },
   robots: {

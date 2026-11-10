@@ -22,9 +22,9 @@ const expertise = [
 ];
 
 export const metadata: Metadata = {
-  title: "Ghayas Ali — Founder & CEO of Genikode",
+  title: "Ghayas Ali — Founder & CEO",
   description:
-    "Meet Ghayas Ali, founder and CEO of Genikode — a Karachi-based digital agency building high-performance websites and mobile apps for clients worldwide with Next.js, React Native, and Node.js.",
+    "Meet Ghayas Ali, founder and CEO of Genikode, a software development company building websites and mobile apps for clients worldwide.",
   alternates: { canonical: `${baseUrl}/founder` },
   openGraph: {
     title: "Ghayas Ali — Founder & CEO of Genikode",
@@ -42,7 +42,7 @@ const personSchema = {
   name: "Ghayas Ali",
   jobTitle: "Founder & CEO",
   description:
-    "Ghayas Ali is the founder and CEO of Genikode, a Karachi-based digital agency building high-performance websites and mobile apps for clients worldwide.",
+    "Ghayas Ali is the founder and CEO of Genikode, a software development company building high-performance websites and mobile apps for clients worldwide.",
   url: `${baseUrl}/founder`,
   image: `${baseUrl}/images/team/ghayas.png`,
   worksFor: {
@@ -99,7 +99,7 @@ export default function FounderPage() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">Ghayas Ali</h1>
             <p className="text-lg md:text-xl text-white font-light leading-relaxed">
               Ghayas Ali is the founder and CEO of <Link href="/" className="underline hover:text-white">Genikode</Link>,
-              a Karachi-based digital agency building high-performance websites and mobile apps for founders and
+              a software development company building high-performance websites and mobile apps for founders and
               businesses around the world.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">

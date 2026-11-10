@@ -26,6 +26,7 @@ export default function Navigation() {
       <div className="hidden md:flex gap-8 pointer-events-auto">
         {[
           { name: "Home", href: "/" },
+          { name: "Services", href: "/services" },
           { name: "Work", href: "/work" },
           { name: "Agency", href: "/agency" },
           { name: "Contact", href: "/contact" },
@@ -61,6 +62,7 @@ export default function Navigation() {
         >
            {[
             { name: "Home", href: "/" },
+              { name: "Services", href: "/services" },
               { name: "Work", href: "/work" },
               { name: "Agency", href: "/agency" },
               { name: "Contact", href: "/contact" },

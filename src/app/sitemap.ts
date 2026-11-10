@@ -1,7 +1,12 @@
 import { MetadataRoute } from 'next';
-import { servicesData } from '@/app/service/[slug]/data';
+import { activeServiceSlugs } from '@/app/service/[slug]/data';
 import { projectsData } from '@/app/work/[slug]/data';
 import { OFFER_PATH, isOfferActive } from '@/app/offer/first-project/offer-config';
+import { guides } from '@/data/guides';
+import { industryPages } from '@/data/industryPages';
+
+// Regenerate hourly so time-limited entries (promos) drop without a redeploy.
+export const revalidate = 3600;
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://genikode.com';
@@ -83,8 +88,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
     ];
 
+    // Commercial hubs and SEO/GEO content pages
+    const contentRoutes: MetadataRoute.Sitemap = [
+        { url: `${baseUrl}/services`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.9 },
+        { url: `${baseUrl}/hire-developers`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.9 },
+        { url: `${baseUrl}/industries`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.7 },
+        ...industryPages.map((p) => ({ url: `${baseUrl}/${p.slug}`, lastModified: currentDate, changeFrequency: 'monthly' as const, priority: 0.8 })),
+        { url: `${baseUrl}/resources`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
+        ...guides.map((g) => ({ url: `${baseUrl}/resources/${g.slug}`, lastModified: new Date(g.updated), changeFrequency: 'monthly' as const, priority: 0.8 })),
+    ];
+
     // Dynamic service detail pages
-    const serviceRoutes: MetadataRoute.Sitemap = Object.keys(servicesData).map((slug) => ({
+    const serviceRoutes: MetadataRoute.Sitemap = activeServiceSlugs().map((slug) => ({
         url: `${baseUrl}/service/${slug}`,
         lastModified: currentDate,
         changeFrequency: 'monthly' as const,
@@ -104,5 +119,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ? [{ url: `${baseUrl}${OFFER_PATH}`, lastModified: currentDate, changeFrequency: 'weekly' as const, priority: 0.7 }]
         : [];
 
-    return [...staticRoutes, ...promoRoutes, ...serviceRoutes, ...workRoutes];
+    return [...staticRoutes, ...contentRoutes, ...promoRoutes, ...serviceRoutes, ...workRoutes];
 }

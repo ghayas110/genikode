@@ -40,9 +40,9 @@ export const projectsData: Record<string, any> = {
         solution:
             "We built a Next.js management system with a Node.js and PostgreSQL backend where each event is one record — hall, date, package, guest count, and catering menu in one place. The sales team books and quotes, and the kitchen sees confirmed menus and headcounts for every upcoming event.",
     },
-    // ⚠️ PLACEHOLDER PROJECT NAME ("ServeOS") and PLACEHOLDER METRICS.
-    // Rename to the real product/client and replace the [X] metric values with
-    // verified numbers before publishing — metrics flow into CreativeWork schema.
+    // ⚠️ PLACEHOLDER PROJECT NAME ("ServeOS"). Rename to the real product/client.
+    // Demo metrics were removed (2026-11) — only add metrics back with verified
+    // numbers, since they flow into CreativeWork schema.
     // Images are royalty-free Unsplash photos (commercial use OK), NOT copied from
     // any third-party site. Swap for real product screenshots when available.
     "restaurant-management-system": {
@@ -68,13 +68,6 @@ export const projectsData: Record<string, any> = {
             "The system had to stay fully responsive during peak service even on unreliable Wi-Fi, sync orders instantly between front-of-house tablets and the kitchen display, handle multi-branch operations, and remain simple enough for new staff to learn in a single shift.",
         solution:
             "We built an offline-first React Native app for waitstaff and a kitchen display system that sync in real time, a Next.js back-office dashboard for menus, inventory, staff, and analytics, and a Node.js backend with a PostgreSQL data layer. Orders flow instantly from table to kitchen, stock deducts automatically per sale, and owners get live, branch-level reporting from anywhere.",
-        // DEMO numbers for presentation — replace with REAL, verified metrics before launch.
-        metrics: [
-            { value: "35", suffix: "%", label: "Faster order turnaround" },
-            { value: "120", suffix: "+", label: "Restaurants onboarded" },
-            { value: "28", suffix: "%", label: "Reduction in stock waste" },
-            { value: "8", suffix: "s", label: "Avg. order-to-kitchen time" },
-        ],
     },
     "pos-system": {
         title: "Smart Mini Mart",
