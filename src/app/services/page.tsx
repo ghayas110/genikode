@@ -33,7 +33,7 @@ const factors = [
   { title: "Design depth", desc: "Template-based layouts cost less than fully custom design systems and animation." },
   { title: "Integrations", desc: "Payments, CRMs, ERPs, maps and third-party APIs each add build and testing time." },
   { title: "Platforms", desc: "Web only, mobile only, or both — React Native lets one codebase serve iOS and Android." },
-  { title: "Timeline", desc: "Compressed deadlines need more engineers working in parallel." },
+  { title: "Timeline", desc: "Rush deadlines cost more, because your project takes priority over other scheduled work." },
   { title: "Ongoing support", desc: "Hosting, maintenance and new features after launch are quoted separately." },
 ];
 
@@ -41,7 +41,7 @@ const faqs: FaqItem[] = [
   {
     question: "Why are your prices lower than US or UK agencies?",
     answer:
-      "Our team is based in Pakistan, where senior engineering costs less than in North America or Western Europe. You get the same modern stack (Next.js, React Native, Node.js) and a senior team, at offshore rates — and you work directly with the people building your product.",
+      "Genikode is a small, founder-led studio based in Pakistan, where senior engineering costs less than in North America or Western Europe. You get the same modern stack (Next.js, React Native, Node.js) at offshore rates — and you work directly with the engineer building your product, not an account manager.",
   },
   {
     question: "Are these prices fixed?",
@@ -59,12 +59,12 @@ const faqs: FaqItem[] = [
   },
   {
     question: "Can I hire a developer by the hour?",
-    answer: `Yes. Hourly work is ${HOURLY_RATE_RANGE}, and dedicated full-time developers are available on a monthly basis. See our hire developers page for details.`,
+    answer: `Yes. Hourly work is ${HOURLY_RATE_RANGE}, and a dedicated full-time developer is available on a monthly basis. See our hire a developer page for details.`,
   },
   {
     question: "How do payments work?",
     answer:
-      "Fixed-price projects are paid by milestone — typically a deposit to start, then payments as agreed milestones are delivered. Retainers and dedicated developers are billed monthly.",
+      "Fixed-price projects are paid by milestone — typically a deposit to start, then payments as agreed milestones are delivered. Retainers and dedicated-developer engagements are billed monthly.",
   },
 ];
 

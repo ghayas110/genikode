@@ -18,7 +18,7 @@ const sitemap = [
   { name: "Web Development", href: "/web-development" },
   { name: "Mobile App Development", href: "/mobile-app-development" },
   { name: "Services & Pricing", href: "/services" },
-  { name: "Hire Developers", href: "/hire-developers" },
+  { name: "Hire a Developer", href: "/hire-developers" },
   { name: "Industries", href: "/industries" },
   { name: "Resources", href: "/resources" },
   { name: "Portfolio", href: "/work" }, // Assuming a /work page exists or will act as an archive

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Genikode",
   },
   description:
-    "Get a professional, mobile-responsive business website of up to 5–7 pages for $400, with design, development and a dedicated project manager.",
+    "Get a professional, mobile-responsive business website of up to 5–7 pages for $400, with design, development and direct contact with the developer building it.",
   alternates: { canonical: "https://genikode.com/offer" },
 };
 

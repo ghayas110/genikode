@@ -42,7 +42,7 @@ export const guides: Guide[] = [
         id: "at-a-glance",
         heading: "App development cost at a glance",
         paragraphs: [
-          "Most apps fall into one of three bands. The ranges below are what an experienced offshore team (like ours) typically charges for an iOS + Android app built with React Native, including the backend and store submission.",
+          "Most apps fall into one of three bands. The ranges below are what an experienced offshore studio (like ours) typically charges for an iOS + Android app built with React Native, including the backend and store submission.",
         ],
         table: {
           head: ["App type", "Typical features", "Cost (offshore team)", "Typical timeline"],
@@ -79,7 +79,7 @@ export const guides: Guide[] = [
         ],
         table: regionalRates,
         after: [
-          `Genikode's rates are ${HOURLY_RATE_RANGE} for hourly work, with fixed quotes for defined projects. You work directly with the senior engineers building your product, which keeps communication tight even across time zones.`,
+          `Genikode's rates are ${HOURLY_RATE_RANGE} for hourly work, with fixed quotes for defined projects. You work directly with the senior engineer building your product, which keeps communication tight even across time zones.`,
         ],
       },
       {
@@ -127,7 +127,7 @@ export const guides: Guide[] = [
       { question: "How much does a simple app cost?", answer: `A simple MVP app typically costs ${tier(app, 0)} with an offshore team, depending on the number of features and whether it needs a custom backend.` },
       { question: "Is it cheaper to build for iOS and Android at the same time?", answer: "Usually yes. With React Native, one codebase serves both platforms, which is typically cheaper and faster than building two separate native apps." },
       { question: "How long does it take to build an app?", answer: `An MVP usually takes ${app.tiers[0].timeline}, a full business app ${app.tiers[1].timeline}, and a complex platform ${app.tiers[2].timeline}.` },
-      { question: "Is a freelancer cheaper than an agency?", answer: "A freelancer's hourly rate can be lower, but you take on more risk around availability, code quality and long-term support. An agency gives you a team, a process and continuity if someone is unavailable." },
+      { question: "Is a freelancer cheaper than an agency?", answer: "A freelancer's hourly rate can be lower, but check for the things an established studio or agency should give you: a written scope, a clear process, references and long-term support." },
       { question: "Do I own the source code?", answer: "You should. Make sure your contract assigns intellectual property to you and that the code lives in a repository you control. At Genikode, clients own their code." },
     ],
     related: [
@@ -169,7 +169,7 @@ export const guides: Guide[] = [
           rows: [
             ["DIY website builder", "Roughly $15–$60 / month", "Very early businesses testing an idea", "Limited design and SEO control; you do the work"],
             ["Freelancer", "Varies widely", "Small, well-defined sites", "Quality and availability depend on one person"],
-            ["Agency", `${tier(web, 0)} upwards`, "Businesses that need a reliable, growing website", "Higher upfront cost than DIY, but a team, a process and support"],
+            ["Agency", `${tier(web, 0)} upwards`, "Businesses that need a reliable, growing website", "Higher upfront cost than DIY, but an experienced builder, a process and support"],
           ],
         },
       },
@@ -196,7 +196,7 @@ export const guides: Guide[] = [
             ["Domain name", "$10 – $20 per year"],
             ["Hosting", "Free tiers for small sites, up to $100+ per month for high traffic"],
             ["Maintenance & updates", "From around $50 per month, or on demand"],
-            ["SEO & content", "Optional; ongoing retainers typically $600+ per month"],
+            ["SEO & content", "Optional; ongoing retainers typically $300+ per month"],
           ],
         },
       },
@@ -270,7 +270,7 @@ export const guides: Guide[] = [
           head: ["Model", "Best for", "Pricing", "Watch out for"],
           rows: [
             ["Fixed-price project", "Well-defined scope with clear deliverables", `${formatTierPrice(dev.tiers[2])} per project, quoted upfront`, "Changes need a change request"],
-            ["Dedicated developer / team", "Ongoing product development", `${formatTierPrice(dev.tiers[1])}`, "You manage priorities day to day"],
+            ["Dedicated developer", "Ongoing product development", `${formatTierPrice(dev.tiers[1])}`, "You manage priorities day to day"],
             ["Time & materials (hourly)", "Maintenance, small tasks, evolving scope", `${formatTierPrice(dev.tiers[0])}`, "Needs good time reporting"],
           ],
         },

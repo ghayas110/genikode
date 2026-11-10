@@ -156,7 +156,7 @@ export default function FounderPage() {
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-6">Work & track record</h2>
         <p className="text-base md:text-lg text-zinc-400 leading-relaxed mb-8">
           The clearest measure of any founder is the work. Explore Genikode's case studies — real products,
-          real clients, real outcomes — to see what the team builds.
+          real clients, real outcomes — to see what Genikode builds.
         </p>
         <div className="flex flex-wrap gap-4">
           <Link href="/case-studies" className="inline-flex items-center gap-2 bg-white text-black px-7 py-3.5 rounded-full font-semibold hover:scale-105 transition-transform">

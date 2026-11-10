@@ -234,27 +234,27 @@ const dev = getPricing("dedicated-developers")!;
 
 export const hireDevelopersPage: AnswerPageData = {
   slug: "hire-developers",
-  serviceType: "Hire Dedicated Developers",
-  metaTitle: "Hire Dedicated React Native & Next.js Developers",
-  metaDescription: `Hire senior React Native, Next.js and Node.js developers from ${formatTierPrice(dev.tiers[0])} or ${formatTierPrice(dev.tiers[1])}. Full-time engineers who join your team.`,
-  h1: "Need to hire dedicated developers who work as part of your team?",
+  serviceType: "Hire a Dedicated Developer",
+  metaTitle: "Hire a Dedicated React Native & Next.js Developer",
+  metaDescription: `Hire a senior React Native, Next.js and Node.js developer from ${formatTierPrice(dev.tiers[0])} or ${formatTierPrice(dev.tiers[1])}. An experienced engineer who joins your team.`,
+  h1: "Need to hire a dedicated developer who works as part of your team?",
   intro:
-    "Hire senior React Native, Next.js and Node.js developers from Genikode — full-time or by the hour. They join your standups, work in your tools and report to you, at offshore rates and without the cost and delay of local hiring.",
+    "Hire a senior React Native, Next.js and Node.js developer from Genikode — full-time or by the hour. You work directly with the engineer who writes your code: they join your standups, work in your tools and report to you, at offshore rates and without the cost and delay of local hiring.",
   definition: {
     heading: "What is a dedicated developer?",
-    lead: "A dedicated developer is an engineer who works exclusively on your product, full-time, as an extension of your team — while we handle hiring, equipment, HR and replacement.",
+    lead: "A dedicated developer is an engineer who works on your product as an extension of your team, on a monthly basis — without the cost, paperwork and delay of hiring locally.",
     body: [
-      "It's the middle ground between hiring in-house and outsourcing a fixed project: you set the priorities day to day, and you can scale the team up or down as your roadmap changes.",
-      "Our developers work across modern JavaScript and TypeScript: React Native for iOS and Android apps, Next.js and React for web, and Node.js for APIs and backends.",
+      "It's the middle ground between hiring in-house and outsourcing a fixed project: you set the priorities day to day, and you can move between hourly and full-time as your roadmap changes.",
+      "The work covers modern JavaScript and TypeScript: React Native for iOS and Android apps, Next.js and React for web, and Node.js for APIs and backends.",
     ],
   },
   process: {
     heading: "How hiring works",
     steps: [
-      { title: "Share your needs", desc: "Tell us your stack, the work and the seniority you need." },
-      { title: "Meet your developer", desc: "We propose a matched engineer and you interview them directly." },
-      { title: "Onboard", desc: "They join your repositories, task board and standups, with an agreed overlap window." },
-      { title: "Work & report", desc: "Weekly progress reports, and a replacement at no cost if the fit isn't right." },
+      { title: "Share your needs", desc: "Tell us your stack, the work and the hours you need." },
+      { title: "Meet your developer", desc: "Have a call with the engineer who will do the work, and review past projects and code." },
+      { title: "Onboard", desc: "Your developer joins your repositories, task board and standups, with an agreed overlap window." },
+      { title: "Work & report", desc: "Weekly progress reports, on a month-to-month basis — you can stop any time if the fit isn't right." },
     ],
   },
   cost: {
@@ -262,33 +262,33 @@ export const hireDevelopersPage: AnswerPageData = {
     lead: "Hourly work suits smaller or irregular tasks; a dedicated full-time developer suits ongoing product work. Both are billed in USD.",
     startingPrice: HOURLY_RATE_RANGE.split(" ")[0] + "/hr",
     factors: [
-      "Seniority and specialism (React Native, Next.js, Node.js)",
+      "Stack and specialism (React Native, Next.js, Node.js)",
       "Full-time dedicated vs. hourly",
-      "Number of developers and length of engagement",
+      "Hours per month and length of engagement",
       "Required overlap with your time zone",
     ],
   },
   pricingId: "dedicated-developers",
   related: {
-    heading: "Products our developers have shipped",
+    heading: "Products built at Genikode",
     items: [
       { title: "Bliq — Fintech App (React Native)", desc: "A digital banking app built with React Native, Node.js and AWS.", href: "/work/digitalbank" },
       { title: "AJ Textiles — ERP (Next.js)", desc: "An enterprise resource planning platform built with Next.js, Node.js and PostgreSQL.", href: "/work/textile-erp" },
     ],
   },
   trust: {
-    heading: "Why teams hire developers from Genikode",
+    heading: "Why teams hire a developer from Genikode",
     points: [
-      { title: "Senior engineers", desc: "You get experienced developers who have shipped real products, not juniors learning on your project." },
+      { title: "Senior and hands-on", desc: "You work with an experienced engineer who has shipped real products, not a junior learning on your project." },
       { title: "Time-zone overlap", desc: "Working from UTC+5, we overlap easily with Gulf and European business hours, and calls can be scheduled for US mornings." },
-      { title: "Flexible & low-risk", desc: "Scale up or down, and get a free replacement if a developer isn't the right fit." },
+      { title: "Flexible & low-risk", desc: "Month-to-month with no lock-in: scale hours up or down, or stop if it isn't the right fit." },
     ],
   },
   faqs: [
-    { question: "How quickly can a developer start?", answer: "Usually within one to two weeks, after you've interviewed and approved the developer." },
-    { question: "Will the developer work only on my project?", answer: "Yes. A dedicated developer works full-time on your product only." },
+    { question: "How quickly can a developer start?", answer: "Usually within one to two weeks of agreeing the work and hours, depending on current availability." },
+    { question: "Will the developer work only on my project?", answer: "A full-time engagement reserves 160 hours a month for your product. Hourly work is scheduled alongside other clients." },
     { question: "What hours will they work?", answer: "We agree a daily overlap window with your time zone, with written updates covering the rest of the day." },
     { question: "Who owns the code?", answer: "You do. Work is committed to your repositories and all IP is assigned to you." },
-    { question: "Is there a minimum commitment?", answer: "Hourly work has no long-term commitment. Dedicated developers are engaged month to month." },
+    { question: "Is there a minimum commitment?", answer: "Hourly work has no long-term commitment. Dedicated engagements run month to month." },
   ],
 };

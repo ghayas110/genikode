@@ -40,7 +40,7 @@ export const answerPages: Record<string, AnswerPageData> = {
     },
     metaTitle: "Web Development Company Serving Clients Worldwide",
     metaDescription:
-      "Custom websites and web apps built with Next.js and Node.js for startups and businesses worldwide. Senior team, fixed quotes, from $600.",
+      `Custom websites and web apps built with Next.js and Node.js for startups and businesses worldwide. Founder-led studio, fixed quotes, from ${WEB_DEV_START}.`,
     h1: "Looking for a trusted, affordable web development company to build your website or web app?",
     intro:
       "Genikode is a web development company that builds fast, scalable, search-friendly websites and web apps for founders and businesses worldwide — with fixed quotes, clear communication, and a public track record you can verify.",
@@ -123,7 +123,7 @@ export const answerPages: Record<string, AnswerPageData> = {
     },
     metaTitle: "Mobile App Development Company for Global Clients",
     metaDescription:
-      "iOS and Android apps built with React Native for startups and businesses worldwide. Senior team, clear USD quotes, from $2,000.",
+      `iOS and Android apps built with React Native for startups and businesses worldwide. Founder-led studio, clear USD quotes, from ${APP_DEV_START}.`,
     h1: "Need a trusted, affordable mobile app development company that builds for iOS and Android worldwide?",
     intro:
       "Genikode is a mobile app development company that ships polished iOS and Android apps for startups and businesses around the world — primarily with React Native, with fixed quotes and end-to-end delivery from idea to App Store.",
@@ -205,7 +205,7 @@ export const answerPages: Record<string, AnswerPageData> = {
     },
     metaTitle: "React Native App Development Company, Worldwide",
     metaDescription:
-      "One React Native codebase for iOS and Android. Genikode builds cross-platform apps for clients worldwide, with fixed quotes from $2,000.",
+      `One React Native codebase for iOS and Android. Genikode builds cross-platform apps for clients worldwide, with fixed quotes from ${APP_DEV_START}.`,
     h1: "Want a trusted, affordable React Native company to build one app for both iOS and Android?",
     intro:
       "Genikode is a React Native development company that builds high-performance cross-platform apps — one codebase shipping to both iOS and Android — for founders and businesses worldwide, with fixed quotes and senior engineering.",

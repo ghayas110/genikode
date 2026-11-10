@@ -199,7 +199,7 @@ export default function AnswerPage({ data }: { data: AnswerPageData }) {
       {/* Final CTA */}
       <section className="px-6 md:px-8 py-24 border-t border-zinc-800 text-center">
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-balance">
-          Ready to build with a team you can trust?
+          Ready to build with a partner you can trust?
         </h2>
         <p className="text-zinc-400 mb-10 max-w-2xl mx-auto">
           Genikode works with founders and businesses in Pakistan and across the world. Tell us about your project and get a clear, fixed quote.

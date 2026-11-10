@@ -118,7 +118,7 @@ export default function CaseStudiesPage() {
           Want to be our next case study?
         </h2>
         <p className="text-zinc-400 mb-10 max-w-2xl mx-auto">
-          Tell us about your product and get a clear, fixed quote from a team trusted by clients worldwide.
+          Tell us about your product and get a clear, fixed quote from a studio trusted by clients worldwide.
         </p>
         <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform">
           Start your project <ArrowUpRight className="w-4 h-4" />
